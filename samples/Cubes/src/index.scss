@@ -1,0 +1,103 @@
+/*!
+ *   The MIT License (MIT)
+ *   Copyright (c) 2019. Wise Wild Web
+ *
+ *   Permission is hereby granted, free of charge, to any person obtaining a copy
+ *   of this software and associated documentation files (the "Software"), to deal
+ *   in the Software without restriction, including without limitation the rights
+ *   to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ *   copies of the Software, and to permit persons to whom the Software is
+ *   furnished to do so, subject to the following conditions:
+ *
+ *   The above copyright notice and this permission notice shall be included in all
+ *   copies or substantial portions of the Software.
+ *
+ *   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ *   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ *   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ *   AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ *   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ *   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ *   SOFTWARE.
+ *
+ *   @author : Nathanael Braun
+ *   @contact : n8tz.js@gmail.com
+ */
+
+@import "Mixins";
+
+@import "./comps/*.scss";
+
+body, html, #app {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  position: fixed;
+  overflow: hidden;
+  //overflow: auto !important;
+}
+
+.Cubes {
+  @include use_hvCenteredAbs();
+  position: relative;
+  background: rgba(190, 190, 190, 0.21);
+  text-align: center;
+  user-select: none;
+  height: 100%;
+  width: 100%;
+  max-width: 900px;
+  max-height: 800px;
+  border-radius: 20px;
+
+  .description {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    pointer-events: none;
+    background: rgba(255, 255, 255, 0.33);
+    padding: 5px;
+    border-radius: 10px;
+    border: solid 1px rgba(0, 0, 0, 0.2);
+  }
+
+  .area {
+    .GooBall {
+      height: 100%;
+      width: 100%;
+      pointer-events: none;
+
+      .ball {
+        position: absolute;
+        will-change: transform;
+        border-radius: 50%;
+        background: lightcoral;
+        box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+        opacity: 0.6;
+        pointer-events: all;
+
+        &:nth-child(2) {
+          width: 15vh;
+          height: 15vh;
+          max-width: 200px;
+          max-height: 200px;
+        }
+
+        &:nth-child(3) {
+          width: 7vh;
+          height: 7vh;
+          max-width: 80px;
+          max-height: 80px;
+        }
+
+        &:nth-child(1) {
+          width: 10vh;
+          height: 10vh;
+          max-width: 120px;
+          max-height: 120px;
+        }
+      }
+    }
+  }
+}

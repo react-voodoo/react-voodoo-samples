@@ -1,0 +1,25 @@
+{
+  "name": "voodoo-cubes",
+  "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
+  "main": "./Server.js",
+  "author": "Nathan Braun <n8tz.js@gmail.com>",
+  "scripts": {
+    "build": "lpack",
+    "start-dev": "lpack-dev-server"
+  },
+  "dependencies": {
+    "is": "^3.3.0",
+    "prop-types": "^15.6.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.2.0",
+    "react-voodoo": "^2.0.0-alpha"
+  },
+  "devDependencies": {
+    "webpack": "^4.35.2",
+    "webpack-cli": "^3.3.5",
+    "layer-pack": "^1.0.4",
+    "lpack-react": "^1.1.0"
+  }
+}
