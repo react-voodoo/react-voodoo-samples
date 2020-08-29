@@ -33352,8 +33352,8 @@ var SwipeableCard = (_dec = react_voodoo__WEBPACK_IMPORTED_MODULE_2___default.a.
         showBack = _this$state.showBack;
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_voodoo__WEBPACK_IMPORTED_MODULE_2___default.a.Axis, {
       axe: "swipeAxis",
-      scrollableWindow: 100 //items={this._flipEvent}
-      ,
+      scrollableWindow: 100,
+      items: this._flipEvent,
       defaultPosition: showBack ? 100 : 0,
       inertia: this.inertia
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_voodoo__WEBPACK_IMPORTED_MODULE_2___default.a.Axis, {

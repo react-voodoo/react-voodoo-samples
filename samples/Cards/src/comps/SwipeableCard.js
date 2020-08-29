@@ -139,7 +139,7 @@ export default class SwipeableCard extends React.Component {
 			<Voodoo.Axis
 				axe={"swipeAxis"}
 				scrollableWindow={100}
-				//items={this._flipEvent}
+				items={this._flipEvent}
 				defaultPosition={showBack ? 100 : 0}
 				inertia={this.inertia}
 			/>
