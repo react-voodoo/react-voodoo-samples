@@ -35,7 +35,8 @@ const AndroidMenu = (
         children,
         rows = 5,
         cols = 4,
-        padding = 5
+        padding = 5,
+        minimizedHeight = 30
     }
       ) => {
           const [tweener, ViewBox] = Voodoo.hook({ enableMouseDrag: true }),
@@ -173,7 +174,7 @@ const AndroidMenu = (
                                     top            : "0%",
                                     left           : "0%",
                                     width          : "100%",
-                                    height         : "15px",
+                                    height         : minimizedHeight,
                                     backgroundColor: 'black'
                                 },
                                 axes : {
@@ -191,7 +192,7 @@ const AndroidMenu = (
                                             duration: 60,
                                             apply   : {
                                                 //top : [top + '%'],
-                                                height: ["70%", "-96px", "-15px"],
+                                                height: ["70%", "-96px", -minimizedHeight],
                                             }
                                         }
                                     ]
@@ -223,7 +224,7 @@ const AndroidMenu = (
                                             apply   : {
                                     
                                                 height: [-70 + '%', 96],
-                                                top   : ["70%", "-96px", "-15px"],
+                                                top   : ["70%", "-96px", -minimizedHeight],
                                             }
                                         }
                                     ]

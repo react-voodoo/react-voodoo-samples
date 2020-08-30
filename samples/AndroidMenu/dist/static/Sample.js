@@ -33247,7 +33247,9 @@ var AndroidMenu = function AndroidMenu(_ref) {
       _ref$cols = _ref.cols,
       cols = _ref$cols === void 0 ? 4 : _ref$cols,
       _ref$padding = _ref.padding,
-      padding = _ref$padding === void 0 ? 5 : _ref$padding;
+      padding = _ref$padding === void 0 ? 5 : _ref$padding,
+      _ref$minimizedHeight = _ref.minimizedHeight,
+      minimizedHeight = _ref$minimizedHeight === void 0 ? 30 : _ref$minimizedHeight;
 
   var _Voodoo$hook = react_voodoo__WEBPACK_IMPORTED_MODULE_2___default.a.hook({
     enableMouseDrag: true
@@ -33362,7 +33364,7 @@ var AndroidMenu = function AndroidMenu(_ref) {
           top: "0%",
           left: "0%",
           width: "100%",
-          height: "15px",
+          height: minimizedHeight,
           backgroundColor: 'black'
         },
         axes: {
@@ -33378,7 +33380,7 @@ var AndroidMenu = function AndroidMenu(_ref) {
             duration: 60,
             apply: {
               //top : [top + '%'],
-              height: ["70%", "-96px", "-15px"]
+              height: ["70%", "-96px", -minimizedHeight]
             }
           }]
         }
@@ -33406,7 +33408,7 @@ var AndroidMenu = function AndroidMenu(_ref) {
             duration: 60,
             apply: {
               height: [-70 + '%', 96],
-              top: ["70%", "-96px", "-15px"]
+              top: ["70%", "-96px", -minimizedHeight]
             }
           }]
         }
