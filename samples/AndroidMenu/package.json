@@ -1,5 +1,5 @@
 {
-  "name": "voodoo-AdditiveEx",
+  "name": "voodoo-AndroidMenu",
   "version": "1.0.0",
   "private": true,
   "license": "MIT",
@@ -14,7 +14,7 @@
     "prop-types": "^15.6.0",
     "react": "^16.8.6",
     "react-dom": "^16.2.0",
-    "react-voodoo": "^2.0.4"
+    "react-voodoo": "^2.1.0"
   },
   "devDependencies": {
     "webpack": "^4.35.2",
