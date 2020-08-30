@@ -1,5 +1,5 @@
 {
-  "name": "voodoo-cards",
+  "name": "voodoo-AdditiveEx",
   "version": "1.0.0",
   "private": true,
   "license": "MIT",
@@ -14,7 +14,7 @@
     "prop-types": "^15.6.0",
     "react": "^16.8.6",
     "react-dom": "^16.2.0",
-    "react-voodoo": "^2.0.5"
+    "react-voodoo": "^2.0.4"
   },
   "devDependencies": {
     "webpack": "^4.35.2",

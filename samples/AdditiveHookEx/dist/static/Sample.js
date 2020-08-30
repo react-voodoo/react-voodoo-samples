@@ -253,6 +253,21 @@ module.exports = _inheritsLoose;
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime/helpers/objectDestructuringEmpty.js":
+/*!*************************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/objectDestructuringEmpty.js ***!
+  \*************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _objectDestructuringEmpty(obj) {
+  if (obj == null) throw new TypeError("Cannot destructure undefined");
+}
+
+module.exports = _objectDestructuringEmpty;
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime/helpers/objectWithoutPropertiesLoose.js":
 /*!*****************************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/objectWithoutPropertiesLoose.js ***!
@@ -925,7 +940,7 @@ exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/li
 
 
 // module
-exports.push([module.i, "/*!\n *   The MIT License (MIT)\n *   Copyright (c) 2019. Wise Wild Web\n *\n *   Permission is hereby granted, free of charge, to any person obtaining a copy\n *   of this software and associated documentation files (the \"Software\"), to deal\n *   in the Software without restriction, including without limitation the rights\n *   to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\n *   copies of the Software, and to permit persons to whom the Software is\n *   furnished to do so, subject to the following conditions:\n *\n *   The above copyright notice and this permission notice shall be included in all\n *   copies or substantial portions of the Software.\n *\n *   THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n *   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n *   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n *   AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n *   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n *   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\n *   SOFTWARE.\n *\n *   @author : Nathanael Braun\n *   @contact : n8tz.js@gmail.com\n */\n/*\r\n *   The MIT License (MIT)\r\n *   Copyright (c) 2019. Wise Wild Web\r\n *\r\n *   Permission is hereby granted, free of charge, to any person obtaining a copy\r\n *   of this software and associated documentation files (the \"Software\"), to deal\r\n *   in the Software without restriction, including without limitation the rights\r\n *   to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\r\n *   copies of the Software, and to permit persons to whom the Software is\r\n *   furnished to do so, subject to the following conditions:\r\n *\r\n *   The above copyright notice and this permission notice shall be included in all\r\n *   copies or substantial portions of the Software.\r\n *\r\n *   THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\r\n *   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\r\n *   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\r\n *   AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\r\n *   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\r\n *   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\r\n *   SOFTWARE.\r\n *\r\n *   @author : Nathanael Braun\r\n *   @contact : n8tz.js@gmail.com\r\n */\n.SwipeableCards {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  text-align: center;\n  position: relative;\n  background: rgba(190, 190, 190, 0.21);\n  text-align: center;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n  height: 100%;\n  width: 100%;\n  max-width: 800px;\n  max-height: 600px;\n  border-radius: 20px; }\n  .SwipeableCards:before {\n    content: ' ';\n    display: inline-block;\n    height: 100%;\n    width: 1px;\n    margin-right: -1px;\n    vertical-align: middle;\n    overflow: hidden; }\n  .SwipeableCards > * {\n    text-align: left;\n    vertical-align: middle;\n    display: inline-block; }\n  .SwipeableCards > span {\n    display: inline-block;\n    text-align: center; }\n  .SwipeableCards .SwipeableCard {\n    margin: 10px;\n    display: inline-block;\n    width: 15vh;\n    height: 15vh;\n    cursor: pointer;\n    border-radius: 2vh;\n    overflow: hidden;\n    border: solid 1px black; }\n    .SwipeableCards .SwipeableCard .description {\n      position: absolute;\n      top: 10%;\n      left: 50%;\n      transform: translateX(-50%);\n      z-index: 1000;\n      pointer-events: none;\n      background: rgba(255, 255, 255, 0.33);\n      padding: 5px;\n      border-radius: 10px;\n      border: solid 1px rgba(0, 0, 0, 0.2); }\n    .SwipeableCards .SwipeableCard .frontCard {\n      height: 100%;\n      width: 100%;\n      background: url(\"https://source.unsplash.com/200x200/?forest\") no-repeat center center;\n      background-size: cover; }\n    .SwipeableCards .SwipeableCard .backCard {\n      height: 100%;\n      width: 100%;\n      background: url(\"https://source.unsplash.com/200x200/?sky\") no-repeat center center;\n      background-size: cover; }\n\nbody, html, #app {\n  width: 100%;\n  height: 100%;\n  margin: 0;\n  position: fixed;\n  overflow: hidden; }\n", ""]);
+exports.push([module.i, "/*!\n *   The MIT License (MIT)\n *   Copyright (c) 2019. Wise Wild Web\n *\n *   Permission is hereby granted, free of charge, to any person obtaining a copy\n *   of this software and associated documentation files (the \"Software\"), to deal\n *   in the Software without restriction, including without limitation the rights\n *   to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\n *   copies of the Software, and to permit persons to whom the Software is\n *   furnished to do so, subject to the following conditions:\n *\n *   The above copyright notice and this permission notice shall be included in all\n *   copies or substantial portions of the Software.\n *\n *   THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n *   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n *   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n *   AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n *   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n *   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\n *   SOFTWARE.\n *\n *   @author : Nathanael Braun\n *   @contact : n8tz.js@gmail.com\n */\n/*\r\n *   The MIT License (MIT)\r\n *   Copyright (c) 2019. Wise Wild Web\r\n *\r\n *   Permission is hereby granted, free of charge, to any person obtaining a copy\r\n *   of this software and associated documentation files (the \"Software\"), to deal\r\n *   in the Software without restriction, including without limitation the rights\r\n *   to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\r\n *   copies of the Software, and to permit persons to whom the Software is\r\n *   furnished to do so, subject to the following conditions:\r\n *\r\n *   The above copyright notice and this permission notice shall be included in all\r\n *   copies or substantial portions of the Software.\r\n *\r\n *   THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\r\n *   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\r\n *   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\r\n *   AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\r\n *   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\r\n *   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\r\n *   SOFTWARE.\r\n *\r\n *   @author : Nathanael Braun\r\n *   @contact : n8tz.js@gmail.com\r\n */\nbody, html, #app {\n  width: 100%;\n  height: 100%;\n  margin: 0;\n  position: fixed;\n  overflow: hidden; }\n\n.card {\n  text-align: center; }\n  .card:before {\n    content: ' ';\n    display: inline-block;\n    height: 100%;\n    width: 1px;\n    margin-right: -1px;\n    vertical-align: middle;\n    overflow: hidden; }\n  .card > * {\n    text-align: left;\n    vertical-align: middle;\n    display: inline-block; }\n", ""]);
 
 // exports
 
@@ -33197,212 +33212,17 @@ module.exports = g;
 /*!**********************************************!*\
   !*** ./src/MapOf.Sample_comps_____js.gen.js ***!
   \**********************************************/
-/*! exports provided: SwipeableCard, default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SwipeableCard", function() { return SwipeableCard; });
-/* This is a virtual file generated by layer-pack */
-var req,
-    _exports = {},
-    walknSetExport = __webpack_require__(/*! layer-pack/etc/utils/indexUtils.js */ "./node_modules/layer-pack/etc/utils/indexUtils.js").walknSetExport;
-
-var _Sample_comps_SwipeableCard_js = __webpack_require__(/*! Sample/comps/SwipeableCard.js */ "./src/comps/SwipeableCard.js");
-
-walknSetExport(_exports, "SwipeableCard", _Sample_comps_SwipeableCard_js);
-var SwipeableCard = _exports.SwipeableCard;
-/* harmony default export */ __webpack_exports__["default"] = (_exports);
-
-/***/ }),
-
-/***/ "./src/comps/SwipeableCard.js":
-/*!************************************!*\
-  !*** ./src/comps/SwipeableCard.js ***!
-  \************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return SwipeableCard; });
-/* harmony import */ var _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/inheritsLoose */ "./node_modules/@babel/runtime/helpers/inheritsLoose.js");
-/* harmony import */ var _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_voodoo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-voodoo */ "../../../react-voodoo/dist/react-voodoo.js");
-/* harmony import */ var react_voodoo__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_voodoo__WEBPACK_IMPORTED_MODULE_2__);
+/* This is a virtual file generated by layer-pack */
+var req,
+    _exports = {},
+    walknSetExport = __webpack_require__(/*! layer-pack/etc/utils/indexUtils.js */ "./node_modules/layer-pack/etc/utils/indexUtils.js").walknSetExport;
 
-
-var _dec, _class, _class2, _temp;
-
-/*
- *   The MIT License (MIT)
- *   Copyright (c) 2019. Wise Wild Web
- *
- *   Permission is hereby granted, free of charge, to any person obtaining a copy
- *   of this software and associated documentation files (the "Software"), to deal
- *   in the Software without restriction, including without limitation the rights
- *   to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- *   copies of the Software, and to permit persons to whom the Software is
- *   furnished to do so, subject to the following conditions:
- *
- *   The above copyright notice and this permission notice shall be included in all
- *   copies or substantial portions of the Software.
- *
- *   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- *   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- *   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- *   AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- *   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- *   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- *   SOFTWARE.
- *
- *   @author : Nathanael Braun
- *   @contact : n8tz.js@gmail.com
- */
-
-
-var swipeAxis = [{
-  from: 0,
-  duration: 50,
-  apply: {
-    transform: [{}, {
-      translateZ: 50,
-      rotateY: "-90deg"
-    }]
-  }
-}, {
-  from: 50,
-  duration: .0001,
-  apply: {
-    transform: [{}, {
-      rotateY: "180deg"
-    }]
-  }
-}, {
-  from: 50,
-  duration: 50,
-  apply: {
-    transform: [{}, {
-      translateZ: -50,
-      rotateY: "-90deg"
-    }]
-  }
-}],
-    cardStyle = {
-  position: "relative",
-  transform: [{
-    perspective: 500
-  }]
-},
-    cardHoverAnim = [{
-  target: "card",
-  from: 0,
-  duration: 100,
-  apply: {
-    transform: [{}, {
-      translateZ: 20
-    }]
-  }
-}];
-var SwipeableCard = (_dec = react_voodoo__WEBPACK_IMPORTED_MODULE_2___default.a.tweener({
-  enableMouseDrag: true
-}), _dec(_class = (_temp = _class2 = /*#__PURE__*/function (_React$Component) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_0___default()(SwipeableCard, _React$Component);
-
-  function SwipeableCard() {
-    var _this;
-
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    _this = _React$Component.call.apply(_React$Component, [this].concat(args)) || this;
-    _this.state = {};
-
-    _this.mouseEnter = function () {
-      var tweener = _this.props.tweener;
-      tweener.scrollTo(100, 500, "hovering");
-    };
-
-    _this.mouseLeave = function () {
-      var tweener = _this.props.tweener;
-      tweener.scrollTo(0, 500, "hovering");
-    };
-
-    _this._flipEvent = [{
-      type: "Event",
-      from: 50,
-      duration: .01,
-      entering: function entering(pos) {
-        var showBack = _this.state.showBack;
-        console.log('SwipeableCard::entering:119: ', showBack, pos);
-        if (showBack !== (pos === 1)) _this.setState({
-          showBack: pos === 1
-        });
-      }
-    }];
-    _this.inertia = {
-      wayPoints: [{
-        at: 0
-      }, {
-        at: 100
-      }]
-    };
-    return _this;
-  }
-
-  SwipeableCard.getDerivedStateFromProps = function getDerivedStateFromProps(props, state) {
-    var swipeAnim = props.swipeAnim,
-        style = props.style;
-    return {
-      swipeAnim: {
-        swipeAxis: swipeAnim
-      },
-      style: style,
-      showBack: state.showBack === undefined ? props.showBack : state.showBack
-    };
-  };
-
-  var _proto = SwipeableCard.prototype;
-
-  _proto.render = function render() {
-    var _this$props$children;
-
-    var _this$state = this.state,
-        swipeAnim = _this$state.swipeAnim,
-        style = _this$state.style,
-        showBack = _this$state.showBack;
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_voodoo__WEBPACK_IMPORTED_MODULE_2___default.a.Axis, {
-      axe: "swipeAxis",
-      scrollableWindow: 100,
-      items: this._flipEvent,
-      defaultPosition: showBack ? 100 : 0,
-      inertia: this.inertia
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_voodoo__WEBPACK_IMPORTED_MODULE_2___default.a.Axis, {
-      axe: "hovering",
-      items: cardHoverAnim,
-      defaultPosition: 0
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_voodoo__WEBPACK_IMPORTED_MODULE_2___default.a.Node, {
-      id: "card",
-      tweenAxis: swipeAnim,
-      initial: style
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_voodoo__WEBPACK_IMPORTED_MODULE_2___default.a.Draggable, {
-      xAxis: "swipeAxis",
-      className: "SwipeableCard",
-      onMouseEnter: this.mouseEnter,
-      onMouseLeave: this.mouseLeave
-    }, (_this$props$children = this.props.children) === null || _this$props$children === void 0 ? void 0 : _this$props$children[showBack ? 1 : 0])));
-  };
-
-  return SwipeableCard;
-}(react__WEBPACK_IMPORTED_MODULE_1___default.a.Component), _class2.defaultProps = {
-  swipeAnim: swipeAxis,
-  style: cardStyle,
-  showBack: false
-}, _temp)) || _class);
-
+/* harmony default export */ __webpack_exports__["default"] = (_exports);
 
 /***/ }),
 
@@ -33415,15 +33235,17 @@ var SwipeableCard = (_dec = react_voodoo__WEBPACK_IMPORTED_MODULE_2___default.a.
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/inheritsLoose */ "./node_modules/@babel/runtime/helpers/inheritsLoose.js");
-/* harmony import */ var _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_helpers_objectDestructuringEmpty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/objectDestructuringEmpty */ "./node_modules/@babel/runtime/helpers/objectDestructuringEmpty.js");
+/* harmony import */ var _babel_runtime_helpers_objectDestructuringEmpty__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_objectDestructuringEmpty__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _comps_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./comps/(*).js */ "./src/MapOf.Sample_comps_____js.gen.js");
-/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./index.scss */ "./src/index.scss");
-/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_index_scss__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var react_voodoo__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-voodoo */ "../../../react-voodoo/dist/react-voodoo.js");
+/* harmony import */ var react_voodoo__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_voodoo__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _comps_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./comps/(*).js */ "./src/MapOf.Sample_comps_____js.gen.js");
+/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./index.scss */ "./src/index.scss");
+/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_index_scss__WEBPACK_IMPORTED_MODULE_5__);
 
 
 /*
@@ -33456,36 +33278,88 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var Sample = /*#__PURE__*/function (_React$Component) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_0___default()(Sample, _React$Component);
 
-  function Sample() {
-    return _React$Component.apply(this, arguments) || this;
-  }
+var Sample = function Sample(_ref) {
+  _babel_runtime_helpers_objectDestructuringEmpty__WEBPACK_IMPORTED_MODULE_0___default()(_ref);
 
-  var _proto = Sample.prototype;
+  var _Voodoo$hook = react_voodoo__WEBPACK_IMPORTED_MODULE_3___default.a.hook(),
+      ViewBox = _Voodoo$hook[0],
+      tweener = _Voodoo$hook[1],
+      _React$useState = react__WEBPACK_IMPORTED_MODULE_1___default.a.useState(false),
+      showBack = _React$useState[0],
+      setShowBack = _React$useState[1],
+      cardAxis = react__WEBPACK_IMPORTED_MODULE_1___default.a.useMemo(function () {
+    return {
+      swipeAxis: [{
+        from: 0,
+        duration: 50,
+        apply: {
+          transform: [{}, {
+            translateZ: 50,
+            rotateY: "-90deg"
+          }]
+        }
+      }, {
+        type: "Event",
+        from: 50,
+        duration: .01,
+        entering: function entering(pos) {
+          setShowBack(pos === 1);
+        }
+      }, {
+        from: 50,
+        duration: .0001,
+        apply: {
+          transform: [{}, {
+            rotateY: "180deg"
+          }]
+        }
+      }, {
+        from: 50,
+        duration: 50,
+        apply: {
+          transform: [{}, {
+            translateZ: -50,
+            rotateY: "-90deg"
+          }]
+        }
+      }]
+    };
+  }, []),
+      cardStyle = react__WEBPACK_IMPORTED_MODULE_1___default.a.useMemo(function () {
+    return {
+      position: "absolute",
+      top: "50%",
+      left: "50%",
+      width: "50px",
+      height: "50px",
+      backgroundColor: "red",
+      transform: [{
+        translateX: "-50%",
+        translateY: "-50%"
+      }]
+    };
+  }, []);
 
-  _proto.render = function render() {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: "SwipeableCards"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, Array(6).fill(null).map(function (e, i) {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_comps_js__WEBPACK_IMPORTED_MODULE_3__["default"].SwipeableCard, {
-        key: i,
-        showBack: !!(i % 2)
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "frontCard"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "description"
-      }, "front ", i)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "backCard"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "description"
-      }, "back ", i)));
-    })));
-  };
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(ViewBox, {
+    className: "container"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_voodoo__WEBPACK_IMPORTED_MODULE_3___default.a.Axis, {
+    axe: "swipeAxis",
+    scrollableWindow: 400 //items={ this._flipEvent }
+    ,
+    defaultPosition: 0 //inertia={ this.inertia }
 
-  return Sample;
-}(react__WEBPACK_IMPORTED_MODULE_1___default.a.Component);
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_voodoo__WEBPACK_IMPORTED_MODULE_3___default.a.Node, {
+    id: "card",
+    tweenAxis: cardAxis,
+    style: cardStyle
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_voodoo__WEBPACK_IMPORTED_MODULE_3___default.a.Draggable, {
+    xAxis: "swipeAxis",
+    className: "SwipeableCard"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "card"
+  }, "test ", showBack ? "true" : "false"))));
+};
 
 document.body.innerHTML = '<div id="app"></div>';
 
