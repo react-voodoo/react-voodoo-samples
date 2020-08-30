@@ -10,6 +10,12 @@ Swipeable cards with merged tween from hover & dragging
 
 Test [here](http://htmlpreview.github.io/?https://github.com/react-voodoo/react-voodoo-samples/blob/master/samples/Cards/dist/static/index.html)
 
+### [Android Menu](samples/AndroidMenu)
+
+Android Menu basic
+
+Test [here](http://htmlpreview.github.io/?https://github.com/react-voodoo/react-voodoo-samples/blob/master/samples/AndroidMenu/dist/static/index.html)
+
 ### [Cubes](samples/Cards)
 
 Swipeable Cubes with merged tween from 2 dragging direction, inertia & animation loop

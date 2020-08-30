@@ -36,26 +36,49 @@ body, html, #app {
   //overflow: auto !important;
 }
 
-.container {
+.desk {
+  @include use_hvCenteredAbs();
   @include use_hvCenteredContent();
-  color: black;
+  background: url("https://source.unsplash.com/400x700/?android");
 
-  .launcher {
-    overflow: hidden;
-    position: relative;
-    border-radius: 5px;
+  width: 375px;
+  height: 667px;
 
-    img {
-      @include use_hvCenteredAbs();
-      width: 100%;
+  .notif {
+    @include use_hvCenteredContent();
+    height: 96px;
+    width: 100%;
+    background: grey;
+  }
+
+  .AndroidMenu {
+    color: black;
+    pointer-events: none;
+    user-select: none;
+    cursor: pointer;
+
+    > * {
+      pointer-events: all;
     }
-  }
 
-  .notifications {
-    background: rgba(0, 0, 0, 0.28);
-  }
+    .launcher {
+      overflow: hidden;
+      position: relative;
+      border-radius: 5px;
 
-  .header {
-    background: black;
+      img {
+        @include use_hvCenteredAbs();
+        width: 100%;
+        pointer-events: none;
+      }
+    }
+
+    .notifications {
+      background: rgba(0, 0, 0, 0.28);
+    }
+
+    .header {
+      background: black;
+    }
   }
 }

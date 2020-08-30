@@ -893,7 +893,7 @@ exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/li
 
 
 // module
-exports.push([module.i, "/*!\n *   The MIT License (MIT)\n *   Copyright (c) 2019. Wise Wild Web\n *\n *   Permission is hereby granted, free of charge, to any person obtaining a copy\n *   of this software and associated documentation files (the \"Software\"), to deal\n *   in the Software without restriction, including without limitation the rights\n *   to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\n *   copies of the Software, and to permit persons to whom the Software is\n *   furnished to do so, subject to the following conditions:\n *\n *   The above copyright notice and this permission notice shall be included in all\n *   copies or substantial portions of the Software.\n *\n *   THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n *   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n *   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n *   AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n *   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n *   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\n *   SOFTWARE.\n *\n *   @author : Nathanael Braun\n *   @contact : n8tz.js@gmail.com\n */\n/*\r\n *   The MIT License (MIT)\r\n *   Copyright (c) 2019. Wise Wild Web\r\n *\r\n *   Permission is hereby granted, free of charge, to any person obtaining a copy\r\n *   of this software and associated documentation files (the \"Software\"), to deal\r\n *   in the Software without restriction, including without limitation the rights\r\n *   to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\r\n *   copies of the Software, and to permit persons to whom the Software is\r\n *   furnished to do so, subject to the following conditions:\r\n *\r\n *   The above copyright notice and this permission notice shall be included in all\r\n *   copies or substantial portions of the Software.\r\n *\r\n *   THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\r\n *   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\r\n *   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\r\n *   AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\r\n *   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\r\n *   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\r\n *   SOFTWARE.\r\n *\r\n *   @author : Nathanael Braun\r\n *   @contact : n8tz.js@gmail.com\r\n */\nbody, html, #app {\n  width: 100%;\n  height: 100%;\n  margin: 0;\n  position: fixed;\n  overflow: hidden; }\n\n.container {\n  text-align: center;\n  color: black; }\n  .container:before {\n    content: ' ';\n    display: inline-block;\n    height: 100%;\n    width: 1px;\n    margin-right: -1px;\n    vertical-align: middle;\n    overflow: hidden; }\n  .container > * {\n    text-align: left;\n    vertical-align: middle;\n    display: inline-block; }\n  .container .launcher {\n    overflow: hidden;\n    position: relative;\n    border-radius: 5px; }\n    .container .launcher img {\n      position: absolute;\n      top: 50%;\n      left: 50%;\n      transform: translate(-50%, -50%);\n      width: 100%; }\n  .container .notifications {\n    background: rgba(0, 0, 0, 0.28); }\n  .container .header {\n    background: black; }\n", ""]);
+exports.push([module.i, "/*!\n *   The MIT License (MIT)\n *   Copyright (c) 2019. Wise Wild Web\n *\n *   Permission is hereby granted, free of charge, to any person obtaining a copy\n *   of this software and associated documentation files (the \"Software\"), to deal\n *   in the Software without restriction, including without limitation the rights\n *   to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\n *   copies of the Software, and to permit persons to whom the Software is\n *   furnished to do so, subject to the following conditions:\n *\n *   The above copyright notice and this permission notice shall be included in all\n *   copies or substantial portions of the Software.\n *\n *   THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n *   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n *   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n *   AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n *   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n *   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\n *   SOFTWARE.\n *\n *   @author : Nathanael Braun\n *   @contact : n8tz.js@gmail.com\n */\n/*\r\n *   The MIT License (MIT)\r\n *   Copyright (c) 2019. Wise Wild Web\r\n *\r\n *   Permission is hereby granted, free of charge, to any person obtaining a copy\r\n *   of this software and associated documentation files (the \"Software\"), to deal\r\n *   in the Software without restriction, including without limitation the rights\r\n *   to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\r\n *   copies of the Software, and to permit persons to whom the Software is\r\n *   furnished to do so, subject to the following conditions:\r\n *\r\n *   The above copyright notice and this permission notice shall be included in all\r\n *   copies or substantial portions of the Software.\r\n *\r\n *   THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\r\n *   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\r\n *   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\r\n *   AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\r\n *   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\r\n *   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\r\n *   SOFTWARE.\r\n *\r\n *   @author : Nathanael Braun\r\n *   @contact : n8tz.js@gmail.com\r\n */\nbody, html, #app {\n  width: 100%;\n  height: 100%;\n  margin: 0;\n  position: fixed;\n  overflow: hidden; }\n\n.desk {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  text-align: center;\n  background: url(\"https://source.unsplash.com/400x700/?android\");\n  width: 375px;\n  height: 667px; }\n  .desk:before {\n    content: ' ';\n    display: inline-block;\n    height: 100%;\n    width: 1px;\n    margin-right: -1px;\n    vertical-align: middle;\n    overflow: hidden; }\n  .desk > * {\n    text-align: left;\n    vertical-align: middle;\n    display: inline-block; }\n  .desk .notif {\n    text-align: center;\n    height: 96px;\n    width: 100%;\n    background: grey; }\n    .desk .notif:before {\n      content: ' ';\n      display: inline-block;\n      height: 100%;\n      width: 1px;\n      margin-right: -1px;\n      vertical-align: middle;\n      overflow: hidden; }\n    .desk .notif > * {\n      text-align: left;\n      vertical-align: middle;\n      display: inline-block; }\n  .desk .AndroidMenu {\n    color: black;\n    pointer-events: none;\n    -webkit-user-select: none;\n       -moz-user-select: none;\n        -ms-user-select: none;\n            user-select: none;\n    cursor: pointer; }\n    .desk .AndroidMenu > * {\n      pointer-events: all; }\n    .desk .AndroidMenu .launcher {\n      overflow: hidden;\n      position: relative;\n      border-radius: 5px; }\n      .desk .AndroidMenu .launcher img {\n        position: absolute;\n        top: 50%;\n        left: 50%;\n        transform: translate(-50%, -50%);\n        width: 100%;\n        pointer-events: none; }\n    .desk .AndroidMenu .notifications {\n      background: rgba(0, 0, 0, 0.28); }\n    .desk .AndroidMenu .header {\n      background: black; }\n", ""]);
 
 // exports
 
@@ -33241,25 +33241,25 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var AndroidMenu = function AndroidMenu(_ref) {
-  var _ref$rows = _ref.rows,
-      rows = _ref$rows === void 0 ? 6 : _ref$rows,
+  var children = _ref.children,
+      _ref$rows = _ref.rows,
+      rows = _ref$rows === void 0 ? 5 : _ref$rows,
       _ref$cols = _ref.cols,
       cols = _ref$cols === void 0 ? 4 : _ref$cols,
       _ref$padding = _ref.padding,
       padding = _ref$padding === void 0 ? 5 : _ref$padding;
 
-  var _Voodoo$hook = react_voodoo__WEBPACK_IMPORTED_MODULE_2___default.a.hook(),
+  var _Voodoo$hook = react_voodoo__WEBPACK_IMPORTED_MODULE_2___default.a.hook({
+    enableMouseDrag: true
+  }),
       tweener = _Voodoo$hook[0],
       ViewBox = _Voodoo$hook[1],
-      _React$useState = react__WEBPACK_IMPORTED_MODULE_0___default.a.useState(false),
-      showBack = _React$useState[0],
-      setShowBack = _React$useState[1],
       launchers = react__WEBPACK_IMPORTED_MODULE_0___default.a.useMemo(function () {
     return {
       All: [].concat(Array(16).fill(true).map(function (item, i) {
         return {
           id: "App" + i,
-          icon: "https://source.unsplash.com/200x200/?forest",
+          icon: "https://source.unsplash.com/200x200/?icon",
           label: "App" + i
         };
       })),
@@ -33287,7 +33287,7 @@ var AndroidMenu = function AndroidMenu(_ref) {
           //                   : left + 100 ) + "%",
           height: "64px",
           width: "64px",
-          backgroundColor: 'red',
+          //backgroundColor: 'red',
           transform: [{
             translateX: "-50%",
             translateY: "-50%"
@@ -33307,7 +33307,7 @@ var AndroidMenu = function AndroidMenu(_ref) {
       byId[id].left = left;
       byId[id].axes.swipeDown.push({
         from: 0,
-        duration: 30,
+        duration: 40,
         apply: {
           top: '96px'
         }
@@ -33323,8 +33323,8 @@ var AndroidMenu = function AndroidMenu(_ref) {
 
       if (preview) {
         launcher.axes.swipeDown.push({
-          from: 30,
-          duration: 70,
+          from: 40,
+          duration: 60,
           apply: {
             top: ["-64px", top + '%'],
             left: [-launcher.left + "%", left + "%"]
@@ -33334,8 +33334,8 @@ var AndroidMenu = function AndroidMenu(_ref) {
         launcher.style.top = ["0px", top + "%"];
         launcher.style.left = left + 100 + "%";
         launcher.axes.swipeDown.push({
-          from: 30,
-          duration: 70,
+          from: 40,
+          duration: 60,
           apply: {
             left: "-100%"
           }
@@ -33350,8 +33350,8 @@ var AndroidMenu = function AndroidMenu(_ref) {
         position: "absolute",
         top: "50%",
         left: "50%",
-        width: "375px",
-        height: "667px",
+        width: "100%",
+        height: "100%",
         //backgroundColor: 'green',
         transform: "translate(-50%,-50%)",
         overflow: "hidden"
@@ -33368,14 +33368,14 @@ var AndroidMenu = function AndroidMenu(_ref) {
         axes: {
           swipeDown: [{
             from: 0,
-            duration: 30,
+            duration: 40,
             apply: {
               //top : [top + '%'],
               height: ["96px"]
             }
           }, {
-            from: 30,
-            duration: 70,
+            from: 40,
+            duration: 60,
             apply: {
               //top : [top + '%'],
               height: ["70%", "-96px", "-15px"]
@@ -33396,14 +33396,14 @@ var AndroidMenu = function AndroidMenu(_ref) {
         axes: {
           swipeDown: [{
             from: 0,
-            duration: 30,
+            duration: 40,
             apply: {
               height: [100 + '%', -96],
               top: ["96px"]
             }
           }, {
-            from: 30,
-            duration: 70,
+            from: 40,
+            duration: 60,
             apply: {
               height: [-70 + '%', 96],
               top: ["70%", "-96px", "-15px"]
@@ -33415,7 +33415,7 @@ var AndroidMenu = function AndroidMenu(_ref) {
         wayPoints: [{
           at: 0
         }, {
-          at: 30
+          at: 40
         }, {
           at: 100
         }]
@@ -33426,16 +33426,15 @@ var AndroidMenu = function AndroidMenu(_ref) {
   }, [launchers]);
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ViewBox, {
-    className: "container",
+    className: "AndroidMenu",
     style: styles.container
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_voodoo__WEBPACK_IMPORTED_MODULE_2___default.a.Axis, {
     axe: "swipeDown",
-    scrollableWindow: 100,
+    scrollableWindow: 80,
     defaultPosition: 0,
     inertia: styles.inertia
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_voodoo__WEBPACK_IMPORTED_MODULE_2___default.a.Draggable, {
-    className: "launchers" //style={ styles.container }
-    ,
+    className: "launchers",
     yHook: styles.inverse,
     yAxis: "swipeDown"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_voodoo__WEBPACK_IMPORTED_MODULE_2___default.a.Node, {
@@ -33458,13 +33457,20 @@ var AndroidMenu = function AndroidMenu(_ref) {
     style: styles.notifs.style
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "notifications"
-  }, "notifications"))), "swipe down");
+  }, children))));
+},
+    Sample = function Sample() {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "desk"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(AndroidMenu, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "notif"
+  }, "notification")), "desk");
 };
 
 document.body.innerHTML = '<div id="app"></div>';
 
 function renderSample() {
-  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(AndroidMenu, null), document.getElementById('app'));
+  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Sample, null), document.getElementById('app'));
 }
 
 renderSample();
