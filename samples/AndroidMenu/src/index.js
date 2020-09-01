@@ -234,6 +234,27 @@ const AndroidMenu = (
                                     ]
                                 }
                             },
+                            topbar     : {
+                                style: {
+                                    position       : "absolute",
+                                    top            : "0%",
+                                    left           : "0%",
+                                    width          : "100%",
+                                    height         : 30,
+                                    backgroundColor: 'black'
+                                },
+                                axes : {
+                                    swipeDown: [
+                                        {
+                                            from    : 0,
+                                            duration: 40,
+                                            apply   : {
+                                                opacity:-1
+                                            }
+                                        }
+                                    ]
+                                }
+                            },
                             notifs   : {
                                 style: {
                                     position: "absolute",
@@ -299,17 +320,14 @@ const AndroidMenu = (
                   xAxis={ "swipeLeft" }
               >
                   <Voodoo.Node
-                      tweenAxis={ styles.menu.axes }
+                      axes={ styles.menu.axes }
                       style={ styles.menu.style }
                   >
                       <div className={ "header" }>
-                          <div className={ "topbar" }>
-                              Swipe me down !
-                          </div>
                           {
                               styles.items.map(
                                   ( launcher, i ) =>
-                                      <Voodoo.Node tweenAxis={ launcher.axes }
+                                      <Voodoo.Node axes={ launcher.axes }
                                                    style={ launcher.style }
                                                    key={ i }
                                       >
@@ -320,11 +338,19 @@ const AndroidMenu = (
                                       </Voodoo.Node>
                               )
                           }
+                          <Voodoo.Node
+                              axes={ styles.topbar.axes }
+                              style={ styles.topbar.style }
+                          >
+                              <div className={ "topbar" }>
+                                  Swipe me down !
+                              </div>
+                          </Voodoo.Node>
                       </div>
                   </Voodoo.Node>
             
                   <Voodoo.Node
-                      tweenAxis={ styles.notifs.axes }
+                      axes={ styles.notifs.axes }
                       style={ styles.notifs.style }
                   >
                       <div className={ "notifications" }>
