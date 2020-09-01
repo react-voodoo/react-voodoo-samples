@@ -27,42 +27,75 @@
 import React    from "react";
 import ReactDom from "react-dom";
 import Voodoo   from "react-voodoo";
+import icons    from "./icons/(*).png";
+
+const allIcons = Object.keys(icons).map(( name, i ) => ( {
+    
+    id   : "App" + i,
+    icon : icons[ name ],
+    label: name
+} ))
 
 import "./index.scss";
+
+
+const Launcher = ( { label, icon, nodeRef, ...props } ) => {
+    return <div className={ "launcher" } { ...props } ref={ nodeRef }>
+        <img src={ icon }/>
+        { label }
+    </div>
+}
 
 const AndroidMenu = (
     {
         children,
-        rows = 5,
+        rows = 4,
         cols = 4,
+        LauncherComp = Launcher,
         padding = 5,
-        minimizedHeight = 30
+        minimizedHeight = 30,
+        maximizedHeight = 400,
+        launchers,
+        launcherStyle = {
+            opacity  : 0,
+            transform: [
+                {
+                    perspective: "200px",
+                },
+                {
+                    rotateX   : "90deg",
+                    rotateZ   : "90deg",
+                    translateZ: "20px"
+                }
+            ]
+        },
+        launcherEntering = [
+            {
+                from    : 0,
+                duration: 100,
+                apply   : {
+                    opacity  : 1,
+                    transform: [
+                        {},
+                        {
+                            rotateX   : "-90deg",
+                            rotateZ   : "-90deg",
+                            translateZ: "-20px"
+                        }
+                    ]
+                }
+            },
+        ]
     }
       ) => {
           const [tweener, ViewBox] = Voodoo.hook({ enableMouseDrag: true }),
-                launchers          = React.useMemo(
-                    () => (
-                        {
-                            All    : [
-                                ...Array(16).fill(true).map(
-                                    ( item, i ) =>
-                                        ( {
-                                            id   : "App" + i,
-                                            icon : "https://source.unsplash.com/200x200/?icon",
-                                            label: "App" + i
-                                        } )
-                                )
-                            ],
-                            Preview: ["App1", "App2", "App8", "App10"]
-                        }
-                    )
-                ),
                 styles             = React.useMemo(
                     () => {
                         let coll    = 0,
                             row     = 0,
                             colSize = ( 100 - padding * 2 ) / cols,
                             rowSize = ( 100 - padding * 2 ) / rows,
+                            nbPages = ~~( launchers.All.length / ( cols * rows ) ),
                             byId    = {},
                             items   = launchers.All.map(
                                 ( item, i ) => {
@@ -73,28 +106,28 @@ const AndroidMenu = (
                                         {
                                             id   : launchers.All[ i ].id,
                                             launcher,
-                                            style: {
-                                                position : "absolute",
-                                                //top            : [preview
-                                                //                  ? "0%"
-                                                //                  : top + "%", "-32px"],
-                                                //left           : ( preview
-                                                //                   ? left
-                                                //                   : left + 100 ) + "%",
-                                                height   : "64px",
-                                                width    : "64px",
-                                                //backgroundColor: 'red',
-                                                transform: [
-                                                    {
-                                                        translateX: "-50%",
-                                                        translateY: "-50%",
-                                                    },
-                                                    {}
-                                                ]
-                                            },
+                                            style: Voodoo.tools.addCss({
+                                                                           position : "absolute",
+                                                                           height   : "64px",
+                                                                           width    : "64px",
+                                                                           transform: [
+                                                                               {
+                                                                                   translateX: "-50%",
+                                                                                   translateY: "-50%",
+                                                                               }
+                                                                           ]
+                                                                       }, launcherStyle),
                                             axes : {
                                                 swipeDown: [],
-                                                swipeLeft: []
+                                                swipeLeft: [
+                                                    {
+                                                        from    : 0,
+                                                        duration: 100,
+                                                        apply   : {
+                                                            left: -( nbPages * 100 ) + "%",
+                                                        }
+                                                    },
+                                                ]
                                             }
                                         };
                                     return byId[ launcher.id ];
@@ -114,7 +147,8 @@ const AndroidMenu = (
                                                   apply   : {
                                                       top: '96px',
                                                   }
-                                              }
+                                              },
+                                              ...Voodoo.tools.scale(launcherEntering, 40)
                                           )
                             }
                         )
@@ -123,9 +157,10 @@ const AndroidMenu = (
                                 const
                                     launcher = byId[ launcherDef.id ],
                                     coll     = i % cols,
-                                    row      = ~~( i / cols ),
+                                    row      = ~~( i / cols ) % ( rows ),
+                                    page     = ~~( ( i / cols ) / ( rows ) ),
                                     top      = ( padding + rowSize / 2 + row * rowSize ),
-                                    left     = ( padding + colSize / 2 + coll * colSize ),
+                                    left     = ( padding + colSize / 2 + coll * colSize ) + page * 100,
                                     preview  = launchers.Preview.includes(launcher.id);
                                 if ( preview ) {
                                     launcher.axes.swipeDown
@@ -151,7 +186,8 @@ const AndroidMenu = (
                                                     apply   : {
                                                         left: "-100%",
                                                     }
-                                                }
+                                                },
+                                                ...Voodoo.tools.scale(launcherEntering, 60, 40)
                                             )
                                 }
                             }
@@ -192,7 +228,7 @@ const AndroidMenu = (
                                             duration: 60,
                                             apply   : {
                                                 //top : [top + '%'],
-                                                height: ["70%", "-96px", -minimizedHeight],
+                                                height: [maximizedHeight, "-96px", -minimizedHeight],
                                             }
                                         }
                                     ]
@@ -223,15 +259,18 @@ const AndroidMenu = (
                                             duration: 60,
                                             apply   : {
                                     
-                                                height: [-70 + '%', 96],
-                                                top   : ["70%", "-96px", -minimizedHeight],
+                                                height: [maximizedHeight, 96],
+                                                top   : [maximizedHeight, "-96px", -minimizedHeight],
                                             }
                                         }
                                     ]
                                 }
                             },
-                            inertia  : {
+                            vInertia : {
                                 wayPoints: [{ at: 0 }, { at: 40 }, { at: 100 }],
+                            },
+                            hInertia : {
+                                wayPoints: [{ at: 0 }, ...Array(nbPages).fill(true).map(( p, i ) => ( { at: ( 100 / nbPages ) * ( i + 1 ) } ))],
                             },
                             byId,
                             items
@@ -245,19 +284,28 @@ const AndroidMenu = (
                   axe={ "swipeDown" }
                   scrollableWindow={ 80 }
                   defaultPosition={ 0 }
-                  inertia={ styles.inertia }
+                  inertia={ styles.vInertia }
+              />
+              <Voodoo.Axis
+                  axe={ "swipeLeft" }
+                  scrollableWindow={ 80 }
+                  defaultPosition={ 0 }
+                  inertia={ styles.hInertia }
               />
               <Voodoo.Draggable
                   className={ "launchers" }
                   yHook={ styles.inverse }
                   yAxis={ "swipeDown" }
+                  xAxis={ "swipeLeft" }
               >
                   <Voodoo.Node
                       tweenAxis={ styles.menu.axes }
                       style={ styles.menu.style }
                   >
                       <div className={ "header" }>
-                    
+                          <div className={ "topbar" }>
+                              Swipe me down !
+                          </div>
                           {
                               styles.items.map(
                                   ( launcher, i ) =>
@@ -265,9 +313,10 @@ const AndroidMenu = (
                                                    style={ launcher.style }
                                                    key={ i }
                                       >
-                                          <div className={ "launcher" }>
-                                              <img src={ launcher.launcher.icon }/>
-                                          </div>
+                                          <LauncherComp
+                                              icon={ launcher.launcher.icon }
+                                              label={ launcher.launcher.label }
+                                          />
                                       </Voodoo.Node>
                               )
                           }
@@ -286,7 +335,13 @@ const AndroidMenu = (
           </ViewBox>;
       },
       Sample      = () => <div className={ "desk" }>
-          <AndroidMenu>
+          <AndroidMenu
+              launchers={ {
+                  All    : [
+                      ...allIcons.slice(0, 20)
+                  ],
+                  Preview: ["App1", "App2", "App8", "App10"]
+              } }>
               <div className={ "notif" }>
                   notification
               </div>

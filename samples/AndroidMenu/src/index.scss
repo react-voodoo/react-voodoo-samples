@@ -78,6 +78,12 @@ body, html, #app {
     }
 
     .header {
+      .topbar {
+        @include use_hvCenteredContent();
+        color: white;
+        height: 30px;
+      }
+
       background: black;
     }
   }
