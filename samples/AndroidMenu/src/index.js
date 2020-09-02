@@ -234,7 +234,7 @@ const AndroidMenu = (
                                     ]
                                 }
                             },
-                            topbar     : {
+                            topbar   : {
                                 style: {
                                     position       : "absolute",
                                     top            : "0%",
@@ -249,7 +249,7 @@ const AndroidMenu = (
                                             from    : 0,
                                             duration: 40,
                                             apply   : {
-                                                opacity:-1
+                                                opacity: -1
                                             }
                                         }
                                     ]
