@@ -41,8 +41,10 @@ body, html, #app {
   @include use_hvCenteredContent();
   background: url("https://source.unsplash.com/400x700/?android");
 
-  width: 375px;
-  height: 667px;
+  max-width: 375px;
+  max-height: 667px;
+  height: 100%;
+  width: 100%;
 
   .notif {
     @include use_hvCenteredContent();
