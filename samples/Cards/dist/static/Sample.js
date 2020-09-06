@@ -33284,7 +33284,8 @@ __webpack_require__.r(__webpack_exports__);
           type: "Event",
           from: 50,
           duration: .01,
-          entering: function entering(pos) {//setSide(pos === 1)
+          entering: function entering(pos) {
+            setSide(pos === 1);
           }
         }, {
           from: 50,

@@ -50,7 +50,7 @@ export default ( { children, showBack } ) => {
                                   from    : 50,
                                   duration: .01,
                                   entering: ( pos ) => {
-                                      //setSide(pos === 1)
+                                      setSide(pos === 1)
                                   }
                               },
                               {
