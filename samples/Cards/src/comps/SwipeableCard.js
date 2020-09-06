@@ -27,138 +27,112 @@
 import React  from "react";
 import Voodoo from "react-voodoo";
 
-const swipeAxis     =
-	      [
-		      {
-			      from    : 0,
-			      duration: 50,
-			      apply   : {
-				      transform: [
-					      {},
-					      { translateZ: 50, rotateY: "-90deg" }
-				      ],
-			      }
-		      },
-		      {
-			      from    : 50,
-			      duration: .0001,
-			      apply   : {
-				      transform: [
-					      {},
-					      { rotateY: "180deg" }
-				      ],
-			      }
-		      },
-		      {
-			      from    : 50,
-			      duration: 50,
-			      apply   : {
-				      transform: [
-					      {},
-					      { translateZ: -50, rotateY: "-90deg" }
-				      ],
-			      }
-		      },
-	      ],
-      cardStyle     = {
-	      position : "relative",
-	      transform: [
-		      {
-			      perspective: 500,
-		      }
-	      ]
-      },
-      cardHoverAnim = [
-	      {
-		      target  : "card",
-		      from    : 0,
-		      duration: 100,
-		      apply   : {
-			      transform: [{}, {
-				      translateZ: 20
-			      }]
-		      }
-	      }
-      ];
-
-@Voodoo.tweener({ enableMouseDrag: true })
-export default class SwipeableCard extends React.Component {
-	static defaultProps = {
-		swipeAnim: swipeAxis,
-		style    : cardStyle,
-		showBack : false
-	};
-	state               = {};
-	
-	static getDerivedStateFromProps( props, state ) {
-		let { swipeAnim, style } = props;
-		return {
-			swipeAnim: { swipeAxis: swipeAnim },
-			style,
-			showBack : state.showBack === undefined ? props.showBack : state.showBack
-		}
-	}
-	
-	
-	mouseEnter = () => {
-		let { tweener } = this.props;
-		tweener.scrollTo(100, 500, "hovering")
-	};
-	
-	mouseLeave = () => {
-		let { tweener } = this.props;
-		tweener.scrollTo(0, 500, "hovering")
-	};
-	
-	_flipEvent = [
-		{
-			type    : "Event",
-			from    : 50,
-			duration: .01,
-			entering: ( pos ) => {
-				let {
-					    showBack
-				    } = this.state;
-				console.log('SwipeableCard::entering:119: ', showBack, pos);
-				if ( showBack !== (pos === 1) )
-					this.setState({ showBack: pos === 1 })
-			}
-		},
-	];
-	
-	inertia = {
-		wayPoints: [{ at: 0 }, { at: 100 }],
-	};
-	
-	render() {
-		let {
-			    swipeAnim, style,
-			    showBack
-		    } = this.state;
-		return <>
-			<Voodoo.Axis
-				axe={"swipeAxis"}
-				scrollableWindow={100}
-				items={this._flipEvent}
-				defaultPosition={showBack ? 100 : 0}
-				inertia={this.inertia}
-			/>
-			<Voodoo.Axis
-				axe={"hovering"}
-				items={cardHoverAnim}
-				defaultPosition={0}
-			/>
-			<Voodoo.Node id="card"
-			             tweenAxis={swipeAnim}
-			             initial={style}>
-				<Voodoo.Draggable
-					xAxis={"swipeAxis"}
-					className={"SwipeableCard"}
-					onMouseEnter={this.mouseEnter}
-					onMouseLeave={this.mouseLeave}>
-					{this.props.children?.[showBack ? 1 : 0]}
-				</Voodoo.Draggable>
-			</Voodoo.Node>
-		</>;
-	}
+export default ( { children, showBack } ) => {
+    const [tweener, ViewBox] = Voodoo.hook({ enableMouseDrag: true }),
+          [side, setSide]    = React.useState(showBack),
+          styles             = React.useMemo(
+              () => (
+                  {
+                      cardAxis     : {
+                          swipeAxis: [
+                              {
+                                  from    : 0,
+                                  duration: 50,
+                                  apply   : {
+                                      transform: [
+                                          {},
+                                          { translateZ: 50, rotateY: "-90deg" }
+                                      ],
+                                  }
+                              },
+                              {
+                                  type    : "Event",
+                                  from    : 50,
+                                  duration: .01,
+                                  entering: ( pos ) => {
+                                      //setSide(pos === 1)
+                                  }
+                              },
+                              {
+                                  from    : 50,
+                                  duration: .0001,
+                                  apply   : {
+                                      transform: [
+                                          {},
+                                          { rotateY: "180deg" }
+                                      ],
+                                  }
+                              },
+                              {
+                                  from    : 50,
+                                  duration: 50,
+                                  apply   : {
+                                      transform: [
+                                          {},
+                                          { translateZ: -50, rotateY: "-90deg" }
+                                      ],
+                                  }
+                              },
+                          ]
+                      },
+                      cardStyle    : {
+                          position : "absolute",
+                          top      : "50%",
+                          left     : "50%",
+                          width    : "100%",
+                          height   : "100%",
+                          transform: [
+                              { translateX: "-50%", translateY: "-50%" }
+                          ],
+                      },
+                      cardHoverAnim: [
+                          {
+                              target  : "card",
+                              from    : 0,
+                              duration: 100,
+                              apply   : {
+                                  transform: [{}, {
+                                      translateZ: 20
+                                  }]
+                              }
+                          }
+                      ],
+                      inertia      : {
+                          wayPoints: [{ at: 0 }, { at: 100 }],
+                      }
+                  }
+              ), []
+          ),
+          mouseEnter         = () => {
+              tweener.scrollTo(100, 500, "hovering")
+          },
+          mouseLeave         = () => {
+              tweener.scrollTo(0, 500, "hovering")
+          };
+    return <ViewBox
+        className={ "SwipeableCard" }
+        style={ { perspective: "400px" } }
+    >
+        <Voodoo.Axis
+            axe={ "swipeAxis" }
+            scrollableWindow={ 100 }
+            defaultPosition={ 0 }
+            inertia={ styles.inertia }
+        />
+        <Voodoo.Axis
+            axe={ "hovering" }
+            items={ styles.cardHoverAnim }
+            defaultPosition={ 0 }
+        />
+        <Voodoo.Node id="card"
+                     tweenAxis={ styles.cardAxis }
+                     style={ styles.cardStyle }
+                     onMouseEnter={ mouseEnter }
+                     onMouseLeave={ mouseLeave }>
+            <Voodoo.Draggable className={ "card" }
+                              xAxis={ "swipeAxis" }>
+                { children?.[ side ? 1 : 0 ] }
+            </Voodoo.Draggable>
+        </Voodoo.Node>
+    </ViewBox>;
 }

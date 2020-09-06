@@ -49,10 +49,15 @@
     display: inline-block;
     width: 15vh;
     height: 15vh;
-    cursor: pointer;
-    border-radius: 2vh;
-    overflow: hidden;
-    border: solid 1px black;
+    position: relative;
+    //perspective: 200px;
+    .card{
+
+      cursor: pointer;
+      border-radius: 2vh;
+      overflow: hidden;
+      border: solid 1px black;
+    }
     //box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
 
     .description {

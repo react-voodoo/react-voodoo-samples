@@ -34,6 +34,7 @@ import "./index.scss";
 
 class Sample extends React.Component {
 	render() {
+		console.log('Sample::render:37: ', Comps.SwipeableCard);
 		return <div className={"SwipeableCards"}>
 			<span>
 				{
