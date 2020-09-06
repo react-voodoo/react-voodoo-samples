@@ -42,7 +42,7 @@ export default (
         rows = 4,
         cols = 4,
         LauncherComp = Launcher,
-        padding = 5,
+        padding = 9,
         minimizedHeight = 35,
         middleHeight = 30,
         maximizedHeight = 400,
@@ -203,7 +203,7 @@ export default (
                               top            : "0%",
                               left           : "0%",
                               width          : "100%",
-                              height         : 0,
+                              height         : minimizedHeight,
                               backgroundColor: 'black'
                           },
                           axes : {
@@ -230,7 +230,7 @@ export default (
                       topbar   : {
                           style: {
                               position       : "absolute",
-                              bottom         : -minimizedHeight,
+                              bottom         : 0,
                               left           : "0%",
                               width          : "100%",
                               height         : minimizedHeight,

@@ -1,5 +1,5 @@
 {
-  "default": {
+  "www": {
     "rootFolder": "src",
     "basedOn": "static",
     "vars": {
@@ -15,6 +15,9 @@
       "webpackPatch": {
         "optimization": {
           //          "namedModules": true
+        },
+        "devServer": {
+          "disableHostCheck": true
         },
         "devtool": "source-map"
       }

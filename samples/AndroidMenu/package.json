@@ -6,8 +6,8 @@
   "main": "./Server.js",
   "author": "Nathan Braun <n8tz.js@gmail.com>",
   "scripts": {
-    "build": "lpack",
-    "start-dev": "lpack-dev-server"
+    "build": "lpack :www",
+    "start-dev": "lpack-dev-server :www --host 0.0.0.0"
   },
   "dependencies": {
     "is": "^3.3.0",
