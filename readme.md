@@ -2,6 +2,9 @@
 
 Simple samples for [react-voodoo](https://github.com/react-voodoo/react-voodoo)
 
+* I have a lot of work & making clean / commented samples take time ^^'
+  Theses samples will be updated progressively.
+
 ## Available :
 
 ### [Swipeable cards](samples/Cards)

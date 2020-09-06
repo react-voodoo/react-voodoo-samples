@@ -29,6 +29,7 @@ import React    from "react";
 import ReactDom from "react-dom";
 import Voodoo   from "react-voodoo";
 
+
 const Launcher = ( { label, icon, nodeRef, ...props } ) => {
     return <div className={ "launcher" } { ...props } ref={ nodeRef }>
         <img src={ icon }/>
@@ -44,7 +45,6 @@ export default (
         LauncherComp = Launcher,
         padding = 9,
         minimizedHeight = 35,
-        middleHeight = 30,
         maximizedHeight = 400,
         launchers,
         launcherHeight = 64,
@@ -52,9 +52,7 @@ export default (
         launcherStyle = {
             opacity  : 0,
             transform: [
-                {
-                    //perspective: "200px",
-                },
+                {},
                 {
                     rotateX   : "90deg",
                     rotateZ   : "90deg",
@@ -84,9 +82,7 @@ export default (
     const [tweener, ViewBox] = Voodoo.hook({ enableMouseDrag: true }),
           styles             = React.useMemo(
               () => {
-                  let coll    = 0,
-                      row     = 0,
-                      colSize = ( 100 - padding * 2 ) / cols,
+                  let colSize = ( 100 - padding * 2 ) / cols,
                       rowSize = ( 100 - padding * 2 ) / rows,
                       nbPages = ~~( launchers.All.length / ( cols * rows ) ),
                       byId    = {},

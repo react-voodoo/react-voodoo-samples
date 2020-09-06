@@ -33,39 +33,38 @@ import "./index.scss";
 
 
 class Sample extends React.Component {
-	render() {
-		console.log('Sample::render:37: ', Comps.SwipeableCard);
-		return <div className={"SwipeableCards"}>
+    render() {
+        return <div className={ "SwipeableCards" }>
 			<span>
 				{
-					Array(6).fill(null).map(
-						( e, i ) =>
-							<Comps.SwipeableCard key={i} showBack={!!(i % 2)}>
-								<div className={"frontCard"}>
-									<div className={"description"}>front {i}</div>
-								</div>
-								<div className={"backCard"}>
-									<div className={"description"}>back {i}</div>
-								</div>
-							</Comps.SwipeableCard>
-					)
-				}
+                    Array(6).fill(null).map(
+                        ( e, i ) =>
+                            <Comps.SwipeableCard key={ i } showBack={ !!( i % 2 ) }>
+                                <div className={ "frontCard" }>
+                                    <div className={ "description" }>front { i }</div>
+                                </div>
+                                <div className={ "backCard" }>
+                                    <div className={ "description" }>back { i }</div>
+                                </div>
+                            </Comps.SwipeableCard>
+                    )
+                }
 			</span>
-		</div>;
-	}
+        </div>;
+    }
 }
 
 document.body.innerHTML = '<div id="app"></div>';
 
 function renderSample() {
-	ReactDom.render(
-		<Sample/>
-		, document.getElementById('app'));
-	
+    ReactDom.render(
+        <Sample/>
+        , document.getElementById('app'));
+    
 }
 
 renderSample()
 
 if ( process.env.NODE_ENV !== 'production' && module.hot ) {
-	module.hot.accept('.', renderSample);
+    module.hot.accept('.', renderSample);
 }
