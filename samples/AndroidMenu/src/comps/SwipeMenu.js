@@ -53,7 +53,7 @@ export default (
             opacity  : 0,
             transform: [
                 {
-                    perspective: "200px",
+                    //perspective: "200px",
                 },
                 {
                     rotateX   : "90deg",
@@ -188,14 +188,15 @@ export default (
                   return {
                       inverse  : ( delta ) => -delta,
                       container: {
-                          position : "absolute",
-                          top      : "50%",
-                          left     : "50%",
-                          width    : "100%",
-                          height   : "100%",
+                          position   : "absolute",
+                          top        : "50%",
+                          left       : "50%",
+                          width      : "100%",
+                          height     : "100%",
+                          perspective: "400px",
                           //backgroundColor: 'green',
-                          transform: "translate(-50%,-50%)",
-                          overflow : "hidden",
+                          transform  : "translate(-50%,-50%)",
+                          overflow   : "hidden",
                       },
                       menu     : {
                           style: {
