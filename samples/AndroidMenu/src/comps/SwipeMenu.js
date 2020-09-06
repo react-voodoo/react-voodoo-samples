@@ -264,7 +264,7 @@ export default (
               , [launchers]
           )
     ;
-    return <ViewBox className={ "AndroidMenu" } style={ styles.container }>
+    return <ViewBox className={ "SwipeMenu" } style={ styles.container }>
         <Voodoo.Axis
             axe={ "swipeDown" }
             scrollableWindow={ 80 }
