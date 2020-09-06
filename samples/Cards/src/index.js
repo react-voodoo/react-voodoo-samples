@@ -35,6 +35,7 @@ import "./index.scss";
 class Sample extends React.Component {
     render() {
         return <div className={ "SwipeableCards" }>
+            <Comps.GithubCorner/>
 			<span>
 				{
                     Array(6).fill(null).map(

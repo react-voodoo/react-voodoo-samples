@@ -16,6 +16,29 @@
         "optimization": {
           //          "namedModules": true
         },
+        "devtool": "source-map"
+      }
+    },
+    "extend": [
+      "lpack-react"
+    ]
+  },
+  "wwwDev": {
+    "rootFolder": "src",
+    "basedOn": "static",
+    "vars": {
+      "rootAlias": "Sample",
+      "entryPoint": "./src",
+      "babelPreset": {
+        "targets": {
+          "browsers": "> 0.25%, not dead, safari >= 7, ios_saf >= 7, chrome >= 52"
+        },
+        "loose": true
+      },
+      "webpackPatch": {
+        "optimization": {
+          //          "namedModules": true
+        },
         "devServer": {
           "disableHostCheck": true
         },

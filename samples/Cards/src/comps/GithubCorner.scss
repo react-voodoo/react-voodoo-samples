@@ -24,69 +24,27 @@
  *   @contact : n8tz.js@gmail.com
  */
 
-@import "Mixins";
-@import "./comps/*.scss";
-
-body, html, #app {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  position: fixed;
-  overflow: hidden;
-  //overflow: auto !important;
+.github-corner:hover .octo-arm {
+  animation: octocat-wave 560ms ease-in-out
 }
 
-.desk {
-  @include use_hvCenteredAbs();
-  @include use_hvCenteredContent();
-  background: url("https://source.unsplash.com/400x700/?android");
-
-  max-width: 375px;
-  max-height: 667px;
-  height: 100%;
-  width: 100%;
-
-  .notif {
-    @include use_hvCenteredContent();
-    height: 96px;
-    width: 100%;
-    background: grey;
+@keyframes octocat-wave {
+  0%, 100% {
+    transform: rotate(0)
   }
+  20%, 60% {
+    transform: rotate(-25deg)
+  }
+  40%, 80% {
+    transform: rotate(10deg)
+  }
+}
 
-  .SwipeMenu {
-    color: black;
-    pointer-events: none;
-    user-select: none;
-    cursor: pointer;
-
-    > * {
-      pointer-events: all;
-    }
-
-    .launcher {
-      overflow: hidden;
-      position: relative;
-      border-radius: 5px;
-
-      img {
-        @include use_hvCenteredAbs();
-        width: 100%;
-        pointer-events: none;
-      }
-    }
-
-    .notifications {
-      background: rgba(0, 0, 0, 0.28);
-    }
-
-    .header {
-      .topbar {
-        @include use_hvCenteredContent();
-        color: white;
-        height: 30px;
-      }
-
-      background: black;
-    }
+@media(max-width: 500px) {
+  .github-corner:hover .octo-arm {
+    animation: none
+  }
+  .github-corner .octo-arm {
+    animation: octocat-wave 560ms ease-in-out
   }
 }

@@ -24,11 +24,11 @@
  *   @contact : n8tz.js@gmail.com
  */
 
-import React         from "react";
-import ReactDom      from "react-dom";
-import Voodoo        from "react-voodoo";
-import icons         from "./icons/(*).png";
-import { SwipeMenu } from "./comps/(*).js";
+import React                       from "react";
+import ReactDom                    from "react-dom";
+import Voodoo                      from "react-voodoo";
+import icons                       from "./icons/(*).png";
+import { SwipeMenu, GithubCorner } from "./comps/(*).js";
 
 const allIcons = Object.keys(icons).map(( name, i ) => ( {
     
@@ -43,20 +43,24 @@ import "./index.scss";
 const Sample = () => {
     
     
-    return <div className={ "desk" }>
-        <SwipeMenu
-            launchers={ {
-                All    : [
-                    ...allIcons.slice(0, 20)
-                ],
-                Preview: ["App1", "App2", "App8", "App10"]
-            } }>
-            <div className={ "notif" }>
-                notification
-            </div>
-        </SwipeMenu>
-        desk
-    </div>
+    return <>
+        
+        <GithubCorner/>
+        <div className={ "desk" }>
+            <SwipeMenu
+                launchers={ {
+                    All    : [
+                        ...allIcons.slice(0, 20)
+                    ],
+                    Preview: ["App1", "App2", "App8", "App10"]
+                } }>
+                <div className={ "notif" }>
+                    notification
+                </div>
+            </SwipeMenu>
+            desk
+        </div>
+    </>
 }
 
 

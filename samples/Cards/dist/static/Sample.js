@@ -221,6 +221,21 @@ module.exports = _inheritsLoose;
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime/helpers/objectDestructuringEmpty.js":
+/*!*************************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/objectDestructuringEmpty.js ***!
+  \*************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _objectDestructuringEmpty(obj) {
+  if (obj == null) throw new TypeError("Cannot destructure undefined");
+}
+
+module.exports = _objectDestructuringEmpty;
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime/helpers/objectWithoutPropertiesLoose.js":
 /*!*****************************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/objectWithoutPropertiesLoose.js ***!
@@ -893,7 +908,7 @@ exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/li
 
 
 // module
-exports.push([module.i, "/*!\n *   The MIT License (MIT)\n *   Copyright (c) 2020. Nathanael Braun\n *\n *   Permission is hereby granted, free of charge, to any person obtaining a copy\n *   of this software and associated documentation files (the \"Software\"), to deal\n *   in the Software without restriction, including without limitation the rights\n *   to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\n *   copies of the Software, and to permit persons to whom the Software is\n *   furnished to do so, subject to the following conditions:\n *\n *   The above copyright notice and this permission notice shall be included in all\n *   copies or substantial portions of the Software.\n *\n *   THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n *   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n *   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n *   AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n *   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n *   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\n *   SOFTWARE.\n *\n *   @author : Nathanael Braun\n *   @contact : n8tz.js@gmail.com\n */\n/*!\r\n *   The MIT License (MIT)\r\n *   Copyright (c) 2020. Nathanael Braun\r\n *\r\n *   Permission is hereby granted, free of charge, to any person obtaining a copy\r\n *   of this software and associated documentation files (the \"Software\"), to deal\r\n *   in the Software without restriction, including without limitation the rights\r\n *   to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\r\n *   copies of the Software, and to permit persons to whom the Software is\r\n *   furnished to do so, subject to the following conditions:\r\n *\r\n *   The above copyright notice and this permission notice shall be included in all\r\n *   copies or substantial portions of the Software.\r\n *\r\n *   THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\r\n *   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\r\n *   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\r\n *   AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\r\n *   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\r\n *   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\r\n *   SOFTWARE.\r\n *\r\n *   @author : Nathanael Braun\r\n *   @contact : n8tz.js@gmail.com\r\n */\n/*!\r\n *   The MIT License (MIT)\r\n *   Copyright (c) 2020. Nathanael Braun\r\n *\r\n *   Permission is hereby granted, free of charge, to any person obtaining a copy\r\n *   of this software and associated documentation files (the \"Software\"), to deal\r\n *   in the Software without restriction, including without limitation the rights\r\n *   to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\r\n *   copies of the Software, and to permit persons to whom the Software is\r\n *   furnished to do so, subject to the following conditions:\r\n *\r\n *   The above copyright notice and this permission notice shall be included in all\r\n *   copies or substantial portions of the Software.\r\n *\r\n *   THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\r\n *   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\r\n *   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\r\n *   AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\r\n *   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\r\n *   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\r\n *   SOFTWARE.\r\n *\r\n *   @author : Nathanael Braun\r\n *   @contact : n8tz.js@gmail.com\r\n */\n.SwipeableCards {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  text-align: center;\n  position: relative;\n  background: rgba(190, 190, 190, 0.21);\n  text-align: center;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n  height: 100%;\n  width: 100%;\n  max-width: 800px;\n  max-height: 600px;\n  border-radius: 20px; }\n  .SwipeableCards:before {\n    content: ' ';\n    display: inline-block;\n    height: 100%;\n    width: 1px;\n    margin-right: -1px;\n    vertical-align: middle;\n    overflow: hidden; }\n  .SwipeableCards > * {\n    text-align: left;\n    vertical-align: middle;\n    display: inline-block; }\n  .SwipeableCards > span {\n    display: inline-block;\n    text-align: center; }\n  .SwipeableCards .SwipeableCard {\n    margin: 10px;\n    display: inline-block;\n    width: 15vh;\n    height: 15vh;\n    position: relative; }\n    .SwipeableCards .SwipeableCard .card {\n      cursor: pointer;\n      border-radius: 2vh;\n      overflow: hidden;\n      border: solid 1px black; }\n    .SwipeableCards .SwipeableCard .description {\n      position: absolute;\n      top: 10%;\n      left: 50%;\n      transform: translateX(-50%);\n      z-index: 1000;\n      pointer-events: none;\n      background: rgba(255, 255, 255, 0.33);\n      padding: 5px;\n      border-radius: 10px;\n      border: solid 1px rgba(0, 0, 0, 0.2); }\n    .SwipeableCards .SwipeableCard .frontCard {\n      height: 100%;\n      width: 100%;\n      background: url(\"https://source.unsplash.com/200x200/?forest\") no-repeat center center;\n      background-size: cover; }\n    .SwipeableCards .SwipeableCard .backCard {\n      height: 100%;\n      width: 100%;\n      background: url(\"https://source.unsplash.com/200x200/?sky\") no-repeat center center;\n      background-size: cover; }\n\nbody, html, #app {\n  width: 100%;\n  height: 100%;\n  margin: 0;\n  position: fixed;\n  overflow: hidden; }\n", ""]);
+exports.push([module.i, "/*!\n *   The MIT License (MIT)\n *   Copyright (c) 2020. Nathanael Braun\n *\n *   Permission is hereby granted, free of charge, to any person obtaining a copy\n *   of this software and associated documentation files (the \"Software\"), to deal\n *   in the Software without restriction, including without limitation the rights\n *   to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\n *   copies of the Software, and to permit persons to whom the Software is\n *   furnished to do so, subject to the following conditions:\n *\n *   The above copyright notice and this permission notice shall be included in all\n *   copies or substantial portions of the Software.\n *\n *   THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n *   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n *   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n *   AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n *   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n *   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\n *   SOFTWARE.\n *\n *   @author : Nathanael Braun\n *   @contact : n8tz.js@gmail.com\n */\n/*!\r\n *   The MIT License (MIT)\r\n *   Copyright (c) 2020. Nathanael Braun\r\n *\r\n *   Permission is hereby granted, free of charge, to any person obtaining a copy\r\n *   of this software and associated documentation files (the \"Software\"), to deal\r\n *   in the Software without restriction, including without limitation the rights\r\n *   to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\r\n *   copies of the Software, and to permit persons to whom the Software is\r\n *   furnished to do so, subject to the following conditions:\r\n *\r\n *   The above copyright notice and this permission notice shall be included in all\r\n *   copies or substantial portions of the Software.\r\n *\r\n *   THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\r\n *   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\r\n *   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\r\n *   AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\r\n *   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\r\n *   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\r\n *   SOFTWARE.\r\n *\r\n *   @author : Nathanael Braun\r\n *   @contact : n8tz.js@gmail.com\r\n */\n/*!\r\n *   The MIT License (MIT)\r\n *   Copyright (c) 2020. Nathanael Braun\r\n *\r\n *   Permission is hereby granted, free of charge, to any person obtaining a copy\r\n *   of this software and associated documentation files (the \"Software\"), to deal\r\n *   in the Software without restriction, including without limitation the rights\r\n *   to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\r\n *   copies of the Software, and to permit persons to whom the Software is\r\n *   furnished to do so, subject to the following conditions:\r\n *\r\n *   The above copyright notice and this permission notice shall be included in all\r\n *   copies or substantial portions of the Software.\r\n *\r\n *   THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\r\n *   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\r\n *   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\r\n *   AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\r\n *   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\r\n *   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\r\n *   SOFTWARE.\r\n *\r\n *   @author : Nathanael Braun\r\n *   @contact : n8tz.js@gmail.com\r\n */\n.github-corner:hover .octo-arm {\n  -webkit-animation: octocat-wave 560ms ease-in-out;\n          animation: octocat-wave 560ms ease-in-out; }\n\n@-webkit-keyframes octocat-wave {\n  0%, 100% {\n    transform: rotate(0); }\n  20%, 60% {\n    transform: rotate(-25deg); }\n  40%, 80% {\n    transform: rotate(10deg); } }\n\n@keyframes octocat-wave {\n  0%, 100% {\n    transform: rotate(0); }\n  20%, 60% {\n    transform: rotate(-25deg); }\n  40%, 80% {\n    transform: rotate(10deg); } }\n\n@media (max-width: 500px) {\n  .github-corner:hover .octo-arm {\n    -webkit-animation: none;\n            animation: none; }\n  .github-corner .octo-arm {\n    -webkit-animation: octocat-wave 560ms ease-in-out;\n            animation: octocat-wave 560ms ease-in-out; } }\n\n/*!\r\n *   The MIT License (MIT)\r\n *   Copyright (c) 2020. Nathanael Braun\r\n *\r\n *   Permission is hereby granted, free of charge, to any person obtaining a copy\r\n *   of this software and associated documentation files (the \"Software\"), to deal\r\n *   in the Software without restriction, including without limitation the rights\r\n *   to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\r\n *   copies of the Software, and to permit persons to whom the Software is\r\n *   furnished to do so, subject to the following conditions:\r\n *\r\n *   The above copyright notice and this permission notice shall be included in all\r\n *   copies or substantial portions of the Software.\r\n *\r\n *   THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\r\n *   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\r\n *   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\r\n *   AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\r\n *   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\r\n *   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\r\n *   SOFTWARE.\r\n *\r\n *   @author : Nathanael Braun\r\n *   @contact : n8tz.js@gmail.com\r\n */\n.SwipeableCards {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  text-align: center;\n  position: relative;\n  background: rgba(190, 190, 190, 0.21);\n  text-align: center;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n  height: 100%;\n  width: 100%;\n  max-width: 800px;\n  max-height: 600px;\n  border-radius: 20px; }\n  .SwipeableCards:before {\n    content: ' ';\n    display: inline-block;\n    height: 100%;\n    width: 1px;\n    margin-right: -1px;\n    vertical-align: middle;\n    overflow: hidden; }\n  .SwipeableCards > * {\n    text-align: left;\n    vertical-align: middle;\n    display: inline-block; }\n  .SwipeableCards > span {\n    display: inline-block;\n    text-align: center; }\n  .SwipeableCards .SwipeableCard {\n    margin: 10px;\n    display: inline-block;\n    width: 15vh;\n    height: 15vh;\n    position: relative; }\n    .SwipeableCards .SwipeableCard .card {\n      cursor: pointer;\n      border-radius: 2vh;\n      overflow: hidden;\n      border: solid 1px black; }\n    .SwipeableCards .SwipeableCard .description {\n      position: absolute;\n      top: 10%;\n      left: 50%;\n      transform: translateX(-50%);\n      z-index: 1000;\n      pointer-events: none;\n      background: rgba(255, 255, 255, 0.33);\n      padding: 5px;\n      border-radius: 10px;\n      border: solid 1px rgba(0, 0, 0, 0.2); }\n    .SwipeableCards .SwipeableCard .frontCard {\n      height: 100%;\n      width: 100%;\n      background: url(\"https://source.unsplash.com/200x200/?forest\") no-repeat center center;\n      background-size: cover; }\n    .SwipeableCards .SwipeableCard .backCard {\n      height: 100%;\n      width: 100%;\n      background: url(\"https://source.unsplash.com/200x200/?sky\") no-repeat center center;\n      background-size: cover; }\n\nbody, html, #app {\n  width: 100%;\n  height: 100%;\n  margin: 0;\n  position: fixed;\n  overflow: hidden; }\n", ""]);
 
 // exports
 
@@ -33197,22 +33212,113 @@ module.exports = g;
 /*!**********************************************!*\
   !*** ./src/MapOf.Sample_comps_____js.gen.js ***!
   \**********************************************/
-/*! exports provided: SwipeableCard, default */
+/*! exports provided: GithubCorner, SwipeableCard, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GithubCorner", function() { return GithubCorner; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SwipeableCard", function() { return SwipeableCard; });
 /* This is a virtual file generated by layer-pack */
 var req,
     _exports = {},
     walknSetExport = __webpack_require__(/*! layer-pack/etc/utils/indexUtils.js */ "./node_modules/layer-pack/etc/utils/indexUtils.js").walknSetExport;
 
+var _Sample_comps_GithubCorner_js = __webpack_require__(/*! Sample/comps/GithubCorner.js */ "./src/comps/GithubCorner.js");
+
+walknSetExport(_exports, "GithubCorner", _Sample_comps_GithubCorner_js);
+
 var _Sample_comps_SwipeableCard_js = __webpack_require__(/*! Sample/comps/SwipeableCard.js */ "./src/comps/SwipeableCard.js");
 
 walknSetExport(_exports, "SwipeableCard", _Sample_comps_SwipeableCard_js);
+var GithubCorner = _exports.GithubCorner;
 var SwipeableCard = _exports.SwipeableCard;
 /* harmony default export */ __webpack_exports__["default"] = (_exports);
+
+/***/ }),
+
+/***/ "./src/comps/GithubCorner.js":
+/*!***********************************!*\
+  !*** ./src/comps/GithubCorner.js ***!
+  \***********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_helpers_objectDestructuringEmpty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/objectDestructuringEmpty */ "./node_modules/@babel/runtime/helpers/objectDestructuringEmpty.js");
+/* harmony import */ var _babel_runtime_helpers_objectDestructuringEmpty__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_objectDestructuringEmpty__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_voodoo__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-voodoo */ "./node_modules/react-voodoo/dist/react-voodoo.js");
+/* harmony import */ var react_voodoo__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_voodoo__WEBPACK_IMPORTED_MODULE_3__);
+
+
+/*
+ *   The MIT License (MIT)
+ *   Copyright (c) 2020. Nathanael Braun
+ *
+ *   Permission is hereby granted, free of charge, to any person obtaining a copy
+ *   of this software and associated documentation files (the "Software"), to deal
+ *   in the Software without restriction, including without limitation the rights
+ *   to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ *   copies of the Software, and to permit persons to whom the Software is
+ *   furnished to do so, subject to the following conditions:
+ *
+ *   The above copyright notice and this permission notice shall be included in all
+ *   copies or substantial portions of the Software.
+ *
+ *   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ *   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ *   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ *   AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ *   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ *   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ *   SOFTWARE.
+ *
+ *   @author : Nathanael Braun
+ *   @contact : n8tz.js@gmail.com
+ */
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = (function (_ref) {
+  _babel_runtime_helpers_objectDestructuringEmpty__WEBPACK_IMPORTED_MODULE_0___default()(_ref);
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
+    href: "https://github.com/react-voodoo/react-voodoo-samples",
+    className: "github-corner",
+    "aria-label": "View source on GitHub"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("svg", {
+    width: "80",
+    height: "80",
+    viewBox: "0 0 250 250",
+    style: {
+      fill: "#151513",
+      color: "#fff",
+      position: "absolute",
+      top: 0,
+      border: 0,
+      right: 0
+    },
+    "aria-hidden": "true"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("path", {
+    d: "M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("path", {
+    d: "M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2",
+    fill: "currentColor",
+    style: {
+      transformOrigin: "130px 106px"
+    },
+    className: "octo-arm"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("path", {
+    d: "M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z",
+    fill: "currentColor",
+    className: "octo-body"
+  })));
+});
 
 /***/ }),
 
@@ -33431,10 +33537,9 @@ var Sample = /*#__PURE__*/function (_React$Component) {
   var _proto = Sample.prototype;
 
   _proto.render = function render() {
-    console.log('Sample::render:37: ', _comps_js__WEBPACK_IMPORTED_MODULE_3__["default"].SwipeableCard);
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
       className: "SwipeableCards"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, Array(6).fill(null).map(function (e, i) {
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_comps_js__WEBPACK_IMPORTED_MODULE_3__["default"].GithubCorner, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, Array(6).fill(null).map(function (e, i) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_comps_js__WEBPACK_IMPORTED_MODULE_3__["default"].SwipeableCard, {
         key: i,
         showBack: !!(i % 2)
