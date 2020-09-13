@@ -12,7 +12,7 @@ Simple samples for [react-voodoo](https://github.com/react-voodoo/react-voodoo)
 Swipeable cards with merged tween from hover & dragging
 
 Test [here](http://htmlpreview.github.io/?https://github.com/react-voodoo/react-voodoo-samples/blob/master/samples/Cards/dist/static/index.html)
-Or [here ( code sandbox )](https://codesandbox.io/s/voodoo-cards-demo-u505t?file=/src/comps/SwipeableCard.js)
+Or [here ( code sandbox )](https://codesandbox.io/s/react-voodoo-demo-swipeable-cards-s00j1?file=/src/comps/SwipeableCard.js)
 
 ### [Android Menu](samples/AndroidMenu)
 
