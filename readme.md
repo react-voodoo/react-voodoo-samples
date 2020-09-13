@@ -25,6 +25,7 @@ Test [here](http://htmlpreview.github.io/?https://github.com/react-voodoo/react-
 Swipeable Cubes with merged tween from 2 dragging direction, inertia & animation loop
 
 Test [here](http://htmlpreview.github.io/?https://github.com/react-voodoo/react-voodoo-samples/blob/master/samples/Cubes/dist/static/index.html)
+Or [here ( code sandbox )](https://codesandbox.io/s/react-voodoo-cube-demo-7d65t)
 
 ### [Goo Balls](samples/Goo)
 
