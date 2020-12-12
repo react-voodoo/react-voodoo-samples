@@ -44,7 +44,6 @@ const Sample = () => {
     
     
     return <>
-        
         <GithubCorner/>
         <div className={ "desk" }>
             <SwipeMenu

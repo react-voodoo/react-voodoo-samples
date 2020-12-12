@@ -59,9 +59,19 @@ body, html, #app {
     user-select: none;
     cursor: pointer;
 
+    //.launchers {
+    //  height: 100%;
+    //  width: 100%;
+    //
+    //  pointer-events: none;
+    //  user-select: none;
+    //  cursor: pointer;
+    //
+    //}
     > * {
       pointer-events: all;
     }
+
 
     .launcher {
       overflow: hidden;

@@ -80,6 +80,7 @@ export default (
     }
 ) => {
     const [tweener, ViewBox] = Voodoo.hook({ enableMouseDrag: true }),
+          rootNode           = React.useRef(),
           styles             = React.useMemo(
               () => {
                   let colSize = ( 100 - padding * 2 ) / cols,
@@ -261,16 +262,16 @@ export default (
               , [launchers]
           )
     ;
-    return <ViewBox className={ "SwipeMenu" } style={ styles.container }>
+    return <ViewBox className={ "SwipeMenu" } style={ styles.container } ref={ rootNode }>
         <Voodoo.Axis
             axe={ "swipeDown" }
-            scrollableWindow={ 80 }
+            size={ 160 }
             defaultPosition={ 0 }
             inertia={ styles.vInertia }
         />
         <Voodoo.Axis
             axe={ "swipeLeft" }
-            scrollableWindow={ 80 }
+            //scrollableWindow={ 80 }
             defaultPosition={ 0 }
             inertia={ styles.hInertia }
         />
@@ -279,6 +280,7 @@ export default (
             yHook={ styles.inverse }
             yAxis={ "swipeDown" }
             xAxis={ "swipeLeft" }
+            yBoxRef={ rootNode }
         >
             <Voodoo.Node
                 axes={ styles.menu.axes }
