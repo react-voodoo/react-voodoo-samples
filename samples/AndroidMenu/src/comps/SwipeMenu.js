@@ -79,7 +79,7 @@ export default (
         ]
     }
 ) => {
-    const [tweener, ViewBox] = Voodoo.hook({ enableMouseDrag: true }),
+    const [tweener, ViewBox] = Voodoo.hook({ enableMouseDrag: true,dragDirectionLock:true }),
           rootNode           = React.useRef(),
           styles             = React.useMemo(
               () => {
