@@ -14,7 +14,7 @@
     "prop-types": "^15.6.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-voodoo": "^2.1.9"
+    "react-voodoo": "^2.1.19"
   },
   "devDependencies": {
     "webpack": "^4.35.2",

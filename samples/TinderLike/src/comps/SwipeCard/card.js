@@ -14,7 +14,7 @@ export default {
 		backgroundColor: 'grey',
 		border         : "solid 1px white",
 		borderRadius   : "5px",
-		
+		opacity        : 0
 	},
 	axes : {
 		hSwipe: [
@@ -40,6 +40,15 @@ export default {
 							translateY: "200%"
 						}
 					]
+				}
+			}
+		],
+		show  : [
+			{
+				from    : 0,
+				duration: 100,
+				apply   : {
+					opacity: 1
 				}
 			}
 		]

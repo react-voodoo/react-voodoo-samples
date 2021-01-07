@@ -1,7 +1,7 @@
 export default {
 	style: {
 		position     : "absolute",
-		top          : "50%",
+		top          : "75%",
 		left         : "50%",
 		width        : "300px",
 		height       : "300px",
@@ -11,13 +11,8 @@ export default {
 				translateY: "-50%"
 			}
 		],
-		//backgroundColor: 'red',
 		fontSize     : "12px",
-		fontWeight   : "bolder",
-		//color          : "red",
-		//border         : "solid 1px white",
-		//borderRadius   : "5px",
-		opacity      : 1,
+		opacity      : 0,
 		pointerEvents: "none"
 	},
 	axes : {
@@ -26,7 +21,17 @@ export default {
 				from    : 30,
 				duration: 20,
 				apply   : {
+					top    : "-25%",
 					opacity: -1
+				}
+			}
+		],
+		show  : [
+			{
+				from    : 0,
+				duration: 100,
+				apply   : {
+					opacity: 1
 				}
 			}
 		]

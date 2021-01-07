@@ -26,24 +26,27 @@
 
 
 import React           from "react";
-import ReactDom        from "react-dom";
 import Voodoo          from "react-voodoo";
 import * as cardStyles from "./SwipeCard/(*).js";
 
 export default (
 	{
 		children,
+		onDisliked,
+		onLiked,
 		card
 	}
 ) => {
-	const [tweener, ViewBox] = Voodoo.hook({ enableMouseDrag: true }),
-	      rootNode           = React.useRef(),
-	      styles             = React.useMemo(
+	const [tweener, ViewBox]    = Voodoo.hook({ enableMouseDrag: true }),
+	      [curCard, setCurCard] = React.useState(card),
+	      rootNode              = React.useRef(),
+	      events                = React.useRef({}),
+	      styles                = React.useMemo(
 		      () => {
 			
 			      return {
-				      inverse  : ( delta ) => -delta,
-				      container: {
+				      inverse   : ( delta ) => -delta,
+				      container : {
 					      position       : "absolute",
 					      top            : "50%",
 					      left           : "50%",
@@ -55,49 +58,90 @@ export default (
 					      overflow       : "hidden",
 				      },
 				      ...cardStyles,
-				      hInertia : {
+				      hInertia  : {
 					      wayPoints: [{ at: 0 }, { at: 50 }, { at: 100 }],
 				      },
-				      vInertia : {
+				      vInertia  : {
 					      wayPoints: [{ at: 50 }],
-				      }
+				      },
+				      hSwipeAxis: [
+					      {
+						      type    : "Event",
+						      from    : 25,
+						      duration: .00000001,
+						      entering: ( pos ) => {
+							      if ( pos === -1 )// from 50 to 0 ( init go from 0 to 50 )
+								      events.current.onDisliked?.(events.current?.curCard);
+						      }
+					      },
+					      {
+						      type    : "Event",
+						      from    : 75,
+						      duration: .00000001,
+						      entering: ( pos ) => {
+							      if ( pos === 1 )// from 50 to 100
+								      events.current.onLiked?.(events.current?.curCard);
+						      }
+					      },
+				      ]
 			      };
 		      }
 		      , []
-	      )
-	;
-	console.log(':::138: ', styles.card.style);
+	      );
+	
+	React.useEffect(
+		e => {
+			events.current = { onDisliked, onLiked, curCard };
+		},
+		[onDisliked, onLiked, curCard]
+	)
+	
+	React.useEffect(
+		e => {
+			if ( card !== curCard )
+				tweener.scrollTo(0, 500, "show")
+				       .then(
+					       e => {
+						       tweener.scrollTo(50, 0, "hSwipe")
+						       tweener.scrollTo(50, 0, "vSwipe")
+						       setCurCard(card)
+					       }
+				       )
+		},
+		[card, curCard, tweener]
+	)
+	React.useEffect(
+		e => {
+			tweener.scrollTo(100, 500, "show")
+		},
+		[curCard, tweener]
+	)
 	return <ViewBox className={"SwipeCard"} style={styles.container} ref={rootNode}>
 		<Voodoo.Axis
 			axe={"hSwipe"}
 			size={100}
 			scrollableWindow={40}
 			defaultPosition={50}
-			inertia={styles.hInertia}
-		/>
+			items={styles.hSwipeAxis}
+			inertia={styles.hInertia}/>
 		<Voodoo.Axis
 			axe={"vSwipe"}
 			size={100}
 			defaultPosition={50}
-			inertia={styles.vInertia}
-		/>
+			inertia={styles.vInertia}/>
 		<Voodoo.Axis
 			axe={"show"}
 			size={100}
-			defaultPosition={100}
-		/>
+			defaultPosition={100}/>
 		<Voodoo.Draggable
 			yHook={styles.inverse}
 			xHook={styles.inverse}
 			yAxis={"vSwipe"}
-			xAxis={"hSwipe"}
-			//yBoxRef={rootNode}
-		>
+			xAxis={"hSwipe"}>
 			<Voodoo.Node
 				axes={styles.card.axes}
-				style={styles.card.style}
-			>
-				<img className={"card"} src={card.image} draggable="false" />
+				style={styles.card.style}>
+				<img className={"card"} src={curCard.image} draggable="false" key={curCard.image}/>
 			</Voodoo.Node>
 		</Voodoo.Draggable>
 		
