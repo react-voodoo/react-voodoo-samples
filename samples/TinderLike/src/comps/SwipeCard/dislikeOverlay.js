@@ -1,7 +1,7 @@
 export default {
 	style: {
 		position     : "absolute",
-		top          : "75%",
+		top          : "50%",
 		left         : "50%",
 		width        : "300px",
 		height       : "300px",
@@ -18,10 +18,10 @@ export default {
 	axes : {
 		hSwipe: [
 			{
-				from    : 30,
-				duration: 20,
+				from    : 20,
+				duration: 15,
 				apply   : {
-					top    : "-25%",
+					top    : "25%",
 					opacity: -1
 				}
 			}
