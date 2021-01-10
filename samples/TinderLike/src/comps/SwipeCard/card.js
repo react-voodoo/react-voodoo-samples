@@ -7,12 +7,20 @@ export default {
 		height         : ["100%", "-170px"],
 		transform      : [
 			{
-				translateX: "-100%",
-				translateY: "-100%"
+				translateY: "100%",
+				translateX: "0%"
+			},
+			{
+				rotateZ: "-30deg"
+			},
+			{
+				translateY: "-200%",
+				translateZ: "0px",
+				rotateY   : "25deg"
 			}
 		],
 		backgroundColor: 'grey',
-		border         : "solid 1px white",
+		//border         : "solid 1px white",
 		borderRadius   : "5px",
 		opacity        : 0
 	},
@@ -23,9 +31,13 @@ export default {
 				duration: 100,
 				apply   : {
 					transform: [
+						{},
 						{
-							translateX: "200%"
-						}
+							rotateZ: "60deg"
+						},
+						{
+							rotateY: "-50deg"
+						},
 					]
 				}
 			}
@@ -38,6 +50,8 @@ export default {
 					transform: [
 						{
 							translateY: "200%"
+						}, {}, {
+							translateZ: "10px"
 						}
 					]
 				}

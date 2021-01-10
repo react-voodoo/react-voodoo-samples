@@ -27,6 +27,7 @@
 
 import React           from "react";
 import Voodoo          from "react-voodoo";
+import {pushIn}        from "../../../../../olds/SimpleHeaderTest/etc/anims";
 import * as cardStyles from "./SwipeCard/(*).js";
 
 export default (
@@ -71,7 +72,10 @@ export default (
 						      duration: .00000001,
 						      entering: ( pos ) => {
 							      if ( pos === -1 )// from 50 to 0 ( init go from 0 to 50 )
+							      {
 								      events.current.onDisliked?.(events.current?.curCard);
+								      tweener.pushAnim(cardStyles.anims.pushIn("dislikeOverlay"));
+							      }
 						      }
 					      },
 					      {
@@ -80,7 +84,10 @@ export default (
 						      duration: .00000001,
 						      entering: ( pos ) => {
 							      if ( pos === 1 )// from 50 to 100
+							      {
 								      events.current.onLiked?.(events.current?.curCard);
+								      tweener.pushAnim(cardStyles.anims.pushIn("likeOverlay"));
+							      }
 						      }
 					      },
 				      ]
@@ -146,6 +153,7 @@ export default (
 		</Voodoo.Draggable>
 		
 		<Voodoo.Node
+			id={"likeOverlay"}
 			axes={styles.likeOverlay.axes}
 			style={styles.likeOverlay.style}>
 			<div className={"likeOverlay"}>
@@ -153,6 +161,7 @@ export default (
 			</div>
 		</Voodoo.Node>
 		<Voodoo.Node
+			id={"dislikeOverlay"}
 			axes={styles.dislikeOverlay.axes}
 			style={styles.dislikeOverlay.style}>
 			<div className={"dislikeOverlay"}>
