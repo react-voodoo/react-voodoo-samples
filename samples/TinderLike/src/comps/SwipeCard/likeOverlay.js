@@ -17,7 +17,7 @@ export default {
 	axes : {
 		hSwipe: [
 			{
-				from    : 60,
+				from    : 50,
 				duration: 15,
 				apply   : {
 					top    : "-25%",
