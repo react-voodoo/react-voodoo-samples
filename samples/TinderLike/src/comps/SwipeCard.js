@@ -53,10 +53,10 @@ export default (
 					      left           : "50%",
 					      width          : "100%",
 					      height         : "100%",
-					      perspective    : "400px",
+					      perspective    : "800px",
 					      backgroundColor: 'green',
 					      transform      : "translate(-50%,-50%)",
-					      overflow       : "hidden",
+					      //overflow       : "hidden",
 				      },
 				      ...cardStyles,
 				      hInertia  : {

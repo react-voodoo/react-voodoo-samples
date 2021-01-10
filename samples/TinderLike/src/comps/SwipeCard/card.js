@@ -15,8 +15,12 @@ export default {
 			},
 			{
 				translateY: "-200%",
-				translateZ: "0px",
-				rotateY   : "25deg"
+				translateZ: "-700px",
+				rotateY   : "20deg"
+			},
+			{
+				translateZ: "700px",
+				
 			}
 		],
 		backgroundColor: 'grey',
@@ -36,7 +40,7 @@ export default {
 							rotateZ: "60deg"
 						},
 						{
-							rotateY: "-50deg"
+							rotateY: "-40deg"
 						},
 					]
 				}
