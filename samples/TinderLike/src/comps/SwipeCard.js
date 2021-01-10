@@ -27,7 +27,6 @@
 
 import React           from "react";
 import Voodoo          from "react-voodoo";
-import {pushIn}        from "../../../../../olds/SimpleHeaderTest/etc/anims";
 import * as cardStyles from "./SwipeCard/(*).js";
 
 export default (
