@@ -29,7 +29,7 @@ import ReactDom                  from "react-dom";
 import Voodoo                    from "react-voodoo";
 import {SwipeCard, GithubCorner} from "./comps/(*).js";
 
-const allCards = ["boat", "car", "bridge", "party"].map(( name, i ) => ({
+const allCards = ["bird", "car", "eyes", "bee", "moon", "bikini", "boobs", "muscles"].map(( name, i ) => ({
 	id   : "App" + i,
 	image: "https://source.unsplash.com/400x700/?" + name,
 	label: name
@@ -43,15 +43,20 @@ const Sample = () => {
 	let [cardIndex, setCardIndex] = React.useState(0),
 	    next                      = ( card ) => {
 		    setCardIndex((cardIndex + 1) % allCards.length);
-	    }
+	    };
 	return <>
 		<GithubCorner/>
 		<div className={"desk"}>
 			<SwipeCard
 				card={allCards[cardIndex]}
+				nextCard={allCards[(cardIndex + 1) % allCards.length]}
 				onDisliked={next}
 				onLiked={next}
-			/>
+			>
+				{
+					card => <img src={card.image} draggable="false" key={card.id}/>
+				}
+			</SwipeCard>
 		</div>
 	</>
 }

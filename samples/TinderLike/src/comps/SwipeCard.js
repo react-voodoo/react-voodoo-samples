@@ -35,16 +35,18 @@ export default (
 		children,
 		onDisliked,
 		onLiked,
+		nextCard,
 		card
 	}
 ) => {
-	const [tweener, ViewBox]    = Voodoo.hook({ enableMouseDrag: true }),
-	      [curCard, setCurCard] = React.useState(card),
-	      rootNode              = React.useRef(),
-	      events                = React.useRef({}),
-	      styles                = React.useMemo(
+	const [tweener, ViewBox]            = Voodoo.hook({ enableMouseDrag: true }),
+	      [curCard, setCurCard]         = React.useState(card),
+	      [curNextCard, setCurNextCard] = React.useState(nextCard),
+	      renderCard                    = children,
+	      rootNode                      = React.useRef(),
+	      events                        = React.useRef({}),
+	      styles                        = React.useMemo(
 		      () => {
-			
 			      return {
 				      inverse   : ( delta ) => -delta,
 				      container : {
@@ -56,7 +58,6 @@ export default (
 					      perspective    : "800px",
 					      backgroundColor: 'green',
 					      transform      : "translate(-50%,-50%)",
-					      //overflow       : "hidden",
 				      },
 				      ...cardStyles,
 				      hInertia  : {
@@ -74,7 +75,7 @@ export default (
 							      if ( pos === -1 )// from 50 to 0 ( init go from 0 to 50 )
 							      {
 								      events.current.onDisliked?.(events.current?.curCard);
-								      tweener.pushAnim(cardStyles.anims.pushIn("dislikeOverlay"));
+								      tweener.pushAnim(cardStyles.anims.pushIn("dislikeOverlay"), 250);
 							      }
 						      }
 					      },
@@ -86,7 +87,7 @@ export default (
 							      if ( pos === 1 )// from 50 to 100
 							      {
 								      events.current.onLiked?.(events.current?.curCard);
-								      tweener.pushAnim(cardStyles.anims.pushIn("likeOverlay"));
+								      tweener.pushAnim(cardStyles.anims.pushIn("likeOverlay"), 250);
 							      }
 						      }
 					      },
@@ -106,11 +107,9 @@ export default (
 	React.useEffect(
 		e => {
 			if ( card !== curCard )
-				tweener.scrollTo(0, 500, "show")
+				tweener.scrollTo(0, 250, "show")
 				       .then(
 					       e => {
-						       tweener.scrollTo(50, 0, "hSwipe")
-						       tweener.scrollTo(50, 0, "vSwipe")
 						       setCurCard(card)
 					       }
 				       )
@@ -119,7 +118,13 @@ export default (
 	)
 	React.useEffect(
 		e => {
-			tweener.scrollTo(100, 500, "show")
+			tweener.scrollTo(50, 0, "hSwipe")
+			tweener.scrollTo(50, 0, "vSwipe")
+			tweener.scrollTo(100, 250, "show")
+			       .then(
+				       e => setCurNextCard(nextCard)
+			       )
+			
 		},
 		[curCard, tweener]
 	)
@@ -140,6 +145,15 @@ export default (
 			axe={"show"}
 			size={100}
 			defaultPosition={100}/>
+		
+		<Voodoo.Node
+			axes={styles.nextCard.axes}
+			style={styles.nextCard.style}>
+			<div className={"nextCard"} draggable="false">
+				{renderCard?.(curNextCard)}
+			</div>
+		</Voodoo.Node>
+		
 		<Voodoo.Draggable
 			yHook={styles.inverse}
 			xHook={styles.inverse}
@@ -148,7 +162,9 @@ export default (
 			<Voodoo.Node
 				axes={styles.card.axes}
 				style={styles.card.style}>
-				<img className={"card"} src={curCard.image} draggable="false" key={curCard.image}/>
+				<div className={"card"} draggable="false">
+					{renderCard?.(curCard)}
+				</div>
 			</Voodoo.Node>
 		</Voodoo.Draggable>
 		

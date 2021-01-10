@@ -53,50 +53,12 @@ body, html, #app {
     background: grey;
   }
 
-  .SwipeMenu {
-    color: black;
-    pointer-events: none;
-    user-select: none;
-    cursor: pointer;
-
-    //.launchers {
-    //  height: 100%;
-    //  width: 100%;
-    //
-    //  pointer-events: none;
-    //  user-select: none;
-    //  cursor: pointer;
-    //
-    //}
-    > * {
-      pointer-events: all;
-    }
-
-
-    .launcher {
-      overflow: hidden;
-      position: relative;
-      border-radius: 5px;
-
+  .SwipeCard {
+    .card, .nextCard {
       img {
         @include use_hvCenteredAbs();
-        width: 100%;
-        pointer-events: none;
+
       }
-    }
-
-    .notifications {
-      background: rgba(0, 0, 0, 0.28);
-    }
-
-    .header {
-      .topbar {
-        @include use_hvCenteredContent();
-        color: white;
-        height: 30px;
-      }
-
-      background: black;
     }
   }
 }

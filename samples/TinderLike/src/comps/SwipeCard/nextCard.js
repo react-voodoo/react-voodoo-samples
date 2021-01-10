@@ -7,65 +7,53 @@ export default {
 		height         : ["100%", "-170px"],
 		transform      : [
 			{
-				perspective: "1200px",
-				translateZ : "200px",
-				translateY : "100%",
-				translateX : "0%"
+				translateZ: "0px",
 			},
-			{
-				rotateZ: "-30deg",
-				rotateY: "30deg"
-			},
-			{
-				translateZ: "-200px",
-				translateY: "-200%"
-			},
+			{},
+			{},
 			{}
 		],
 		backgroundColor: 'grey',
-		//border         : "solid 1px white",
 		borderRadius   : "5px",
-		opacity        : 0,
+		opacity        : 1,
 		overflow       : "hidden"
 	},
 	axes : {
 		hSwipe: [
 			{
-				from    : 0,
-				duration: 100,
+				from    : 40,
+				duration: 10,
 				apply   : {
+					opacity: -.5,
+					
 					transform: [
-						{},
 						{
-							rotateY: "-60deg",
-							rotateZ: "60deg"
-						},
-						{},
+							
+							translateZ: "-20px",
+						}
 					]
 				}
-			}
-		],
-		vSwipe: [
+			},
 			{
-				from    : 0,
-				duration: 100,
+				from    : 50,
+				duration: 10,
 				apply   : {
+					opacity  : .5,
 					transform: [
 						{
-							translateY: "200%"
-						}, {}, {
-							translateZ: "10px"
+							translateZ: "20px",
 						}
 					]
 				}
 			}
 		],
+		vSwipe: [],
 		show  : [
 			{
 				from    : 0,
 				duration: 100,
 				apply   : {
-					opacity: 1
+					//opacity: 1
 				}
 			}
 		]
