@@ -3,8 +3,8 @@ export default {
 		position     : "absolute",
 		top          : "75%",
 		left         : "50%",
-		width        : "300px",
-		height       : "300px",
+		width        : "200px",
+		height       : "200px",
 		transform    : [
 			{
 				translateX: "-50%",

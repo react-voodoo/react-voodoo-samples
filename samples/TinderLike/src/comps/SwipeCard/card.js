@@ -22,11 +22,13 @@ export default {
 			},
 			{}
 		],
-		backgroundColor: 'grey',
-		//border         : "solid 1px white",
+		filter         : {
+			grayscale: "100%"
+		},
+		backgroundColor: 'white',
 		borderRadius   : "5px",
-		opacity        : 0,
-		overflow       : "hidden"
+		overflow       : "hidden",
+		cursor         : "pointer"
 	},
 	axes : {
 		hSwipe: [
@@ -43,6 +45,15 @@ export default {
 						{},
 					]
 				}
+			},
+			{
+				from    : 40,
+				duration: 10,
+				apply   : {
+					filter: {
+						grayscale: "-100%"
+					},
+				}
 			}
 		],
 		vSwipe: [
@@ -54,7 +65,7 @@ export default {
 						{
 							translateY: "200%"
 						}, {}, {
-							translateZ: "10px"
+							//translateZ: "10px"
 						}
 					]
 				}
@@ -65,7 +76,7 @@ export default {
 				from    : 0,
 				duration: 100,
 				apply   : {
-					opacity: 1
+					//opacity: 1
 				}
 			}
 		]

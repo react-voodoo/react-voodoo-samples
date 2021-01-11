@@ -55,7 +55,7 @@ export default (
 					      width          : "100%",
 					      height         : "100%",
 					      perspective    : "800px",
-					      backgroundColor: 'green',
+					      backgroundColor: 'gray',
 					      transform      : "translate(-50%,-50%)",
 				      },
 				      ...cardStyles,
@@ -66,6 +66,15 @@ export default (
 					      wayPoints: [{ at: 50 }],
 				      },
 				      hSwipeAxis: [
+					      {
+						      type    : "Event",
+						      from    : 30,
+						      duration: 40,
+						      moveTo  : ( pos, precPos, update ) => {
+							      //console.log('::moveTo:74: ', Math.abs(.5 - pos) * 200);
+							      tweener.scrollTo(Math.abs(.5 - pos) * 200, 0, "showNext");
+						      }
+					      },
 					      {
 						      type    : "Event",
 						      from    : 15,
@@ -119,9 +128,13 @@ export default (
 		e => {
 			tweener.scrollTo(50, 0, "hSwipe")
 			tweener.scrollTo(50, 0, "vSwipe")
+			tweener.scrollTo(100, 0, "showNext")
 			tweener.scrollTo(100, 250, "show")
 			       .then(
-				       e => setCurNextCard(nextCard)
+				       e => {
+					       tweener.scrollTo(0, 0, "showNext");
+					       setCurNextCard(nextCard)
+				       }
 			       )
 			
 		},
@@ -140,15 +153,21 @@ export default (
 			size={100}
 			defaultPosition={50}
 			inertia={styles.vInertia}/>
+		
 		<Voodoo.Axis
 			axe={"show"}
+			size={100}
+			defaultPosition={100}/>
+		
+		<Voodoo.Axis
+			axe={"showNext"}
 			size={100}
 			defaultPosition={100}/>
 		
 		<Voodoo.Node
 			axes={styles.nextCard.axes}
 			style={styles.nextCard.style}>
-			<div className={"nextCard"} draggable="false">
+			<div className={"nextCard"} draggable="false" key={"nextCard"}>
 				{renderCard?.(curNextCard)}
 			</div>
 		</Voodoo.Node>
@@ -183,12 +202,12 @@ export default (
 				<h1>Next !</h1>
 			</div>
 		</Voodoo.Node>
-		{/*<Voodoo.Node*/}
-		{/*	axes={styles.superLikeOverlay.axes}*/}
-		{/*	style={styles.superLikeOverlay.style}>*/}
-		{/*	<div className={"superLikeOverlay"}>*/}
-		{/*		superLikeOverlay*/}
-		{/*	</div>*/}
-		{/*</Voodoo.Node>*/}
+		
+		<div className={"likeBtn"} onClick={e => tweener.scrollTo(100, 500, "hSwipe")}>
+			&#128077;
+		</div>
+		<div className={"dislikeBtn"} onClick={e => tweener.scrollTo(0, 500, "hSwipe")}>
+			&#128072;
+		</div>
 	</ViewBox>;
 }

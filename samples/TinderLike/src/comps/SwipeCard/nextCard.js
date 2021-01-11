@@ -7,53 +7,35 @@ export default {
 		height         : ["100%", "-170px"],
 		transform      : [
 			{
-				translateZ: "0px",
+				translateZ: "-20px",
 			},
 			{},
 			{},
 			{}
 		],
-		backgroundColor: 'grey',
+		filter         : {
+			blur: "5px"
+		},
+		backgroundColor: 'white',
 		borderRadius   : "5px",
-		opacity        : 1,
+		opacity        : .5,
 		overflow       : "hidden"
 	},
 	axes : {
-		hSwipe: [
-			{
-				from    : 40,
-				duration: 10,
-				apply   : {
-					opacity: -.5,
-					
-					transform: [
-						{
-							
-							translateZ: "-20px",
-						}
-					]
-				}
-			},
-			{
-				from    : 50,
-				duration: 10,
-				apply   : {
-					opacity  : .5,
-					transform: [
-						{
-							translateZ: "20px",
-						}
-					]
-				}
-			}
-		],
-		vSwipe: [],
-		show  : [
+		showNext: [
 			{
 				from    : 0,
 				duration: 100,
 				apply   : {
-					//opacity: 1
+					transform: [
+						{
+							translateZ: "20px",
+						}
+					],
+					filter         : {
+						blur: "-5px"
+					},
+					opacity  : .5
 				}
 			}
 		]
