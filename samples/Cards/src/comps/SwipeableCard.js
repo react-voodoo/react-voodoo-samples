@@ -116,7 +116,7 @@ export default ( { children, showBack } ) => {
         <Voodoo.Axis
             axe={ "swipeAxis" }
             scrollableWindow={ 100 }
-            defaultPosition={ 0 }
+            defaultPosition={ side ? 100 : 0 }
             inertia={ styles.inertia }
         />
         <Voodoo.Axis

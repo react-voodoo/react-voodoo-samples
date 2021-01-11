@@ -38,7 +38,7 @@ const allSamples = [
 	{
 		label      : "Android style Menu",
 		path       : "./samples/AndroidMenu/dist/static/index.html",
-		description: "Android style Menu",
+		description: "Proof of concept Android style Menu",
 		sandbox    : "https://codesandbox.io/s/android-style-menu-bhn1n"
 	},
 	{
@@ -56,7 +56,7 @@ const allSamples = [
 	{
 		label      : "Goo balls",
 		path       : "./samples/Goo/dist/static/index.html",
-		description: "Goo balls"
+		description: "Multitouch Goo balls"
 	}
 ]
 
@@ -91,7 +91,10 @@ const Sample = () => {
 				<iframe src={allSamples[sampleIndex].path}/>
 				<div className={"description"}>
 					Description : {allSamples[sampleIndex].description}<br/>
-					<a href={allSamples[sampleIndex].sandbox} target={"_new"}>Demo sandbox</a>
+					{
+						allSamples[sampleIndex].sandbox &&
+						<a href={allSamples[sampleIndex].sandbox} target={"_new"}>Demo sandbox</a>
+					}
 				</div>
 			</div>
 		
