@@ -72,7 +72,7 @@ const Sample = () => {
 			<img className={"logo"} src={require("./assets/logo-v0.png").default}/>
 			
 			<div className={"description"}>
-				<h1>react-voodoo Samples</h1>
+				<h1><a href={"https://github.com/react-voodoo/react-voodoo"} target={"_new"}>react-voodoo</a> Samples</h1>
 			</div>
 		</div>
 		<div className={"desk"}>
