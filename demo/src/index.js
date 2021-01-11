@@ -31,31 +31,31 @@ import {GithubCorner} from "./comps/(*).js";
 const allSamples = [
 	{
 		label      : "TinderLike swiper",
-		path       : "../samples/TinderLike/dist/static/index.html",
+		path       : "./samples/TinderLike/dist/static/index.html",
 		description: "Swipe like on tinder",
 		sandbox    : "https://codesandbox.io/s/tinder-like-card-swiper-1735w"
 	},
 	{
 		label      : "Android style Menu",
-		path       : "../samples/AndroidMenu/dist/static/index.html",
+		path       : "./samples/AndroidMenu/dist/static/index.html",
 		description: "Android style Menu",
 		sandbox    : "https://codesandbox.io/s/android-style-menu-bhn1n"
 	},
 	{
 		label      : "Swipeable cards",
-		path       : "../samples/Cards/dist/static/index.html",
+		path       : "./samples/Cards/dist/static/index.html",
 		description: "Swipeable cards",
 		sandbox    : "https://codesandbox.io/s/react-voodoo-demo-cards-fmpt2?file=/src/comps/SwipeableCard.js"
 	},
 	{
 		label      : "3d Cubes",
-		path       : "../samples/Cubes/dist/static/index.html",
+		path       : "./samples/Cubes/dist/static/index.html",
 		description: "3d Cubes",
 		sandbox    : "https://codesandbox.io/s/react-voodoo-cube-demo-7d65t"
 	},
 	{
 		label      : "Goo balls",
-		path       : "../samples/Goo/dist/static/index.html",
+		path       : "./samples/Goo/dist/static/index.html",
 		description: "Goo balls"
 	}
 ]
