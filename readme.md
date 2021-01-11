@@ -7,9 +7,9 @@ Simple samples for [react-voodoo](https://github.com/react-voodoo/react-voodoo)
 
 ## Available :
 
-### [TinderLike cards](samples/Cards) ( work in progress )
+### [TinderLike cards](samples/Cards) 
 
-Swipeable TinderLike cards with merged dragable tween, actually do whats hard without react-voodoo. Still wip
+Swipeable TinderLike cards with merged dragable tween, actually do whats hard without react-voodoo. 
 
 Test [here](http://htmlpreview.github.io/?https://github.com/react-voodoo/react-voodoo-samples/blob/master/samples/TinderLike/dist/static/index.html)
 Or [here ( code sandbox )](https://codesandbox.io/s/tinder-like-card-swiper-1735w)
