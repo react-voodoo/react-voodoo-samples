@@ -28,7 +28,7 @@ export default {
 		show  : [
 			{
 				from    : 0,
-				duration: 100,
+				duration: 50,
 				apply   : {
 					opacity: 1
 				}

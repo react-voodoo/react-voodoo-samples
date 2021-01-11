@@ -10,9 +10,6 @@ export function pushIn( target ) {
 				apply   : {
 					transform: {
 						translateZ: "-.2box"
-					},
-					filter   : {
-						sepia: 100
 					}
 				}
 			},
@@ -26,9 +23,6 @@ export function pushIn( target ) {
 					transform: {
 						translateZ: ".2box"
 					},
-					filter   : {
-						sepia: -100
-					}
 				}
 			},
 			//{
