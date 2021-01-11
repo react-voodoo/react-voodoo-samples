@@ -28,7 +28,7 @@
     "rootFolder": "src",
     "basedOn": "static",
     "vars": {
-//      "targetDir": "../docs",
+      "targetDir": "../",
       "rootAlias": "App",
       "entryPoint": "./src",
       "babelPreset": {
