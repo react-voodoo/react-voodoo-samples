@@ -32,8 +32,8 @@ body, html, #app {
   height: 100%;
   margin: 0;
   position: fixed;
-  overflow: hidden;
-  //overflow: auto !important;
+  //overflow: hidden;
+  overflow-y: auto !important;
 }
 
 .header {
