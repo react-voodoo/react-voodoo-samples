@@ -67,7 +67,7 @@ const Sample = () => {
 	
 	let [sampleIndex, setSampleIndex] = React.useState(0);
 	return <>
-		<GithubCorner/>
+		{/*<GithubCorner/>*/}
 		<div className={"header"}>
 			<img className={"logo"} src={require("./assets/logo-v0.png").default}/>
 			

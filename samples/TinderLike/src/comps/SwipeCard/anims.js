@@ -1,27 +1,25 @@
-export function pushIn( target ) {
+export function pushIn( target, tm = 1000 ) {
 	return {
 		anims: [
 			{
-				type    : "Tween",
 				target  : target,
 				from    : 0,
-				duration: 500,
+				duration: tm / 2,
 				easeFn  : "easeCircleIn",
 				apply   : {
 					transform: {
-						translateZ: "-.2box"
+						translateZ: "-200px"
 					}
 				}
 			},
 			{
-				type    : "Tween",
 				target  : target,
-				from    : 500,
-				duration: 500,
+				from    : tm / 2,
+				duration: tm / 2,
 				easeFn  : "easeCircleIn",
 				apply   : {
 					transform: {
-						translateZ: ".2box"
+						translateZ: "200px"
 					},
 				}
 			},

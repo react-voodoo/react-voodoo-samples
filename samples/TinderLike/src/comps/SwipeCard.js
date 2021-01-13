@@ -71,7 +71,6 @@ export default (
 						      from    : 30,
 						      duration: 40,
 						      moveTo  : ( pos, precPos, update ) => {
-							      //console.log('::moveTo:74: ', Math.abs(.5 - pos) * 200);
 							      tweener.scrollTo(Math.abs(.5 - pos) * 200, 0, "showNext");
 						      }
 					      },
@@ -80,10 +79,10 @@ export default (
 						      from    : 15,
 						      duration: .00000001,
 						      entering: ( pos ) => {
-							      if ( pos === -1 )// from 50 to 0 ( init go from 0 to 50 )
+							      if ( pos < 0 )// from 50 to 0 ( init go from 0 to 50 )
 							      {
 								      events.current.onDisliked?.(events.current?.curCard);
-								      tweener.pushAnim(cardStyles.anims.pushIn("dislikeOverlay"), 250);
+								      tweener.pushAnim(cardStyles.anims.pushIn("dislikeOverlay", 250));
 							      }
 						      }
 					      },
@@ -92,10 +91,10 @@ export default (
 						      from    : 85,
 						      duration: .00000001,
 						      entering: ( pos ) => {
-							      if ( pos === 1 )// from 50 to 100
+							      if ( pos > 0 )// from 50 to 100
 							      {
 								      events.current.onLiked?.(events.current?.curCard);
-								      tweener.pushAnim(cardStyles.anims.pushIn("likeOverlay"), 250);
+								      tweener.pushAnim(cardStyles.anims.pushIn("likeOverlay", 250));
 							      }
 						      }
 					      },
@@ -203,10 +202,10 @@ export default (
 			</div>
 		</Voodoo.Node>
 		
-		<div className={"likeBtn"} onClick={e => tweener.scrollTo(100, 500, "hSwipe")}>
+		<div className={"likeBtn"} onClick={e => tweener.axes.hSwipe.scrollTo(100, 500, "easeCubicInOut")}>
 			&#128077;
 		</div>
-		<div className={"dislikeBtn"} onClick={e => tweener.scrollTo(0, 500, "hSwipe")}>
+		<div className={"dislikeBtn"} onClick={e => tweener.axes.hSwipe.scrollTo(0, 500, "easeCubicInOut")}>
 			&#128072;
 		</div>
 	</ViewBox>;

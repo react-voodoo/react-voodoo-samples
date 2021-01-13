@@ -25,6 +25,7 @@ export default {
 		filter         : {
 			grayscale: "100%"
 		},
+		opacity        : 0,
 		backgroundColor: 'white',
 		borderRadius   : "5px",
 		overflow       : "hidden",
@@ -53,6 +54,20 @@ export default {
 					filter: {
 						grayscale: "-100%"
 					},
+				}
+			},
+			{
+				from    : 0,
+				duration: 20,
+				apply   : {
+					opacity        : 1,
+				}
+			},
+			{
+				from    : 80,
+				duration: 20,
+				apply   : {
+					opacity        : -1,
 				}
 			}
 		],
