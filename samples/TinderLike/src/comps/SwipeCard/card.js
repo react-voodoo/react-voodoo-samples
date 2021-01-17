@@ -60,14 +60,14 @@ export default {
 				from    : 0,
 				duration: 20,
 				apply   : {
-					opacity        : 1,
+					opacity: 1,
 				}
 			},
 			{
 				from    : 80,
 				duration: 20,
 				apply   : {
-					opacity        : -1,
+					opacity: -1,
 				}
 			}
 		],

@@ -26,17 +26,17 @@
 
 import React          from "react";
 import ReactDom       from "react-dom";
-import {GithubCorner} from "./comps/(*).js";
+import {RadialSelect} from "./comps/(*).js";
 
 const allSamples = [
 	{
 		label      : "TinderLike swiper",
 		path       : "./samples/TinderLike/dist/static/index.html",
-		description: "Swipe like on tinder",
+		description: "Swipe card desk like the native tinder anim",
 		sandbox    : "https://codesandbox.io/s/tinder-like-card-swiper-1735w"
 	},
 	{
-		label      : "Android style Menu",
+		label      : "Swipeable Menu",
 		path       : "./samples/AndroidMenu/dist/static/index.html",
 		description: "Proof of concept Android style Menu",
 		sandbox    : "https://codesandbox.io/s/android-style-menu-bhn1n"
@@ -69,12 +69,15 @@ const Sample = () => {
 	return <>
 		{/*<GithubCorner/>*/}
 		<div className={"header"}>
-			<img className={"logo"} src={require("./assets/logo-v0.png").default}/>
-			
 			<div className={"description"}>
-				<h1><a href={"https://github.com/react-voodoo/react-voodoo"} target={"_new"}>react-voodoo</a> Samples</h1>
+				<h1><a href={"https://github.com/react-voodoo/react-voodoo"} target={"_new"}>react-voodoo</a> Samples
+				</h1>
 			</div>
 		</div>
+		<RadialSelect
+			onChange={( item, i ) => setSampleIndex(i)}
+			selectedIndex={sampleIndex}
+			items={allSamples}/>
 		<div className={"desk"}>
 			<div className={"menu"}>
 				{
@@ -89,11 +92,15 @@ const Sample = () => {
 			</div>
 			<div className={"demo"}>
 				<iframe src={allSamples[sampleIndex].path}/>
-				<div className={"description"}>
-					Description : {allSamples[sampleIndex].description}<br/>
+				<div className={"details"}>
+					<div className={"description"}>
+						{allSamples[sampleIndex].description}
+					</div>
 					{
 						allSamples[sampleIndex].sandbox &&
-						<a href={allSamples[sampleIndex].sandbox} target={"_new"}>Demo sandbox</a>
+						<a href={allSamples[sampleIndex].sandbox} target={"_new"} className={"codesandbox"}>
+							<img src={require("App/assets/codesandbox.png").default} draggable="false"/>
+						</a>
 					}
 				</div>
 			</div>

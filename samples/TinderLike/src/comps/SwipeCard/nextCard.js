@@ -13,9 +13,9 @@ export default {
 			{},
 			{}
 		],
-		filter         : {
-			blur: "5px"
-		},
+		//filter         : {
+		//	blur: "5px"
+		//},
 		backgroundColor: 'white',
 		borderRadius   : "5px",
 		opacity        : .5,
@@ -32,9 +32,9 @@ export default {
 							translateZ: "20px",
 						}
 					],
-					filter         : {
-						blur: "-5px"
-					},
+					//filter         : {
+					//	blur: "-5px"
+					//},
 					opacity  : .5
 				}
 			}
