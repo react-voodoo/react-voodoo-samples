@@ -220,7 +220,6 @@ export default (
 				      ),
 				      hInertia  : {
 					      willSnap  : ( index ) => {
-						      console.log('hInertia::willSnap:222: ', index % items.length);
 						      events.current.onChange?.(items[(allItems.length - index + 1) % items.length], (allItems.length - index + 1) % items.length)
 					      },
 					      shouldLoop: ( currentPos ) => (
@@ -248,7 +247,7 @@ export default (
 	)
 	React.useEffect(
 		e => {
-			let i = 2 * items.length - selectedIndex + 1
+			let i = 2 * items.length - selectedIndex + 1;
 			tweener.axes.hSwipe.scrollTo(i * slotSize, 250, "easeCubicInOut")
 		},
 		[selectedIndex]

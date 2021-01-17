@@ -32,6 +32,8 @@ body, html, #app {
   height: 100%;
   margin: 0;
   position: fixed;
+  overscroll-behavior-y: contain;
+  overscroll-behavior-x: contain;
   //overflow: hidden;
   overflow-y: auto !important;
 }
@@ -39,6 +41,14 @@ body, html, #app {
 #app {
   width: 100vw;
   overflow: hidden;
+  overscroll-behavior-y: contain;
+  overscroll-behavior-x: contain;
+
+  * {
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+
+  }
+
   .header {
 
     @include use_hvCenteredContent();
@@ -88,6 +98,7 @@ body, html, #app {
     right: 0px;
     bottom: 0px;
     display: flex;
+    z-index: 15;
 
     .menu {
       width: 250px;
@@ -236,13 +247,14 @@ body, html, #app {
     .header {
       width: 80%;
       left: 50%;
-      top:0vw;
+      top: 0vw;
       transform: translateX(-50%);
-      font-size: 14px;
+      font-size: 12px;
       text-align: center;
       background: #ffffff88;
       border-radius: 15px;
-      *{
+
+      * {
         margin: 0;
       }
     }
@@ -255,7 +267,25 @@ body, html, #app {
       display: none;
     }
     .desk {
-      top: 52vw
+      top: 52vw;
+
+      .demo {
+        height: 100%;
+        width: 100%;
+        iframe {
+          @include use_hvCenteredAbs();
+          transform: translate(-50%,-50%) scale(.5);
+          width: 200%;
+          height: 200%;
+        }
+
+      }
+      .details{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+      }
     }
   }
 }
