@@ -64,7 +64,8 @@ body, html, #app {
 
     .description {
       @include use_hvCenteredContent();
-font-family: 'Aladin', cursive;
+      font-family: 'Aladin', cursive;
+
       .logo {
         height: 50px;
         margin-left: 20px;

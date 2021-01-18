@@ -221,7 +221,10 @@ export default (
 				      hInertia  : {
 					      willSnap  : ( index ) => {
 						      let target = (allItems.length - index + 1) % items.length;
-						      events.current.onChange?.(items[target], target)
+						      setTimeout(
+							      tm => events.current.onChange?.(items[target], target),
+							      500
+						      )
 						      events.current.target = target;
 					      },
 					      shouldLoop: ( currentPos ) => (
@@ -243,16 +246,26 @@ export default (
 	
 	React.useEffect(
 		e => {
-			events.current = { onChange, curItem, target: events.current.target };
+			events.current = { onChange, curItem, target: events.current.target, current: events.current.current };
 		},
 		[onChange, curItem]
 	)
 	React.useEffect(
 		e => {
 			let i = 2 * items.length - selectedIndex + 1;
-			//console.log(':::251: ', selectedIndex, events.current.target);
-			if ( selectedIndex !== events.current.target )
+			if ( events.current.current === undefined ) {
+				events.current.current = selectedIndex;
+				return;
+			}
+			if ( selectedIndex !== events.current.target && selectedIndex !== events.current.current ) {
 				tweener.axes.hSwipe.scrollTo(i * slotSize, 250, "easeCubicInOut")
+				       .then(
+					       t =>
+						       tweener.axes.hSwipe.scrollTo(i * slotSize, 250, "easeCubicInOut")
+				       );
+				events.current.current = selectedIndex;
+				events.current.target  = undefined;
+			}
 		},
 		[selectedIndex]
 	)
