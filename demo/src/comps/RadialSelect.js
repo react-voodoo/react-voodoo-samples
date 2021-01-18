@@ -220,7 +220,9 @@ export default (
 				      ),
 				      hInertia  : {
 					      willSnap  : ( index ) => {
-						      events.current.onChange?.(items[(allItems.length - index + 1) % items.length], (allItems.length - index + 1) % items.length)
+						      let target = (allItems.length - index + 1) % items.length;
+						      events.current.onChange?.(items[target], target)
+						      events.current.target = target;
 					      },
 					      shouldLoop: ( currentPos ) => (
 						      currentPos >= slideLength * 2 / 3
@@ -241,14 +243,16 @@ export default (
 	
 	React.useEffect(
 		e => {
-			events.current = { onChange, curItem };
+			events.current = { onChange, curItem, target: events.current.target };
 		},
 		[onChange, curItem]
 	)
 	React.useEffect(
 		e => {
 			let i = 2 * items.length - selectedIndex + 1;
-			tweener.axes.hSwipe.scrollTo(i * slotSize, 250, "easeCubicInOut")
+			//console.log(':::251: ', selectedIndex, events.current.target);
+			if ( selectedIndex !== events.current.target )
+				tweener.axes.hSwipe.scrollTo(i * slotSize, 250, "easeCubicInOut")
 		},
 		[selectedIndex]
 	)

@@ -222,10 +222,12 @@ body, html, #app {
       .details {
         min-height: 50px;
         display: flex;
-
+        background: #bfbfbf;
         .description {
-          @include use_hvCenteredContent();
           flex-grow: 3;
+          padding: 5px;
+          overflow: auto;
+
         }
 
         .codesandbox {
