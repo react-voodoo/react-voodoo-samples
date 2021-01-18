@@ -23,6 +23,7 @@
  *   @author : Nathanael Braun
  *   @contact : n8tz.js@gmail.com
  */
+@import url('https://fonts.googleapis.com/css2?family=Aladin&family=Open+Sans&display=swap');
 
 @import "Mixins";
 @import "./comps/*.scss";
@@ -63,7 +64,7 @@ body, html, #app {
 
     .description {
       @include use_hvCenteredContent();
-
+font-family: 'Aladin', cursive;
       .logo {
         height: 50px;
         margin-left: 20px;
@@ -217,12 +218,14 @@ body, html, #app {
 
       iframe {
         flex-grow: 2;
+        border: none;
       }
 
       .details {
         min-height: 50px;
         display: flex;
         background: #bfbfbf;
+
         .description {
           flex-grow: 3;
           padding: 5px;
@@ -274,15 +277,17 @@ body, html, #app {
       .demo {
         height: 100%;
         width: 100%;
+
         iframe {
           @include use_hvCenteredAbs();
-          transform: translate(-50%,-50%) scale(.5);
+          transform: translate(-50%, -50%) scale(.5);
           width: 200%;
           height: 200%;
         }
 
       }
-      .details{
+
+      .details {
         position: absolute;
         bottom: 0;
         left: 0;
