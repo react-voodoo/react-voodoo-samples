@@ -34,8 +34,8 @@ body, html, #app {
   position: fixed;
   overscroll-behavior-y: contain;
   overscroll-behavior-x: contain;
-  //overflow: hidden;
-  overflow-y: auto !important;
+  overflow: hidden;
+  //overflow-y: auto !important;
 }
 
 #app {
