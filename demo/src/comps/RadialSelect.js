@@ -167,6 +167,22 @@ export default (
 								      ]
 							      },
 							      axes : {
+								      vSwipe: [
+									      {
+										      from    : 0,
+										      duration: 100,
+										      apply   : {
+											      transform: [
+												      {},
+												      {},
+												      {},
+												      {
+													      rotateX: "30deg"
+												      }
+											      ]
+										      }
+									      }
+								      ],
 								      hSwipe: [
 									      // rotate
 									      {
@@ -238,6 +254,9 @@ export default (
 						      : null
 					      ),
 					      wayPoints : allItems.map(( item, i ) => ({ at: slotSize * i }))
+				      },
+				      vInertia  : {
+					      wayPoints: [{ at: 0 }, { at: 100 }]
 				      }
 			      };
 		      }
@@ -259,10 +278,10 @@ export default (
 			}
 			if ( selectedIndex !== events.current.target && selectedIndex !== events.current.current ) {
 				tweener.axes.hSwipe.scrollTo(i * slotSize, 250, "easeCubicInOut")
-				       .then(
-					       t =>
-						       tweener.axes.hSwipe.scrollTo(i * slotSize, 250, "easeCubicInOut")
-				       );
+				       //.then(
+					   //    t =>
+						//       tweener.axes.hSwipe.scrollTo(i * slotSize, 250, "easeCubicInOut")
+				       //);
 				events.current.current = selectedIndex;
 				events.current.target  = undefined;
 			}
@@ -277,17 +296,25 @@ export default (
 			defaultPosition={(items.length + 1) * 15}
 			items={styles.hSwipeAxis}
 			inertia={styles.hInertia}/>
+		<Voodoo.Axis
+			axe={"vSwipe"}
+			size={100}
+			//scrollableWindow={15}
+			defaultPosition={100}
+			inertia={styles.vInertia}/>
 		
 		<Voodoo.Node
 			axes={styles.backWheel.axes}
 			style={styles.backWheel.style}>
 			<img className={"logo-back"} src={require("App/assets/logo-menu-b.png").default} draggable="false"/>
 		</Voodoo.Node>
+		
 		<Voodoo.Node
 			axes={styles.frontWheel.axes}
 			style={styles.frontWheel.style}>
 			<img className={"logo"} src={require("App/assets/logo-menu.png").default} draggable="false"/>
 		</Voodoo.Node>
+		
 		<Voodoo.Draggable className={"items"}
 		                  xHook={styles.inverse}
 		                  xAxis={"hSwipe"}>
