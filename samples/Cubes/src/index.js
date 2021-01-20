@@ -46,11 +46,11 @@ class Sample extends React.Component {
 				Drag cube ( alpha demo )
 			</div>
 			<div style={areaStyle} className={"area"}>
-				<Comps.Cube color={"cyan"} defaultPosition={{ x: .5, y: .5 }}/>
+				<Comps.Cube color={"black"} defaultPosition={{ x: .5, y: .5 }}/>
 				<Comps.Cube color={"green"} defaultPosition={{ x: .75, y: .75 }}/>
 				<Comps.Cube color={"red"} defaultPosition={{ x: .25, y: .25 }}/>
 				<Comps.Cube color={"darkblue"} defaultPosition={{ x: .25, y: .75 }}/>
-				<Comps.Cube color={"yellow"} defaultPosition={{ x: .75, y: .25 }}/>
+				<Comps.Cube color={"indigo"} defaultPosition={{ x: .75, y: .25 }}/>
 			</div>
 		</div>;
 	}
