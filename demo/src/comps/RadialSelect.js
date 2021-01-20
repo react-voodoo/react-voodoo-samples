@@ -331,8 +331,8 @@ export default (
 								       .then(
 									       e => events.current.onChange?.(item, items.indexOf(item))
 								       )
-							}}>
-								<svg viewBox="0 0 500 250"
+							}} draggable="false">
+								<svg viewBox="0 0 500 250" draggable="false"
 								     height={"100%"}
 								     width={"100%"}>
 									<path id="curve" fill="transparent"
