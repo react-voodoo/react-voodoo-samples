@@ -105,8 +105,9 @@ body, html, #app {
     .menu {
       width: 250px;
       text-align: center;
-      padding-top: 50px;
-      overflow-y: auto;
+      padding-top: 25px;
+      overflow: visible;
+      //overflow-y: auto;
 
       .button {
         border: 1px solid green;
@@ -220,7 +221,7 @@ body, html, #app {
       iframe {
         flex-grow: 2;
         border: none;
-        background: transparent;
+        background: transparent !important;
       }
 
       .details {
