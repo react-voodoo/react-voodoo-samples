@@ -1,14 +1,14 @@
 export default {
 	style: {
 		position     : "absolute",
-		top          : "75%",
+		top          : "50%",
 		left         : "50%",
 		width        : "200px",
 		height       : "200px",
 		transform    : [
 			{
 				translateX: "-50%",
-				translateY: "-50%"
+				translateY: "50%"
 			}
 		],
 		opacity      : -1,
@@ -20,7 +20,11 @@ export default {
 				from    : 50,
 				duration: 15,
 				apply   : {
-					top    : "-25%",
+					transform    : [
+						{
+							translateY: "-100%",
+						}
+					],
 					opacity: 1
 				}
 			}

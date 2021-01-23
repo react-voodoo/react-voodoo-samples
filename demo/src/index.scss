@@ -222,6 +222,8 @@ body, html, #app {
         flex-grow: 2;
         border: none;
         background: transparent !important;
+        backface-visibility: hidden;
+        transform: translate3d(0,0,0);
       }
 
       .details {

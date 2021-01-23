@@ -21,7 +21,11 @@ export default {
 				from    : 35,
 				duration: 15,
 				apply   : {
-					top    : "25%",
+					transform    : [
+						{
+							translateY: "100%",
+						}
+					],
 					opacity: -1
 				}
 			}
