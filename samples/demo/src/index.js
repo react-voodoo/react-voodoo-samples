@@ -31,35 +31,35 @@ import {RadialSelect} from "./comps/(*).js";
 const allSamples = [
 	{
 		label      : "TinderLike swiper",
-		path       : "./samples/TinderLike/dist/static/index.html",
+		path       : "../../../TinderLike/dist/static/index.html",
 		description: "Swipe card desk like the native tinder anim",
 		github     : "https://github.com/react-voodoo/react-voodoo-samples/tree/master/samples/TinderLike",
 		sandbox    : "https://codesandbox.io/s/tinder-like-card-swiper-1735w"
 	},
 	{
 		label      : "Swipeable Menu",
-		path       : "./samples/AndroidMenu/dist/static/index.html",
+		path       : "../../../AndroidMenu/dist/static/index.html",
 		description: "Proof of concept Android style Menu",
 		github     : "https://github.com/react-voodoo/react-voodoo-samples/tree/master/samples/AndroidMenu",
 		sandbox    : "https://codesandbox.io/s/android-style-menu-bhn1n"
 	},
 	{
 		label      : "Swipeable cards",
-		path       : "./samples/Cards/dist/static/index.html",
+		path       : "../../../Cards/dist/static/index.html",
 		description: "Swipeable cards",
 		github     : "https://github.com/react-voodoo/react-voodoo-samples/tree/master/samples/Cards",
 		sandbox    : "https://codesandbox.io/s/react-voodoo-demo-cards-fmpt2?file=/src/comps/SwipeableCard.js"
 	},
 	{
 		label      : "3d Cubes",
-		path       : "./samples/Cubes/dist/static/index.html",
+		path       : "../../../Cubes/dist/static/index.html",
 		description: "3d Cubes",
 		github     : "https://github.com/react-voodoo/react-voodoo-samples/tree/master/samples/Cubes",
 		sandbox    : "https://codesandbox.io/s/react-voodoo-cube-demo-7d65t"
 	},
 	{
 		label      : "Goo balls",
-		path       : "./samples/Goo/dist/static/index.html",
+		path       : "../../../Goo/dist/static/index.html",
 		github     : "https://github.com/react-voodoo/react-voodoo-samples/tree/master/samples/Goo",
 		description: "Multitouch Goo balls"
 	}
