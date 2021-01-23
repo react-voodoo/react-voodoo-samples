@@ -57,7 +57,7 @@ const Sample = () => {
                     notification
                 </div>
             </SwipeMenu>
-            desk
+            PoC desk
         </div>
     </>
 }

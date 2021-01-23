@@ -266,12 +266,12 @@ export default (
         <Voodoo.Axis
             axe={ "swipeDown" }
             size={ 160 }
+            scrollableWindow={ 180 }
             defaultPosition={ 0 }
             inertia={ styles.vInertia }
         />
         <Voodoo.Axis
             axe={ "swipeLeft" }
-            //scrollableWindow={ 80 }
             defaultPosition={ 0 }
             inertia={ styles.hInertia }
         />
@@ -280,7 +280,7 @@ export default (
             yHook={ styles.inverse }
             yAxis={ "swipeDown" }
             xAxis={ "swipeLeft" }
-            yBoxRef={ rootNode }
+            //yBoxRef={ rootNode }
         >
             <Voodoo.Node
                 axes={ styles.menu.axes }
