@@ -163,45 +163,51 @@ export default (
 			size={100}
 			defaultPosition={100}/>
 		
-		<Voodoo.Node
-			axes={styles.nextCard.axes}
-			style={styles.nextCard.style}>
-			<div className={"nextCard"} draggable="false" key={"nextCard"}>
-				{renderCard?.(curNextCard)}
-			</div>
-		</Voodoo.Node>
-		
-		<Voodoo.Draggable
-			yHook={styles.inverse}
-			xHook={styles.inverse}
-			yAxis={"vSwipe"}
-			xAxis={"hSwipe"}>
+		<div className={"layer"}>
 			<Voodoo.Node
-				axes={styles.card.axes}
-				style={styles.card.style}>
-				<div className={"card"} draggable="false">
-					{renderCard?.(curCard)}
+				axes={styles.nextCard.axes}
+				style={styles.nextCard.style}>
+				<div className={"nextCard"} draggable="false" key={"nextCard"}>
+					{renderCard?.(curNextCard)}
 				</div>
 			</Voodoo.Node>
-		</Voodoo.Draggable>
+		</div>
 		
-		<Voodoo.Node
-			id={"likeOverlay"}
-			axes={styles.likeOverlay.axes}
-			style={styles.likeOverlay.style}>
-			<div className={"likeOverlay"}>
-				<h1>COOL :)</h1>
-			</div>
-		</Voodoo.Node>
-		<Voodoo.Node
-			id={"dislikeOverlay"}
-			axes={styles.dislikeOverlay.axes}
-			style={styles.dislikeOverlay.style}>
-			<div className={"dislikeOverlay"}>
-				<h1>Next !</h1>
-			</div>
-		</Voodoo.Node>
+		<div className={"layer"}>
+			<Voodoo.Draggable
+				yHook={styles.inverse}
+				xHook={styles.inverse}
+				yAxis={"vSwipe"}
+				xAxis={"hSwipe"}>
+				<Voodoo.Node
+					axes={styles.card.axes}
+					style={styles.card.style}>
+					<div className={"card"} draggable="false">
+						{renderCard?.(curCard)}
+					</div>
+				</Voodoo.Node>
+			</Voodoo.Draggable>
+		</div>
 		
+		<div className={"layer noEvent"}>
+			<Voodoo.Node
+				id={"likeOverlay"}
+				axes={styles.likeOverlay.axes}
+				style={styles.likeOverlay.style}>
+				<div className={"likeOverlay"}>
+					<h1>COOL :)</h1>
+				</div>
+			</Voodoo.Node>
+			<Voodoo.Node
+				id={"dislikeOverlay"}
+				axes={styles.dislikeOverlay.axes}
+				style={styles.dislikeOverlay.style}>
+				<div className={"dislikeOverlay"}>
+					<h1>Next !</h1>
+				</div>
+			</Voodoo.Node>
+		
+		</div>
 		<div className={"likeBtn"} onClick={e => tweener.axes.hSwipe.scrollTo(100, 500, "easeCubicInOut")}>
 			&#128077;
 		</div>

@@ -42,7 +42,16 @@ const Sample = () => {
 	
 	let [cardIndex, setCardIndex] = React.useState(0),
 	    next                      = ( card ) => {
+		
 		    setCardIndex((cardIndex + 1) % allCards.length);
+		    // preload next
+		    let i = (cardIndex + 2) % allCards.length;
+		    if ( !allCards[i].loaded )
+			    fetch(allCards[i].image)
+				    .then(res => {// ugly img preload to avoid flick when switching cards
+					    allCards[i].image  = res.url;
+					    allCards[i].loaded = true;
+				    })
 	    };
 	return <>
 		<GithubCorner/>
@@ -64,7 +73,17 @@ const Sample = () => {
 
 document.body.innerHTML = '<div id="app"></div>';
 
-function renderSample() {
+async function renderSample() {
+	await fetch(allCards[1].image)
+		.then(res => {// ugly img preload to avoid flick when switching cards
+			allCards[1].image  = res.url;
+			allCards[1].loaded = true;
+		})
+	await fetch(allCards[2].image)
+		.then(res => {// ugly img preload to avoid flick when switching cards
+			allCards[2].image  = res.url;
+			allCards[1].loaded = true;
+		})
 	ReactDom.render(
 		<Sample/>
 		, document.getElementById('app'));

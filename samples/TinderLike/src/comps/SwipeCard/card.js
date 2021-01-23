@@ -1,11 +1,11 @@
 export default {
 	style: {
-		position       : "absolute",
-		top            : "10px",
-		left           : "10px",
-		width          : ["100%", "-20px"],
-		height         : ["100%", "-170px"],
-		transform      : [
+		position          : "absolute",
+		top               : "10px",
+		left              : "10px",
+		width             : ["100%", "-20px"],
+		height            : ["100%", "-170px"],
+		transform         : [
 			{
 				perspective: "1200px",
 				translateZ : "200px",
@@ -22,14 +22,16 @@ export default {
 			},
 			{}
 		],
-		filter         : {
+		filter            : {
 			grayscale: "100%"
 		},
-		opacity        : 0,
-		backgroundColor: 'white',
-		borderRadius   : "5px",
-		overflow       : "hidden",
-		cursor         : "pointer"
+		opacity           : 0,
+		backgroundColor   : 'white',
+		borderRadius      : "5px",
+		overflow          : "hidden",
+		cursor            : "pointer",
+		backfaceVisibility: "hidden",// safari perfs
+		zIndex            : 100
 	},
 	axes : {
 		hSwipe: [
