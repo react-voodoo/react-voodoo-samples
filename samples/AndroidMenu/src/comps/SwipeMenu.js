@@ -80,8 +80,8 @@ export default (
 				}
 			},
 		],
-		closedStatus="Swipe me down !",
-		openStatus="Swipe me up !"
+		closedStatus = "Swipe me down !",
+		openStatus = "Swipe me up !"
 	}
 ) => {
 	const [tweener, ViewBox]  = Voodoo.hook({ enableMouseDrag: true, dragDirectionLock: true }),
@@ -264,7 +264,7 @@ export default (
 									      if ( d > 0 )
 										      setStatus(openStatus)
 								      },
-								      leaving: ( d ) => {
+								      leaving : ( d ) => {
 									      if ( d < 0 )
 										      setStatus(closedStatus)
 								      }

@@ -34,5 +34,10 @@ body, html, #app {
   margin: 0;
   position: fixed;
   overflow: hidden;
+  overscroll-behavior-y: contain;
+  overscroll-behavior-x: contain;
+  > * {
+    backface-visibility: hidden;
+  }
   //overflow: auto !important;
 }

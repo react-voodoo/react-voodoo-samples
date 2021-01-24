@@ -32,7 +32,12 @@ body, html, #app {
   height: 100%;
   margin: 0;
   position: fixed;
+  overscroll-behavior-y: contain;
+  overscroll-behavior-x: contain;
   overflow: hidden;
+  > * {
+    backface-visibility: hidden;
+  }
   //overflow: auto !important;
 }
 
@@ -42,10 +47,9 @@ body, html, #app {
   background: url("https://source.unsplash.com/400x700/?android");
   background-color: #acacac;
 
-  max-width: 375px;
-  max-height: 667px;
-  height: 100%;
-  width: 100%;
+  width: 375px;
+  height: 667px;
+  backface-visibility: hidden;
 
   > * {
     backface-visibility: hidden;
