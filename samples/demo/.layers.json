@@ -3,7 +3,7 @@
     "rootFolder": "src",
     "basedOn": "static",
     "vars": {
-      "targetDir": "../../demo",
+      "targetDir": "../../docs",
       "rootAlias": "App",
       "entryPoint": "./src",
       "production": true,
