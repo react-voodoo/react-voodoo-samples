@@ -3,7 +3,7 @@
     "rootFolder": "src",
     "basedOn": "static",
     "vars": {
-//      "targetDir": "../",
+      "targetDir": "../../demo",
       "rootAlias": "App",
       "entryPoint": "./src",
       "production": true,
@@ -28,7 +28,7 @@
     "rootFolder": "src",
     "basedOn": "static",
     "vars": {
-//      "targetDir": "../",
+      //      "targetDir": "../",
       "rootAlias": "App",
       "entryPoint": "./src",
       "babelPreset": {
