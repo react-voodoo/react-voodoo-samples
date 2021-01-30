@@ -32,7 +32,7 @@ const allSamples = [
 	{
 		label      : "TinderLike swiper",
 		path       : "./samples/TinderLike/dist/static/index.html",
-		description: "Swipe card desk like the native tinder anim",
+		description: "Swipe card desk like the native tinder anim ( use full screen for Safari )",
 		github     : "https://github.com/react-voodoo/react-voodoo-samples/tree/master/samples/TinderLike",
 		sandbox    : "https://codesandbox.io/s/tinder-like-card-swiper-1735w"
 	},
@@ -101,6 +101,12 @@ const Sample = () => {
 					<div className={"description"}>
 						{allSamples[sampleIndex].description}
 					</div>
+					{
+						allSamples[sampleIndex].path &&
+						<a href={allSamples[sampleIndex].path} className={"codesandbox"}>
+							<img src={require("App/assets/fullPage.png").default} draggable="false"/>
+						</a>
+					}
 					{
 						allSamples[sampleIndex].github &&
 						<a href={allSamples[sampleIndex].github} target={"_new"} className={"codesandbox"}>
