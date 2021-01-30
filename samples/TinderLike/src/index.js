@@ -30,10 +30,20 @@ import Voodoo                    from "react-voodoo";
 import {SwipeCard, GithubCorner} from "./comps/(*).js";
 
 const allCards = ["bird", "car", "eyes", "bee", "moon", "bikini", "boobs", "muscles"].map(( name, i ) => ({
-	id   : "App" + i,
 	image: "https://source.unsplash.com/400x700/?" + name,
 	label: name
-}))
+}));
+
+allCards.unshift(
+	{
+		image: require('./assets/img.jpg').default,
+		label: "John"
+	},
+	{
+		image: require('./assets/img0.jpg').default,
+		label: "Louis"
+	}
+)
 
 import "./index.scss";
 
@@ -47,11 +57,12 @@ const Sample = () => {
 		    // preload next
 		    let i = (cardIndex + 2) % allCards.length;
 		    if ( !allCards[i].loaded )
-			    fetch(allCards[i].image)
-				    .then(res => {// ugly img preload to avoid flick when switching cards
-					    allCards[i].image  = res.url;
-					    allCards[i].loaded = true;
-				    })
+			    setTimeout(// ugly img preload to avoid flick / reload when switching cards
+				    e => fetch(allCards[i].image)
+					    .then(res => {
+						    allCards[i].image  = res.url;
+						    allCards[i].loaded = true;
+					    }), 500)
 	    };
 	return <>
 		<GithubCorner/>
@@ -74,16 +85,7 @@ const Sample = () => {
 document.body.innerHTML = '<div id="app"></div>';
 
 async function renderSample() {
-	await fetch(allCards[1].image)
-		.then(res => {// ugly img preload to avoid flick when switching cards
-			allCards[1].image  = res.url;
-			allCards[1].loaded = true;
-		})
-	await fetch(allCards[2].image)
-		.then(res => {// ugly img preload to avoid flick when switching cards
-			allCards[2].image  = res.url;
-			allCards[1].loaded = true;
-		})
+	
 	ReactDom.render(
 		<Sample/>
 		, document.getElementById('app'));
