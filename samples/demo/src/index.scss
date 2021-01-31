@@ -55,12 +55,20 @@ body, html, #app {
     @include use_hvCenteredContent();
     position: absolute;
     top: 30px;
-    left: 250px;
+    left: 0px;
     height: 50px;
     right: 0%;
+    padding-left: 250px;
     //text-align: left;
-    z-index: 11;
+    z-index: 1;
     text-transform: capitalize;
+    background: linear-gradient(to right, #cedce7 0%, #596a72 370px, #596A72 380px, #596a72 400px);
+    color: white;
+
+    a {
+      color: white;
+      text-decoration: none;
+    }
 
     .description {
       @include use_hvCenteredContent();
@@ -127,8 +135,8 @@ body, html, #app {
         font-weight: 300;
         text-shadow: 0 0 20px #fff;
         text-transform: uppercase;
-        -webkit-animation: breath2 2s 0.5s infinite alternate;
-        animation: breath2 2s 0.5s infinite alternate;
+        //-webkit-animation: breath2 2s 0.5s infinite alternate;
+        //animation: breath2 2s 0.5s infinite alternate;
         cursor: pointer;
       }
 
@@ -137,8 +145,8 @@ body, html, #app {
         display: block;
         width: calc(100% - 22px);
         height: calc(50px - 8px);
-        -webkit-animation: breath 2s infinite alternate;
-        animation: breath 2s infinite alternate;
+        //-webkit-animation: breath 2s infinite alternate;
+        //animation: breath 2s infinite alternate;
         left: 10px;
         top: 3px;
         position: absolute;
@@ -223,28 +231,37 @@ body, html, #app {
         border: none;
         background: transparent !important;
         backface-visibility: hidden;
-        transform: translate3d(0,0,0);
+        transform: translate3d(0, 0, 0);
       }
 
       .details {
         min-height: 50px;
         display: flex;
         background: #bfbfbf;
+        overflow: hidden;
+        border-radius: 5px;
+        margin: 3px;
 
         .description {
+          @include use_hvCenteredContent();
           flex-grow: 3;
           padding: 5px;
           overflow: auto;
 
+          * {
+            text-align: center;
+          }
         }
 
         .codesandbox {
-          height: 64px;
-          width: 64px;
+          height: 100%;
+          width: 48px;
           float: right;
+          //display: inline-block;
+          @include use_hvCenteredContent();
 
           img {
-            height: 64px;
+            height: 48px;
           }
         }
       }
@@ -263,8 +280,12 @@ body, html, #app {
       text-align: center;
       background: #ffffff88;
       border-radius: 15px;
+      z-index: 20;
+      color: #2b281d;
+      padding-left: 0;
 
-      * {
+      *,a {
+        color: #2b281d;
         margin: 0;
       }
     }
