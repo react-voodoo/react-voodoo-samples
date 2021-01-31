@@ -54,15 +54,16 @@ const Sample = () => {
 	    next                      = ( card ) => {
 		
 		    setCardIndex((cardIndex + 1) % allCards.length);
+		
 		    // preload next
 		    let i = (cardIndex + 2) % allCards.length;
 		    if ( !allCards[i].loaded )
 			    setTimeout(// ugly img preload to avoid flick / reload when switching cards
-				    e => fetch(allCards[i].image)
-					    .then(res => {
-						    allCards[i].image  = res.url;
-						    allCards[i].loaded = true;
-					    }), 500)
+			               e => fetch(allCards[i].image)
+				               .then(res => {
+					               allCards[i].image  = res.url;
+					               allCards[i].loaded = true;
+				               }), 500)
 	    };
 	return <>
 		<GithubCorner/>

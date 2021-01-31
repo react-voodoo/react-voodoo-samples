@@ -30,4 +30,3 @@ $RECYCLE.BIN/
 node_modules
 .idea
 .npmignore
-package-lock.json

@@ -32,7 +32,7 @@ const allSamples = [
 	{
 		label      : "TinderLike swiper",
 		path       : "./samples/TinderLike/dist/static/index.html",
-		description: "Swipe card desk like the native tinder anim ( use full screen for Safari )",
+		description: "Swipe card desk like the native tinder anim ( use full page btn for Safari )",
 		github     : "https://github.com/react-voodoo/react-voodoo-samples/tree/master/samples/TinderLike",
 		sandbox    : "https://codesandbox.io/s/tinder-like-card-swiper-1735w"
 	},
