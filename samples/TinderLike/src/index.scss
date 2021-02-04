@@ -58,7 +58,7 @@ body, html, #app {
     .card, .nextCard {
       img {
         @include use_hvCenteredAbs();
-
+        height: 100%;
       }
     }
   }

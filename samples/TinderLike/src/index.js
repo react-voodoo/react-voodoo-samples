@@ -29,10 +29,7 @@ import ReactDom                  from "react-dom";
 import Voodoo                    from "react-voodoo";
 import {SwipeCard, GithubCorner} from "./comps/(*).js";
 
-const allCards = ["bird", "car", "eyes", "bee", "moon", "bikini", "boobs", "muscles"].map(( name, i ) => ({
-	image: "https://source.unsplash.com/400x700/?" + name,
-	label: name
-}));
+const allCards = [];
 
 allCards.unshift(
 	{
@@ -41,6 +38,18 @@ allCards.unshift(
 	},
 	{
 		image: require('./assets/img0.jpg').default,
+		label: "Louis"
+	},
+	{
+		image: require('./assets/img1.jpg').default,
+		label: "John"
+	},
+	{
+		image: require('./assets/img2.jpg').default,
+		label: "Louis"
+	},
+	{
+		image: require('./assets/img3.jpg').default,
 		label: "Louis"
 	}
 )
