@@ -67,9 +67,11 @@ const allSamples = [
 
 import "./index.scss";
 
+const initialSampleIndex = allSamples.findIndex(s => (s.label === decodeURI(location.hash.substring(1))));
+
 const Sample = () => {
 	
-	let [sampleIndex, setCurSampleIndex] = React.useState(allSamples.findIndex(s => (s.label === decodeURI(location.hash.substring(1)))) || 0),
+	let [sampleIndex, setCurSampleIndex] = React.useState(initialSampleIndex !== -1 ? initialSampleIndex : 0),
 	    setSampleIndex                   = ( index ) => {
 		    location.hash = "#" + allSamples[index].label;
 		    setCurSampleIndex(index)
