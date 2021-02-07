@@ -67,12 +67,16 @@ const allSamples = [
 
 import "./index.scss";
 
-
 const Sample = () => {
 	
-	let [sampleIndex, setSampleIndex] = React.useState(0);
+	let [sampleIndex, setCurSampleIndex] = React.useState(allSamples.findIndex(s => (s.label === decodeURI(location.hash.substring(1)))) || 0),
+	    setSampleIndex                   = ( index ) => {
+		    location.hash = "#" + allSamples[index].label;
+		    setCurSampleIndex(index)
+	    };
 	return <>
 		{/*<GithubCorner/>*/}
+		
 		<div className={"header"}>
 			<div className={"description"}>
 				<h1><a href={"https://github.com/react-voodoo/react-voodoo"} target={"_new"}>react-voodoo</a> Samples
@@ -138,6 +142,19 @@ function renderSample() {
 	
 }
 
+document.write(
+	`
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-75XZ6R35X0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-75XZ6R35X0');
+</script>
+	`
+)
 renderSample()
 
 if ( process.env.NODE_ENV !== 'production' && module.hot ) {
