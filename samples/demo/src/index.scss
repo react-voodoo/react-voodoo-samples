@@ -94,7 +94,7 @@ body, html, #app {
     top: 55px;
     left: 127px;
     //right: 0;
-    height: 120px;
+    height: 112px;
     width: 250px;
     transform: translateX(-50%);
     //background: #776112;
@@ -231,7 +231,7 @@ body, html, #app {
         border: none;
         background: transparent !important;
         backface-visibility: hidden;
-        transform: translate3d(0, 0, 0);
+        transform: translate3d(0px, 0px, 0px);
       }
 
       .details {
@@ -269,14 +269,14 @@ body, html, #app {
   }
 
 
-  @media (max-width: 600px) {
+  @media (max-width: 700px) {
     flex-direction: column-reverse;
     .header {
       width: 80%;
       left: 50%;
       top: 0vw;
       transform: translateX(-50%);
-      font-size: 12px;
+      font-size: 14px;
       text-align: center;
       background: #ffffff88;
       border-radius: 15px;
@@ -284,21 +284,30 @@ body, html, #app {
       color: #2b281d;
       padding-left: 0;
 
-      *,a {
+      *, a {
         color: #2b281d;
         margin: 0;
       }
     }
     .RadialSelect {
-      width: 100%;
+      width: 95%;
+      top: -10px;
+      //z-index: 1000;
+      //width: 550px;
+      //height: 263px;
       left: 50%;
-      height: 48vw;
+      height: 43vw;
+      transform: translateX(-50%) perspective(150px) rotateX(27deg);
+
+      svg {
+        //transform: perspective(100px) rotateX(-10deg);
+      }
     }
     .menu {
       display: none;
     }
     .desk {
-      top: 52vw;
+      top: 38vw;
 
       .demo {
         height: 100%;
@@ -306,9 +315,9 @@ body, html, #app {
 
         iframe {
           @include use_hvCenteredAbs();
-          transform: translate(-50%, -50%) scale(.5);
-          width: 200%;
-          height: 200%;
+          transform: translate(-50%, -50%) scale(.75);
+          width: 133%;
+          height: 133%;
         }
 
       }

@@ -38,7 +38,7 @@ module.exports = {
 		"rootFolder": "src",
 		"basedOn"   : "static",
 		"vars"      : {
-			//      "targetDir": "../",
+			"targetDir"   : "dist",
 			"rootAlias"   : "App",
 			"entryPoint"  : "./src",
 			"babelPreset" : {
@@ -54,7 +54,14 @@ module.exports = {
 				"devServer"   : {
 					"disableHostCheck": true
 				},
-				"devtool"     : "source-map"
+				plugins       : [
+					new CopyPlugin({
+						               patterns: [
+							               { from: "../*/dist/static/**/*", to: "./samples/samples" }
+						               ],
+					               }),
+				],
+				"devtool": "source-map"
 			}
 		},
 		"extend"    : [

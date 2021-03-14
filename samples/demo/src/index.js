@@ -102,7 +102,7 @@ const Sample = () => {
 				}
 			</div>
 			<div className={"demo"}>
-				<iframe src={allSamples[sampleIndex].path} allowtransparency="true"/>
+				<iframe src={allSamples[sampleIndex].path}/>
 				<div className={"details"}>
 					<div className={"description"}>
 						<span>
