@@ -4,9 +4,6 @@ Simple samples for [react-voodoo](https://github.com/react-voodoo/react-voodoo)
 
 Demos [here](https://react-voodoo.github.io/react-voodoo-samples/)
 
-* I have a lot of work & making clean / commented samples take time ^^'<br/>
-  Theses samples will be updated occasionally. ( or with contribs )
-
 ## Available :
 
 ### [TinderLike cards](samples/TinderLike) 
