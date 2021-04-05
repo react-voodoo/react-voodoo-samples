@@ -4,14 +4,11 @@ Simple samples for [react-voodoo](https://github.com/react-voodoo/react-voodoo)
 
 Demos [here](https://react-voodoo.github.io/react-voodoo-samples/)
 
-* I have a lot of work & making clean / commented samples take time ^^'<br/>
-  Theses samples will be updated occasionally. ( or with contribs )
-
 ## Available :
 
 ### [TinderLike cards](samples/TinderLike) 
 
-Swipeable TinderLike cards with merged dragable tween, actually do whats hard without react-voodoo. 
+Swipeable TinderLike cards stack
 
 Test [here](http://htmlpreview.github.io/?https://github.com/react-voodoo/react-voodoo-samples/blob/master/samples/TinderLike/dist/static/index.html)
 Or [here ( code sandbox )](https://codesandbox.io/s/tinder-like-card-swiper-1735w)
