@@ -49,6 +49,7 @@ body, html, #app {
 
   width: 375px;
   height: 667px;
+  max-height: 100%;
   backface-visibility: hidden;
 
   > * {

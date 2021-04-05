@@ -34,10 +34,11 @@ export default (
 		onChange,
 		items,
 		selectedIndex,
+		style,
 		card
 	}
 ) => {
-	const [tweener, ViewBox]    = Voodoo.hook({ enableMouseDrag: true }),
+	const [tweener, ViewBox]    = Voodoo.hook({ enableMouseDrag: true, dragDirectionLock: true }),
 	      [curItem, setCurItem] = React.useState(0),
 	      rootNode              = React.useRef(),
 	      events                = React.useRef({ onChange }),
@@ -84,7 +85,7 @@ export default (
 								      translateX: "-50%"
 							      },
 							      {
-								      rotateZ: "73deg"
+								      rotateZ: "0deg"
 							      }
 						      ]
 					      },
@@ -98,7 +99,7 @@ export default (
 									      transform: [
 										      {},
 										      {
-											      rotateZ: (1 + (-3 * 360)) + "deg"
+											      rotateZ: (allItems.length * (-360 / 5)) + "deg"
 										      },
 										      {}
 									      ]
@@ -159,7 +160,7 @@ export default (
 										      translateY: "-70%"
 									      },
 									      {
-										      rotateZ: "150deg"
+										      rotateZ: (180 - (360 / 5) / 2) + "deg"
 									      },
 									      {
 										      translateY: "70%"
@@ -193,7 +194,7 @@ export default (
 												      {},
 												      {},
 												      {
-													      rotateZ: "-300deg"
+													      rotateZ: -((360 / 5) * 4) + "deg"
 												      },
 												      {}
 											      ]
@@ -260,9 +261,18 @@ export default (
 				      }
 			      };
 		      }
-		      , [allItems, slideLength]
+		      , [items, allItems, slideLength]
 	      );
 	
+	React.useEffect(
+		e => {
+			events.current.current = undefined;
+			events.current.target  = undefined;
+			tweener.axes.hSwipe.scrollTo((2 * items.length - 1 + 2) * slotSize, 0);
+			//console.log(':::272: ', items.length, (2 * items.length + 1) * slotSize);
+		},
+		[items]
+	)
 	React.useEffect(
 		e => {
 			events.current = { onChange, curItem, target: events.current.target, current: events.current.current };
@@ -271,29 +281,31 @@ export default (
 	)
 	React.useEffect(
 		e => {
-			let i = 2 * items.length - selectedIndex + 1;
+			let i = 2 * items.length - 1 - (selectedIndex);
 			if ( events.current.current === undefined ) {
 				events.current.current = selectedIndex;
 				return;
 			}
 			if ( selectedIndex !== events.current.target && selectedIndex !== events.current.current ) {
-				tweener.axes.hSwipe.scrollTo(i * slotSize, 250, "easeCubicInOut")
-				       //.then(
-					   //    t =>
-						//       tweener.axes.hSwipe.scrollTo(i * slotSize, 250, "easeCubicInOut")
-				       //);
+				//console.log(':::290: ', i * slotSize, i, items.length, allItems[i], selectedIndex);
+				tweener.axes.hSwipe.scrollTo((i + 2) * slotSize, 250, "easeCubicInOut")
+				//.then(
+				//    t =>
+				//       tweener.axes.hSwipe.scrollTo(i * slotSize, 250, "easeCubicInOut")
+				//);
 				events.current.current = selectedIndex;
 				events.current.target  = undefined;
 			}
 		},
-		[selectedIndex]
-	)
-	return <ViewBox className={"RadialSelect"} style={styles.container} ref={rootNode}>
+		[selectedIndex, items, allItems]
+	);
+	//console.log(':::301: ', allItems);
+	return <ViewBox className={"RadialSelect"} style={style} ref={rootNode}>
 		<Voodoo.Axis
 			axe={"hSwipe"}
-			size={slideLength}
+			//size={slideLength}
 			scrollableWindow={15}
-			defaultPosition={(items.length + 1) * 15}
+			defaultPosition={(2 * items.length - 1 + 2) * slotSize}
 			items={styles.hSwipeAxis}
 			inertia={styles.hInertia}/>
 		<Voodoo.Axis
