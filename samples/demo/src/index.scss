@@ -294,7 +294,7 @@ body, html, #app {
       .details {
         min-height: 50px;
         display: flex;
-        background: #bfbfbf;
+        background: #ffffff99;
         overflow: hidden;
         border-radius: 5px;
         margin: 3px;
@@ -304,6 +304,9 @@ body, html, #app {
           flex-grow: 3;
           padding: 5px;
           overflow: auto;
+          font-size: 1.1em;
+          font-weight: bold;
+          font-family: sans-serif;
 
           * {
             text-align: center;
@@ -313,7 +316,7 @@ body, html, #app {
         .codesandbox {
           height: 100%;
           width: 48px;
-          float: right;
+          float: left;
           //display: inline-block;
           @include use_hvCenteredContent();
 

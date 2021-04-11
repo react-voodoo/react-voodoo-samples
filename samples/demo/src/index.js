@@ -261,7 +261,7 @@ const Sample = () => {
 				                  style: {
 					                  position : "absolute",
 					                  width    : ["405px"],
-					                  top      : ["50%", "-170px"],
+					                  top      : ["200px"],
 					                  left     : "50%",
 					                  height   : "405px",
 					                  zIndex   : 2,
@@ -279,7 +279,7 @@ const Sample = () => {
 							                  from    : 0,
 							                  duration: 50,
 							                  apply   : {
-								                  top      : ["70px", "-50%"],
+								                  top      : ["-270px"],
 								                  left     : ["-50%", "135px"],
 								                  width    : ["-155px"],
 								                  height   : ["-155px"],
@@ -443,11 +443,6 @@ const Sample = () => {
 						<div className={"demo"}>
 							<iframe src={cItem.path}/>
 							<div className={"details"}>
-								<div className={"description"}>
-						<span>
-						{cItem.description}
-						</span>
-								</div>
 								{
 									cItem.path &&
 									<a href={cItem.path} className={"codesandbox"}>
@@ -466,6 +461,11 @@ const Sample = () => {
 										<img src={require("App/assets/codesandbox.png").default} draggable="false"/>
 									</a>
 								}
+								<div className={"description"}>
+						<span>
+							{cItem.description}
+						</span>
+								</div>
 							</div>
 						</div>
 					}
