@@ -67,11 +67,13 @@ const allSamples = [
 ]
 const allSlides  = [
 	{
-		label      : "React-Voodoo",
+		label      : " React-Voodoo",
 		title      : "Welcome ! ",
 		description: <div>
 			React-voodoo is an additive & intuitive tween engine for React<br/>
-			You will find here some demos samples ! :)<br/>
+			<br/>
+			It's a drafty demo site; But you'll find here some simple / cool samples.<br/>
+			All demos have theirs github & codesandbox<br/>
 			<br/>
 		</div>,
 		link       : "https://github.com/react-voodoo/react-voodoo"
@@ -165,7 +167,7 @@ const Sample = () => {
 					               color     : "black",
 					               zIndex    : 5,
 					               fontSize  : "35px",
-					               background: "#8080806b",
+					               background: "rgba(255,255,255,0.42)",
 					               transform : {
 						               "translateX": "-50%",
 						               "translateY": "-50%",
@@ -224,13 +226,13 @@ const Sample = () => {
 				                  style: {
 					                  position : "absolute",
 					                  width    : ["250px"],
-					                  top      : "50%",
+					                  top      : "30%",
 					                  left     : "50%",
-					                  height   : "112px",
+					                  height   : "250px",
 					                  transform: {
 						                  "translateX" : "-50%",
 						                  "translateY" : "-50%",
-						                  "perspective": "150px",
+						                  "perspective": "275px",
 						                  rotateX      : "0deg"
 					                  },
 				                  },
@@ -240,13 +242,13 @@ const Sample = () => {
 							                  from    : 0,
 							                  duration: 50,
 							                  apply   : {
-								                  width: ["95%", "-250px"],
-								                  top  : ["10px", "-50%"],
+								                  width: ["85vw", "-250px"],
+								                  top  : ["-40px", "-50%"],
 								                  //left     : ["50%"],
-								                  height   : ["-112px", "43vw"],
+								                  height   : ["-250px", "85vw"],
 								                  transform: {
 									                  "translateY": "50%",
-									                  rotateX     : "27deg"
+									                  rotateX     : "52deg"
 								                  },
 							                  }
 						                  }
@@ -257,9 +259,9 @@ const Sample = () => {
 				                  style: {
 					                  position : "absolute",
 					                  width    : ["405px"],
-					                  top      : ["50%", "-60px"],
+					                  top      : ["50%", "-170px"],
 					                  left     : "50%",
-					                  height   : "182px",
+					                  height   : "405px",
 					                  zIndex   : 2,
 					                  transform: {
 						                  "translateX" : "-50%",
@@ -275,10 +277,10 @@ const Sample = () => {
 							                  from    : 0,
 							                  duration: 50,
 							                  apply   : {
-								                  top      : ["155px", "-50%"],
+								                  top      : ["70px", "-50%"],
 								                  left     : ["-50%", "135px"],
 								                  width    : ["-155px"],
-								                  height   : ["-70px"],
+								                  height   : ["-155px"],
 								                  transform: {
 									                  "translateY": "50%",
 								                  },
@@ -289,15 +291,15 @@ const Sample = () => {
 			                  },
 			    homeBlock   : {
 				    style: {
-					    position  : "absolute",
-					    width     : ["100%"],
-					    top       : ["50%", "70px"],
-					    left      : "0px",
-					    bottom    : "75px",
-					    fontSize  : viewMode === "mobile"
-					                ? "17px" : "22px",
-					    textAlign : "center",
-					    background: "#8080806b",
+					    position : "absolute",
+					    width    : ["100%"],
+					    top      : ["50%", "30px"],
+					    left     : "0px",
+					    bottom   : "75px",
+					    fontSize : viewMode === "mobile"
+					               ? "17px" : "22px",
+					    textAlign: "center",
+					    //background: "rgba(255,255,255,0.42)",
 					    //background: 'red',
 					    transform: {
 						    //"translateX" : "-50%",
@@ -343,7 +345,7 @@ const Sample = () => {
 	React.useEffect(
 		() => {
 			let onResize = e => setViewMode(window.innerWidth > 700 ? "desk" : "mobile")
-			let onScroll = e => tweener.axes.pageSwipe.scrollTo(e.deltaY < 0 ? 50 : 0, 250)
+			let onScroll = e => tweener.axes.pageSwipe.scrollTo(e.deltaY > 0 ? 50 : 0, 250, "ease-in-out-cubic")
 			window.addEventListener("resize", onResize)
 			window.addEventListener("wheel", onScroll, { passive: true });
 			

@@ -37,7 +37,7 @@ body, html, #app {
   overscroll-behavior-x: contain;
   overflow: hidden;
   //overflow-y: auto !important;
-  background: url("App/assets/back.png") no-repeat;
+  background: url("App/assets/back.jpg") no-repeat;
   background-size: cover;
 }
 
@@ -87,7 +87,7 @@ body, html, #app {
 
     .description {
       @include use_hvCenteredContent();
-      font-family: 'Aladin', cursive;
+      font-family: sans-serif; //'Aladin', cursive;
 
       .logo {
         height: 50px;
@@ -107,13 +107,14 @@ body, html, #app {
     @include use_hvCenteredContent();
     position: relative;
     //padding: 10px;
+    z-index: 10;
 
     .description {
       text-align: center;
       max-height: 100%;
       font-family: sans-serif;
       overflow-y: auto;
-      background: #ececec;
+      background: #ffffff;
       border-radius: 7px;
       padding: 15px;
 
@@ -138,6 +139,7 @@ body, html, #app {
   }
 
   .RadialSelect {
+    -webkit-mask-image: -webkit-gradient(linear, 50% 0%, 50% 100%, from(rgba(0, 0, 0, 0)), color-stop(15%, rgba(0, 0, 0, 0)), color-stop(45%, rgba(0, 0, 0, 1)), to(rgba(0, 0, 0, 1)));
 
     height: 100%;
     width: 100%;
@@ -184,12 +186,14 @@ body, html, #app {
         justify-content: center;
         transition: all 0.3s ease;
         font: 14px sans-serif;
-        font-weight: 300;
+        //font-weight: 300;
         text-shadow: 0 0 20px #fff;
         text-transform: uppercase;
         //-webkit-animation: breath2 2s 0.5s infinite alternate;
         //animation: breath2 2s 0.5s infinite alternate;
         cursor: pointer;
+        color: white;
+        font-weight: bold;
       }
 
       .button:before {
@@ -205,6 +209,7 @@ body, html, #app {
         background-color: transparent;
         border: 1px solid #fff;
         border-radius: 15px 3px 15px 3px;
+        z-index: -1;
       }
 
       .button.fire {
@@ -323,6 +328,9 @@ body, html, #app {
 
   @media (max-width: 700px) {
     flex-direction: column-reverse;
+    .homeBlock {
+      font-size: .8em !important;
+    }
     .header {
       //  width: 80%;
       //  left: 50%;

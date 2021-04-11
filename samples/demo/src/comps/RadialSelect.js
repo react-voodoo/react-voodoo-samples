@@ -76,7 +76,7 @@ export default (
 				      backWheel : {
 					      style: {
 						      position : "absolute",
-						      top      : "-28%",
+						      top      : "50%",
 						      left     : "50%",
 						      width    : "100%",
 						      transform: [
@@ -85,7 +85,7 @@ export default (
 								      translateX: "-50%"
 							      },
 							      {
-								      rotateZ: "0deg"
+								      rotateZ: "72deg"
 							      }
 						      ]
 					      },
@@ -111,7 +111,7 @@ export default (
 				      frontWheel: {
 					      style: {
 						      position : "absolute",
-						      top      : "-28%",
+						      top      : "50%",
 						      left     : "50%",
 						      width    : "100%",
 						      transform: [
@@ -144,10 +144,10 @@ export default (
 						      {
 							      style: {
 								      position : "absolute",
-								      top      : "0%",
+								      top      : "50%",
 								      left     : "50%",
 								      width    : "100%",
-								      height   : "140%",
+								      height   : "100%",
 								      textAlign: "center",
 								      opacity  : 0,
 								      fontSize : "35px",
@@ -157,13 +157,13 @@ export default (
 										      translateX: "-50%"
 									      },
 									      {
-										      translateY: "-70%"
+										      translateY: "-50%"
 									      },
 									      {
-										      rotateZ: (180 - (360 / 5) / 2) + "deg"
+										      rotateZ: (179 - (360 / 5) / 2) + "deg"
 									      },
 									      {
-										      translateY: "70%"
+										      translateY: ["50%", "-6%"]
 									      }
 								      ]
 							      },
@@ -178,7 +178,7 @@ export default (
 												      {},
 												      {},
 												      {
-													      rotateX: "30deg"
+													      //rotateX: "30deg"
 												      }
 											      ]
 										      }
