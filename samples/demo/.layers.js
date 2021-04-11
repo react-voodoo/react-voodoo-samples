@@ -54,13 +54,13 @@ module.exports = {
 				"devServer"   : {
 					"disableHostCheck": true
 				},
-				plugins       : [
-					new CopyPlugin({
-						               patterns: [
-							               { from: "../*/dist/static/**/*", to: "./samples/samples" }
-						               ],
-					               }),
-				],
+				//plugins       : [
+				//	new CopyPlugin({
+				//		               patterns: [
+				//			               { from: "../*/dist/static/**/*", to: "./samples/samples" }
+				//		               ],
+				//	               }),
+				//],
 				"devtool": "source-map"
 			}
 		},

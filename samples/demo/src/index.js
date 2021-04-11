@@ -130,8 +130,8 @@ const Sample = () => {
 					               position: "absolute",
 					               width   : ["100%"],
 					               //height    : "150px",
-					               left      : "50%",
-					               top       : ["30px"],
+					               left: "50%",
+					               top : ["30px"],
 					               //color     : "white",
 					               zIndex    : 5,
 					               background: "rgba(255,255,255,0.42)",
@@ -162,14 +162,14 @@ const Sample = () => {
 					               position: "absolute",
 					               width   : ["100%"],
 					               //height    : "120px",
-					               left      : "50%",
-					               top       : ["50px"],
-					               color     : "black",
-					               zIndex    : 5,
-					               fontSize  : "35px",
-					               paddingLeft:"0px",
-					               background: "rgba(255,255,255,0.42)",
-					               transform : {
+					               left       : "50%",
+					               top        : ["50px"],
+					               color      : "black",
+					               zIndex     : 5,
+					               fontSize   : "35px",
+					               paddingLeft: "0px",
+					               background : "rgba(255,255,255,0.42)",
+					               transform  : {
 						               "translateX": "-50%",
 						               "translateY": "-50%",
 					               },
@@ -180,10 +180,10 @@ const Sample = () => {
 							               from    : 0,
 							               duration: 50,
 							               apply   : {
-								               paddingLeft:"200px",
-								               zIndex  : -5,
-								               top     : ["-20px"],
-								               fontSize: "-10px",
+								               paddingLeft: "200px",
+								               zIndex     : -5,
+								               top        : ["-20px"],
+								               fontSize   : "-10px",
 							               }
 						               }
 					               ]
@@ -250,7 +250,7 @@ const Sample = () => {
 								                  //height   : ["-250px", "85vw"],
 								                  transform: {
 									                  //"translateY": "50%",
-									                  rotateX     : "52deg"
+									                  rotateX: "52deg"
 								                  },
 							                  }
 						                  }
@@ -389,13 +389,13 @@ const Sample = () => {
 				<div className={"homeBlock"}>
 					<div className={"description"}>
 						<h2>
-							{cItem.title}
+							{cItem?.title}
 						</h2>
 						<div>
-							{cItem.description}
+							{cItem?.description}
 						</div>
 						{
-							cItem.link &&
+							cItem?.link &&
 							<a href={cItem.link} target={"_blank"}>
 								{cItem.link}
 							</a>
@@ -439,7 +439,7 @@ const Sample = () => {
 						}
 					</div>
 					{
-						!atTop &&
+						!atTop && cItem &&
 						<div className={"demo"}>
 							<iframe src={cItem.path}/>
 							<div className={"details"}>
@@ -450,21 +450,21 @@ const Sample = () => {
 									</a>
 								}
 								{
-									cItem.github &&
+									cItem?.github &&
 									<a href={cItem.github} target={"_new"} className={"codesandbox"}>
 										<img src={require("App/assets/github.png").default} draggable="false"/>
 									</a>
 								}
 								{
-									cItem.sandbox &&
+									cItem?.sandbox &&
 									<a href={cItem.sandbox} target={"_new"} className={"codesandbox"}>
 										<img src={require("App/assets/codesandbox.png").default} draggable="false"/>
 									</a>
 								}
 								<div className={"description"}>
-						<span>
-							{cItem.description}
-						</span>
+									<span>
+										{cItem?.description || ''}
+									</span>
 								</div>
 							</div>
 						</div>
