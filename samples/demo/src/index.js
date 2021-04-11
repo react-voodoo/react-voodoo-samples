@@ -167,6 +167,7 @@ const Sample = () => {
 					               color     : "black",
 					               zIndex    : 5,
 					               fontSize  : "35px",
+					               paddingLeft:"0px",
 					               background: "rgba(255,255,255,0.42)",
 					               transform : {
 						               "translateX": "-50%",
@@ -179,6 +180,7 @@ const Sample = () => {
 							               from    : 0,
 							               duration: 50,
 							               apply   : {
+								               paddingLeft:"200px",
 								               zIndex  : -5,
 								               top     : ["-20px"],
 								               fontSize: "-10px",
@@ -242,10 +244,10 @@ const Sample = () => {
 							                  from    : 0,
 							                  duration: 50,
 							                  apply   : {
-								                  width: ["85vw", "-250px"],
-								                  top  : ["-40px", "-50%"],
+								                  //width: ["85vw", "-250px"],
+								                  top: ["-30%", "-100px"],
 								                  //left     : ["50%"],
-								                  height   : ["-250px", "85vw"],
+								                  //height   : ["-250px", "85vw"],
 								                  transform: {
 									                  "translateY": "50%",
 									                  rotateX     : "52deg"
