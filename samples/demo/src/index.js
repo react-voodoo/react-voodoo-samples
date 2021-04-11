@@ -131,10 +131,10 @@ const Sample = () => {
 					               width   : ["100%"],
 					               //height    : "150px",
 					               left      : "50%",
-					               top       : ["50%", "-40vh"],
-					               color     : "black",
+					               top       : ["30px"],
+					               //color     : "white",
 					               zIndex    : 5,
-					               background: "#8080806b",
+					               background: "rgba(255,255,255,0.42)",
 					               fontSize  : "20px",
 					               transform : {
 						               "translateX": "-50%",
@@ -149,8 +149,8 @@ const Sample = () => {
 							               from    : 0,
 							               duration: 50,
 							               apply   : {
-								               top: ["-50%", "40vh", "20px"],
-								
+								               top: ["-10px"],
+								               //color     : "black",
 							               }
 						               }
 					               ]
@@ -228,7 +228,7 @@ const Sample = () => {
 				                  style: {
 					                  position : "absolute",
 					                  width    : ["250px"],
-					                  top      : "30%",
+					                  top      : "120px",
 					                  left     : "50%",
 					                  height   : "250px",
 					                  transform: {
@@ -245,11 +245,11 @@ const Sample = () => {
 							                  duration: 50,
 							                  apply   : {
 								                  //width: ["85vw", "-250px"],
-								                  top: ["-30%", "-100px"],
+								                  top: ["-100px"],
 								                  //left     : ["50%"],
 								                  //height   : ["-250px", "85vw"],
 								                  transform: {
-									                  "translateY": "50%",
+									                  //"translateY": "50%",
 									                  rotateX     : "52deg"
 								                  },
 							                  }
@@ -402,7 +402,7 @@ const Sample = () => {
 						}
 						<br/>
 					</div>
-					<div className={"down"} onClick={e => tweener.axes.pageSwipe.scrollTo(50, 250)}>🡇</div>
+					<div className={"down"} onClick={e => tweener.axes.pageSwipe.scrollTo(50, 250)}>▼</div>
 				</div>
 			</Voodoo.Node>
 			<Voodoo.Node

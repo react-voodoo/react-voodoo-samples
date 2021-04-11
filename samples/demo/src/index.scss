@@ -116,7 +116,8 @@ body, html, #app {
       overflow-y: auto;
       background: #ffffff;
       border-radius: 7px;
-      padding: 15px;
+      padding: 10px;
+      margin: 5px;
 
       h2 {
         margin: 10px;
@@ -348,7 +349,7 @@ body, html, #app {
       //  padding-left: 0;
 
       *, a {
-        color: #2b281d;
+        //color: #2b281d;
         margin: 0;
       }
     }
