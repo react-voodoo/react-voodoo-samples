@@ -245,7 +245,8 @@ export default (
 						      events.current.target = target;
 					      },
 					      shouldLoop: ( currentPos ) => (
-						      currentPos >= slideLength * 2 / 3
+					      	
+						      currentPos >= (slideLength / 3) * 2
 						      ?
 						      -slideLength / 3
 						      :
@@ -269,7 +270,6 @@ export default (
 			events.current.current = undefined;
 			events.current.target  = undefined;
 			tweener.axes.hSwipe.scrollTo((2 * items.length - 1 + 2) * slotSize, 0);
-			//console.log(':::272: ', items.length, (2 * items.length + 1) * slotSize);
 		},
 		[items]
 	)
@@ -287,19 +287,15 @@ export default (
 				return;
 			}
 			if ( selectedIndex !== events.current.target && selectedIndex !== events.current.current ) {
-				//console.log(':::290: ', i * slotSize, i, items.length, allItems[i], selectedIndex);
 				tweener.axes.hSwipe.scrollTo((i + 2) * slotSize, 250, "easeCubicInOut")
-				//.then(
-				//    t =>
-				//       tweener.axes.hSwipe.scrollTo(i * slotSize, 250, "easeCubicInOut")
-				//);
+				
 				events.current.current = selectedIndex;
 				events.current.target  = undefined;
 			}
 		},
 		[selectedIndex, items, allItems]
 	);
-	//console.log(':::301: ', allItems);
+	
 	return <ViewBox className={"RadialSelect"} style={style} ref={rootNode}>
 		<Voodoo.Axis
 			axe={"hSwipe"}
@@ -338,12 +334,9 @@ export default (
 							key={i}
 							axes={styles.items[i].axes}
 							style={styles.items[i].style}>
-							<div onClick={e => {
-								tweener.axes.hSwipe.scrollTo((i + 2) * slotSize, 250, "easeCubicInOut")
-								       .then(
-									       e => events.current.onChange?.(item, items.indexOf(item))
-								       )
-							}} draggable="false">
+							<div draggable="false"
+							     className={"radialItem"}
+							>
 								<svg viewBox="0 0 500 220" draggable="false"
 								     height={"100%"}
 								     width={"100%"}>
@@ -362,7 +355,16 @@ export default (
 										</textPath>
 									</text>
 								</svg>
-							
+								<div className={"clickOverlay"}
+								     onClick={e => {
+									     let index = 2 * items.length - 1 - (items.indexOf(item) + 1);
+									     //console.log(':::337: ', index, i, item);
+									     tweener.axes.hSwipe.scrollTo((i + 2) * slotSize, 250,
+									                                  "easeCubicInOut")
+									            .then(e => events.current.onChange?.(item, items.indexOf(item)))
+								     }}>
+								
+								</div>
 							</div>
 						</Voodoo.Node>
 				)

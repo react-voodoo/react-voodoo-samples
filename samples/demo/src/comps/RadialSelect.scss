@@ -11,4 +11,19 @@
     height: 100%;
 
   }
+
+  .radialItem {
+    pointer-events: none;
+  }
+
+  .clickOverlay {
+    @include use_hvCenteredAbs();
+    width: 70%;
+    height: 10%;
+    pointer-events: auto;
+  }
+
+  //
+  //text{
+  //}
 }
