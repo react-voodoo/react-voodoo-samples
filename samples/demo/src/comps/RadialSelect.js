@@ -245,7 +245,7 @@ export default (
 						      events.current.target = target;
 					      },
 					      shouldLoop: ( currentPos ) => (
-					      	
+						
 						      currentPos >= (slideLength / 3) * 2
 						      ?
 						      -slideLength / 3
@@ -357,8 +357,6 @@ export default (
 								</svg>
 								<div className={"clickOverlay"}
 								     onClick={e => {
-									     let index = 2 * items.length - 1 - (items.indexOf(item) + 1);
-									     //console.log(':::337: ', index, i, item);
 									     tweener.axes.hSwipe.scrollTo((i + 2) * slotSize, 250,
 									                                  "easeCubicInOut")
 									            .then(e => events.current.onChange?.(item, items.indexOf(item)))
