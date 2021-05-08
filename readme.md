@@ -2,6 +2,8 @@
 
 Simple samples for [react-voodoo](https://github.com/react-voodoo/react-voodoo)
 
+<p align="center"><img src ="https://github.com/react-voodoo/react-voodoo/raw/master/doc/assets/demo.gif?sanitize=true" /></p>
+
 Demos [here](https://react-voodoo.github.io/react-voodoo-samples/)
 
 ## Available :
