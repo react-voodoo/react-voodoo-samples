@@ -22,9 +22,9 @@ export default {
 			},
 			{}
 		],
-		filter            : {
-			grayscale: "100%"
-		},
+		//filter            : {// this cause some lag in low perf devices
+		//	grayscale: "100%"
+		//},
 		opacity           : 0,
 		backgroundColor   : 'white',
 		borderRadius      : "5px",
@@ -53,9 +53,9 @@ export default {
 				from    : 40,
 				duration: 10,
 				apply   : {
-					filter: {
-						grayscale: "-100%"
-					},
+					//filter: {
+					//	grayscale: "-100%"
+					//},
 				}
 			},
 			{
