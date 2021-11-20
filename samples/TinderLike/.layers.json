@@ -40,7 +40,7 @@
           //          "namedModules": true
         },
         "devServer": {
-          "disableHostCheck": true
+//          "disableHostCheck": true
         },
         "devtool": "source-map"
       }

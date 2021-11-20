@@ -77,7 +77,7 @@ export default (
 					      {
 						      type    : "Event",
 						      from    : 15,
-						      duration: .00000001,
+						      duration: .01,
 						      entering: ( pos ) => {
 							      if ( pos < 0 )// from 50 to 0 ( init go from 0 to 50 )
 							      {
@@ -89,7 +89,7 @@ export default (
 					      {
 						      type    : "Event",
 						      from    : 85,
-						      duration: .00000001,
+						      duration: .01,
 						      entering: ( pos ) => {
 							      if ( pos > 0 )// from 50 to 100
 							      {

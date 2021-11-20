@@ -187,6 +187,21 @@ export default (
 								      hSwipe: [
 									      // rotate
 									      {
+										      from    : -slotSize,
+										      duration: slotSize,
+										      apply   : {
+											      transform: [
+												      {},
+												      {},
+												      {
+													      rotateZ: "360deg"
+												      },
+												      {}
+											      ]
+										      }
+									      },
+									      // rotate
+									      {
 										      from    : i * slotSize,
 										      duration: slotSize * 4,
 										      apply   : {
@@ -244,17 +259,19 @@ export default (
 						      )
 						      events.current.target = target;
 					      },
-					      shouldLoop: ( currentPos ) => (
-						
-						      currentPos >= (slideLength / 3) * 2
-						      ?
-						      -slideLength / 3
-						      :
-						      currentPos < slideLength / 3
-						      ?
-						      slideLength / 3
-						      : null
-					      ),
+					      shouldLoop: ( currentPos ) => {
+					      	console.log('hInertia::shouldLoop:263: ', currentPos);
+						      return (
+							      currentPos >= (slideLength / 3) * 2
+							      ?
+							      -slideLength / 3
+							      :
+							      currentPos < slideLength / 3
+							      ?
+							      slideLength / 3
+							      : null
+						      )
+					      },
 					      wayPoints : allItems.map(( item, i ) => ({ at: slotSize * i }))
 				      },
 				      vInertia  : {
