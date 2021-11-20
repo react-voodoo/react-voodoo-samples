@@ -52,7 +52,6 @@ module.exports = {
 					//          "namedModules": true
 				},
 				"devServer"   : {
-					"disableHostCheck": true
 				},
 				plugins       : [
 					new CopyPlugin({

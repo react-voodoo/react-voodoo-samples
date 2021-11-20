@@ -127,8 +127,9 @@ export default ( { children, showBack } ) => {
         <Voodoo.Node id="card"
                      tweenAxis={ styles.cardAxis }
                      style={ styles.cardStyle }
-                     onMouseEnter={ mouseEnter }
-                     onMouseLeave={ mouseLeave }>
+                     //onMouseEnter={ mouseEnter }
+                     //onMouseLeave={ mouseLeave }
+        >
             <Voodoo.Draggable className={ "card" }
                               xAxis={ "swipeAxis" }>
                 { children?.[ side ? 1 : 0 ] }

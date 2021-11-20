@@ -47,8 +47,8 @@ export default (
 	      styles                        = React.useMemo(
 		      () => {
 			      return {
-				      inverse   : ( delta ) => -delta,
-				      container : {
+				      inverse  : ( delta ) => -delta,
+				      container: {
 					      position       : "absolute",
 					      top            : "50%",
 					      left           : "50%",
