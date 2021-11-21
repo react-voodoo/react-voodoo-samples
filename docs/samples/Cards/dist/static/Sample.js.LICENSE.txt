@@ -28,43 +28,19 @@ object-assign
  * SOFTWARE.
  */
 
-/*!
- * react-voodoo
- * Copyright (C) 2019  Nathanael Braun
- * 
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU Affero General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU Affero General Public License for more details.
- * 
- * You should have received a copy of the GNU Affero General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
+/*! !!../node_modules/lpack-react/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!../node_modules/lpack-react/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!../node_modules/lpack-react/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./index.scss */
 
-/*! !../node_modules/css-loader/dist/cjs.js??ref--5-1!../node_modules/postcss-loader/dist/cjs.js??ref--5-2!../node_modules/sass-loader/dist/cjs.js??ref--5-3!./index.scss */
+/*! !../node_modules/lpack-react/node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */
 
-/*! ../node_modules/css-loader/dist/runtime/api.js */
+/*! ../node_modules/lpack-react/node_modules/css-loader/dist/runtime/api.js */
 
-/*! ../node_modules/css-loader/dist/runtime/cssWithMappingToString.js */
-
-/*! ../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */
+/*! ../node_modules/lpack-react/node_modules/css-loader/dist/runtime/cssWithMappingToString.js */
 
 /*! ./alphabet */
-
-/*! ./back.js */
-
-/*! ./bounce.js */
 
 /*! ./build */
 
 /*! ./checkPropTypes */
-
-/*! ./circle.js */
 
 /*! ./cjs/react-dom.development.js */
 
@@ -78,12 +54,6 @@ object-assign
 
 /*! ./comps/(*).js */
 
-/*! ./cubic.js */
-
-/*! ./elastic.js */
-
-/*! ./exp.js */
-
 /*! ./factoryWithTypeCheckers */
 
 /*! ./generate */
@@ -96,23 +66,13 @@ object-assign
 
 /*! ./lib/index */
 
-/*! ./linear.js */
-
-/*! ./math.js */
-
-/*! ./poly.js */
-
-/*! ./quad.js */
-
 /*! ./random/random-byte */
 
 /*! ./random/random-from-seed */
 
 /*! ./rgb */
 
-/*! ./sin.js */
-
-/*! ./src */
+/*! ./setPrototypeOf.js */
 
 /*! ./util/cluster-worker-id */
 
@@ -148,35 +108,9 @@ object-assign
 
 /*! color-space/hsl */
 
+/*! color-space/rgb */
+
 /*! d3-ease */
-
-/*! exports provided: GithubCorner, SwipeableCard, default */
-
-/*! exports provided: backIn, backOut, backInOut */
-
-/*! exports provided: bounceIn, bounceOut, bounceInOut */
-
-/*! exports provided: circleIn, circleOut, circleInOut */
-
-/*! exports provided: cubicIn, cubicOut, cubicInOut */
-
-/*! exports provided: default */
-
-/*! exports provided: easeLinear, easeQuad, easeQuadIn, easeQuadOut, easeQuadInOut, easeCubic, easeCubicIn, easeCubicOut, easeCubicInOut, easePoly, easePolyIn, easePolyOut, easePolyInOut, easeSin, easeSinIn, easeSinOut, easeSinInOut, easeExp, easeExpIn, easeExpOut, easeExpInOut, easeCircle, easeCircleIn, easeCircleOut, easeCircleInOut, easeBounce, easeBounceIn, easeBounceOut, easeBounceInOut, easeBack, easeBackIn, easeBackOut, easeBackInOut, easeElastic, easeElasticIn, easeElasticOut, easeElasticInOut */
-
-/*! exports provided: elasticIn, elasticOut, elasticInOut */
-
-/*! exports provided: expIn, expOut, expInOut */
-
-/*! exports provided: linear */
-
-/*! exports provided: polyIn, polyOut, polyInOut */
-
-/*! exports provided: quadIn, quadOut, quadInOut */
-
-/*! exports provided: sinIn, sinOut, sinInOut */
-
-/*! exports provided: tpmt */
 
 /*! fast-deep-equal */
 
@@ -186,10 +120,6 @@ object-assign
 
 /*! nanoid/format */
 
-/*! no exports provided */
-
-/*! no static exports found */
-
 /*! object-assign */
 
 /*! parse-svg-path */
@@ -197,8 +127,6 @@ object-assign
 /*! point-at-length */
 
 /*! prop-types */
-
-/*! prop-types/checkPropTypes */
 
 /*! react */
 
@@ -216,10 +144,6 @@ object-assign
 
 /*! tween-axis */
 
-/*!*******************!*\
-  !*** multi ./src ***!
-  \*******************/
-
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
@@ -227,10 +151,6 @@ object-assign
 /*!************************!*\
   !*** ./src/index.scss ***!
   \************************/
-
-/*!**********************************!*\
-  !*** ./node_modules/is/index.js ***!
-  \**********************************/
 
 /*!***********************************!*\
   !*** ./src/comps/GithubCorner.js ***!
@@ -240,16 +160,8 @@ object-assign
   !*** ./src/comps/SwipeableCard.js ***!
   \************************************/
 
-/*!*************************************!*\
-  !*** ./node_modules/react/index.js ***!
-  \*************************************/
-
 /*!***************************************!*\
   !*** ./node_modules/isarray/index.js ***!
-  \***************************************/
-
-/*!***************************************!*\
-  !*** ./node_modules/shortid/index.js ***!
   \***************************************/
 
 /*!****************************************!*\
@@ -269,18 +181,6 @@ object-assign
   \*****************************************/
 
 /*!*****************************************!*\
-  !*** ./node_modules/d3-ease/src/exp.js ***!
-  \*****************************************/
-
-/*!*****************************************!*\
-  !*** ./node_modules/d3-ease/src/sin.js ***!
-  \*****************************************/
-
-/*!*****************************************!*\
-  !*** ./node_modules/react-dom/index.js ***!
-  \*****************************************/
-
-/*!*****************************************!*\
   !*** ./node_modules/scheduler/index.js ***!
   \*****************************************/
 
@@ -293,22 +193,6 @@ object-assign
   \******************************************/
 
 /*!******************************************!*\
-  !*** ./node_modules/d3-ease/src/back.js ***!
-  \******************************************/
-
-/*!******************************************!*\
-  !*** ./node_modules/d3-ease/src/math.js ***!
-  \******************************************/
-
-/*!******************************************!*\
-  !*** ./node_modules/d3-ease/src/poly.js ***!
-  \******************************************/
-
-/*!******************************************!*\
-  !*** ./node_modules/d3-ease/src/quad.js ***!
-  \******************************************/
-
-/*!******************************************!*\
   !*** ./node_modules/prop-types/index.js ***!
   \******************************************/
 
@@ -317,63 +201,23 @@ object-assign
   \*******************************************/
 
 /*!*******************************************!*\
-  !*** ./node_modules/d3-ease/src/cubic.js ***!
-  \*******************************************/
-
-/*!*******************************************!*\
-  !*** ./node_modules/d3-ease/src/index.js ***!
-  \*******************************************/
-
-/*!*******************************************!*\
   !*** ./node_modules/scheduler/tracing.js ***!
-  \*******************************************/
-
-/*!*******************************************!*\
-  !*** ./node_modules/shortid/lib/build.js ***!
-  \*******************************************/
-
-/*!*******************************************!*\
-  !*** ./node_modules/shortid/lib/index.js ***!
   \*******************************************/
 
 /*!********************************************!*\
   !*** ./node_modules/abs-svg-path/index.js ***!
   \********************************************/
 
-/*!********************************************!*\
-  !*** ./node_modules/d3-ease/src/bounce.js ***!
-  \********************************************/
-
-/*!********************************************!*\
-  !*** ./node_modules/d3-ease/src/circle.js ***!
-  \********************************************/
-
-/*!********************************************!*\
-  !*** ./node_modules/d3-ease/src/linear.js ***!
-  \********************************************/
-
-/*!*********************************************!*\
-  !*** ./node_modules/d3-ease/src/elastic.js ***!
-  \*********************************************/
-
 /*!*********************************************!*\
   !*** ./node_modules/object-assign/index.js ***!
   \*********************************************/
 
 /*!**********************************************!*\
+  !*** ./node_modules/d3-ease/dist/d3-ease.js ***!
+  \**********************************************/
+
+/*!**********************************************!*\
   !*** ./node_modules/parse-svg-path/index.js ***!
-  \**********************************************/
-
-/*!**********************************************!*\
-  !*** ./node_modules/shortid/lib/alphabet.js ***!
-  \**********************************************/
-
-/*!**********************************************!*\
-  !*** ./node_modules/shortid/lib/generate.js ***!
-  \**********************************************/
-
-/*!**********************************************!*\
-  !*** ./node_modules/shortid/lib/is-valid.js ***!
   \**********************************************/
 
 /*!**********************************************!*\
@@ -400,14 +244,6 @@ object-assign
   !*** ./node_modules/tween-axis/dist/tween-axis.js ***!
   \****************************************************/
 
-/*!*****************************************************!*\
-  !*** ./node_modules/css-loader/dist/runtime/api.js ***!
-  \*****************************************************/
-
-/*!*****************************************************!*\
-  !*** ./node_modules/react/cjs/react.development.js ***!
-  \*****************************************************/
-
 /*!********************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/extends.js ***!
   \********************************************************/
@@ -415,6 +251,10 @@ object-assign
 /*!********************************************************!*\
   !*** ./node_modules/react-voodoo/dist/react-voodoo.js ***!
   \********************************************************/
+
+/*!***********************************************************!*\
+  !*** ./node_modules/lpack-react/node_modules/is/index.js ***!
+  \***********************************************************/
 
 /*!***********************************************************!*\
   !*** ./node_modules/react-is/cjs/react-is.development.js ***!
@@ -433,19 +273,15 @@ object-assign
   \*************************************************************/
 
 /*!*************************************************************!*\
-  !*** ./node_modules/react-dom/cjs/react-dom.development.js ***!
-  \*************************************************************/
-
-/*!*************************************************************!*\
   !*** ./node_modules/scheduler/cjs/scheduler.development.js ***!
-  \*************************************************************/
-
-/*!*************************************************************!*\
-  !*** ./node_modules/shortid/lib/random/random-from-seed.js ***!
   \*************************************************************/
 
 /*!**************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/inheritsLoose.js ***!
+  \**************************************************************/
+
+/*!**************************************************************!*\
+  !*** ./node_modules/lpack-react/node_modules/react/index.js ***!
   \**************************************************************/
 
 /*!***************************************************************!*\
@@ -456,12 +292,32 @@ object-assign
   !*** ./node_modules/@babel/runtime/helpers/defineProperty.js ***!
   \***************************************************************/
 
+/*!***************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/setPrototypeOf.js ***!
+  \***************************************************************/
+
 /*!****************************************************************!*\
-  !*** ./node_modules/shortid/lib/random/random-byte-browser.js ***!
+  !*** ./node_modules/lpack-react/node_modules/shortid/index.js ***!
   \****************************************************************/
 
+/*!******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/inheritsLoose.js ***!
+  \******************************************************************/
+
+/*!******************************************************************!*\
+  !*** ./node_modules/lpack-react/node_modules/react-dom/index.js ***!
+  \******************************************************************/
+
+/*!*******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/setPrototypeOf.js ***!
+  \*******************************************************************/
+
 /*!********************************************************************!*\
-  !*** ./node_modules/shortid/lib/util/cluster-worker-id-browser.js ***!
+  !*** ./node_modules/lpack-react/node_modules/shortid/lib/build.js ***!
+  \********************************************************************/
+
+/*!********************************************************************!*\
+  !*** ./node_modules/lpack-react/node_modules/shortid/lib/index.js ***!
   \********************************************************************/
 
 /*!*********************************************************************!*\
@@ -472,25 +328,61 @@ object-assign
   !*** ./node_modules/@babel/runtime/helpers/assertThisInitialized.js ***!
   \**********************************************************************/
 
-/*!************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/runtime/cssWithMappingToString.js ***!
-  \************************************************************************/
+/*!***********************************************************************!*\
+  !*** ./node_modules/lpack-react/node_modules/shortid/lib/alphabet.js ***!
+  \***********************************************************************/
 
-/*!*************************************************************************!*\
-  !*** ./node_modules/@babel/runtime/helpers/objectDestructuringEmpty.js ***!
-  \*************************************************************************/
+/*!***********************************************************************!*\
+  !*** ./node_modules/lpack-react/node_modules/shortid/lib/generate.js ***!
+  \***********************************************************************/
 
-/*!****************************************************************************!*\
-  !*** ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js ***!
-  \****************************************************************************/
+/*!***********************************************************************!*\
+  !*** ./node_modules/lpack-react/node_modules/shortid/lib/is-valid.js ***!
+  \***********************************************************************/
+
+/*!*****************************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/objectDestructuringEmpty.js ***!
+  \*****************************************************************************/
 
 /*!*****************************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/objectWithoutPropertiesLoose.js ***!
   \*****************************************************************************/
 
-/*!*****************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??ref--5-1!./node_modules/postcss-loader/dist/cjs.js??ref--5-2!./node_modules/sass-loader/dist/cjs.js??ref--5-3!./src/index.scss ***!
-  \*****************************************************************************************************************************************************************************/
+/*!******************************************************************************!*\
+  !*** ./node_modules/lpack-react/node_modules/css-loader/dist/runtime/api.js ***!
+  \******************************************************************************/
+
+/*!******************************************************************************!*\
+  !*** ./node_modules/lpack-react/node_modules/react/cjs/react.development.js ***!
+  \******************************************************************************/
+
+/*!**************************************************************************************!*\
+  !*** ./node_modules/lpack-react/node_modules/react-dom/cjs/react-dom.development.js ***!
+  \**************************************************************************************/
+
+/*!**************************************************************************************!*\
+  !*** ./node_modules/lpack-react/node_modules/shortid/lib/random/random-from-seed.js ***!
+  \**************************************************************************************/
+
+/*!*****************************************************************************************!*\
+  !*** ./node_modules/lpack-react/node_modules/shortid/lib/random/random-byte-browser.js ***!
+  \*****************************************************************************************/
+
+/*!*********************************************************************************************!*\
+  !*** ./node_modules/lpack-react/node_modules/shortid/lib/util/cluster-worker-id-browser.js ***!
+  \*********************************************************************************************/
+
+/*!*************************************************************************************************!*\
+  !*** ./node_modules/lpack-react/node_modules/css-loader/dist/runtime/cssWithMappingToString.js ***!
+  \*************************************************************************************************/
+
+/*!*****************************************************************************************************!*\
+  !*** ./node_modules/lpack-react/node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js ***!
+  \*****************************************************************************************************/
+
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/lpack-react/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/lpack-react/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/lpack-react/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./src/index.scss ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************/
 
 /**
  * Checks if an event is supported in the current execution environment.
@@ -506,7 +398,7 @@ object-assign
  * @license Modernizr 3.0.0pre (Custom Build) | MIT
  */
 
-/** @license React v0.19.1
+/** @license React v0.20.2
  * scheduler-tracing.development.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -515,7 +407,7 @@ object-assign
  * LICENSE file in the root directory of this source tree.
  */
 
-/** @license React v0.19.1
+/** @license React v0.20.2
  * scheduler.development.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -533,7 +425,7 @@ object-assign
  * LICENSE file in the root directory of this source tree.
  */
 
-/** @license React v16.14.0
+/** @license React v17.0.1
  * react-dom.development.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -542,7 +434,7 @@ object-assign
  * LICENSE file in the root directory of this source tree.
  */
 
-/** @license React v16.14.0
+/** @license React v17.0.1
  * react.development.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.

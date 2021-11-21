@@ -7,17 +7,14 @@
   "author": "Nathan Braun <n8tz.js@gmail.com>",
   "scripts": {
     "build": "lpack",
-    "start-dev": "lpack-dev-server"
+    "start-dev": "lpack-dev-server",
+    "postinstall": "lpack-setup"
   },
   "dependencies": {
-    "is": "^3.3.0",
-    "prop-types": "^15.6.0",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-voodoo": "^2.1.22"
+    "react-voodoo": "^2.1.35",
+    "lpack-react": "2.0.2"
   },
   "devDependencies": {
-    "layer-pack": "^1.2.4",
-    "lpack-react": "^1.3.3"
+    "layer-pack": "^2.0.7"
   }
 }
