@@ -56,7 +56,6 @@ allCards.unshift(
 
 import "./index.scss";
 
-
 const Sample = () => {
 	
 	let [cardIndex, setCardIndex] = React.useState(0),

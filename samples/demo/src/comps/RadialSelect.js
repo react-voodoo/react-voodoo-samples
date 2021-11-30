@@ -260,7 +260,7 @@ export default (
 						      events.current.target = target;
 					      },
 					      shouldLoop: ( currentPos ) => {
-					      	console.log('hInertia::shouldLoop:263: ', currentPos);
+					      	//console.log('hInertia::shouldLoop:263: ', currentPos);
 						      return (
 							      currentPos >= (slideLength / 3) * 2
 							      ?
