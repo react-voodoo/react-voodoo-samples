@@ -12,8 +12,7 @@ Demos [here](https://react-voodoo.github.io/react-voodoo-samples/)
 
 Swipeable TinderLike cards stack
 
-Test [here](http://htmlpreview.github.io/?https://github.com/react-voodoo/react-voodoo-samples/blob/master/samples/TinderLike/dist/static/index.html)
-Or [here ( code sandbox )](https://codesandbox.io/s/tinder-like-card-swiper-1735w)
+Test [here ( code sandbox )](https://codesandbox.io/s/tinder-like-card-swiper-1735w)
 
 ### [Swipeable cards](samples/Cards)
 
