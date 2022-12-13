@@ -37,17 +37,22 @@ body, html, #app {
   overscroll-behavior-y: contain;
   overscroll-behavior-x: contain;
   overflow: hidden;
+  background: black;
   //overflow-y: auto !important;
-  background: url("App/assets/back.jpg") no-repeat;
-  background-size: cover;
 }
 
 #app {
-  width: 100vw;
+  @include use_hvCenteredAbs();
+  border-radius: 15px;
+  border: 5px solid black;
+  width: 414px;
+  height: 800px;
   overflow: hidden;
   overscroll-behavior-y: contain;
   overscroll-behavior-x: contain;
   user-select: none;
+  background: url("App/assets/back.jpg") no-repeat;
+  background-size: cover;
 
   .AppBox, .page {
     position: absolute;

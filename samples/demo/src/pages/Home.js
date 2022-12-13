@@ -104,7 +104,7 @@ export default () => {
 		    () => curItems[cItemIndex],
 		    [cItemIndex, curItems]
 	    ),
-	    [viewMode, setViewMode]     = React.useState(window.innerWidth > 700 ? "desktop" : "mobile"),
+	    [viewMode, setViewMode]     = React.useState("mobile"),
 	    styles                      = React.useMemo(
 		    () => ({
 			    pageSwipe: {
@@ -141,13 +141,13 @@ export default () => {
 	    };
 	React.useEffect(
 		() => {
-			let onResize = e => setViewMode(window.innerWidth > 700 ? "desktop" : "mobile")
+			//let onResize = e => setViewMode(window.innerWidth > 700 ? "desktop" : "mobile")
 			let onScroll = e => tweener.axes.pageSwipe.scrollTo(e.deltaY > 0 ? 50 : 0, 250, "ease-in-out-cubic")
-			window.addEventListener("resize", onResize)
+			//window.addEventListener("resize", onResize)
 			window.addEventListener("wheel", onScroll, { passive: true });
 			
 			return e => {
-				window.removeEventListener("resize", onResize);
+				//window.removeEventListener("resize", onResize);
 				window.removeEventListener("wheel", onScroll);
 			}
 		},
@@ -271,3 +271,4 @@ export default () => {
 	</ViewBox>
 }
 
+module.hot?.accept?.()

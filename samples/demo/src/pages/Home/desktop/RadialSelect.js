@@ -1,16 +1,16 @@
 export default {
 	style: {
 		position : "absolute",
-		width    : ["405px"],
-		top      : ["200px"],
-		left     : "50%",
-		height   : "405px",
+		top      : ["150px"],
+		left     : "135px",
+		width    : ["300px"],
+		height   : "300px",
 		zIndex   : 2,
 		transform: {
 			"translateX" : "-50%",
 			"translateY" : "-50%",
 			"perspective": "150px",
-			//"scale"      : "1.2",
+			"scale"      : "1.2",
 			rotateX: "0deg"
 		},
 	},
@@ -25,7 +25,7 @@ export default {
 					width    : ["-155px"],
 					height   : ["-155px"],
 					transform: {
-						"translateY": "50%",
+						//"translateY": "50%",
 					},
 				}
 			}

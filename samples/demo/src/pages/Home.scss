@@ -300,7 +300,7 @@
   }
 
 
-  @media (max-width: 700px) {
+  //@media (max-width: 700px) {
     flex-direction: column-reverse;
     .homeBlock {
       font-size: .8em !important;
@@ -363,7 +363,7 @@
         width: 100%;
       }
     }
-  }
+  //}
 }
 
 @-webkit-keyframes breath {
