@@ -4,30 +4,6 @@ object-assign
 @license MIT
 */
 
-/*!
- * MIT License
- * 
- * Copyright (c) 2020 Braun Nathanael
- * 
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- * 
- * The above copyright notice and this permission notice shall be included in all
- * copies or substantial portions of the Software.
- * 
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- * SOFTWARE.
- */
-
 /*! !!../node_modules/lpack-react/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!../node_modules/lpack-react/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!../node_modules/lpack-react/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./index.scss */
 
 /*! !../node_modules/lpack-react/node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */
@@ -36,15 +12,19 @@ object-assign
 
 /*! ../node_modules/lpack-react/node_modules/css-loader/dist/runtime/cssWithMappingToString.js */
 
+/*! ./TweenAxis */
+
 /*! ./alphabet */
+
+/*! ./back.js */
+
+/*! ./bounce.js */
 
 /*! ./build */
 
-/*! ./checkPropTypes */
+/*! ./circle.js */
 
 /*! ./cjs/react-dom.development.js */
-
-/*! ./cjs/react-is.development.js */
 
 /*! ./cjs/react.development.js */
 
@@ -54,7 +34,11 @@ object-assign
 
 /*! ./comps/(*).js */
 
-/*! ./factoryWithTypeCheckers */
+/*! ./cubic.js */
+
+/*! ./elastic.js */
+
+/*! ./exp.js */
 
 /*! ./generate */
 
@@ -62,9 +46,17 @@ object-assign
 
 /*! ./is-valid */
 
-/*! ./lib/ReactPropTypesSecret */
-
 /*! ./lib/index */
+
+/*! ./linear.js */
+
+/*! ./lines/Tween.js */
+
+/*! ./math.js */
+
+/*! ./poly.js */
+
+/*! ./quad.js */
 
 /*! ./random/random-byte */
 
@@ -74,15 +66,13 @@ object-assign
 
 /*! ./setPrototypeOf.js */
 
+/*! ./sin.js */
+
 /*! ./util/cluster-worker-id */
 
+/*! ./utils/Runner.js */
+
 /*! @babel/runtime/helpers/assertThisInitialized */
-
-/*! @babel/runtime/helpers/classCallCheck */
-
-/*! @babel/runtime/helpers/createClass */
-
-/*! @babel/runtime/helpers/defineProperty */
 
 /*! @babel/runtime/helpers/extends */
 
@@ -90,11 +80,11 @@ object-assign
 
 /*! @babel/runtime/helpers/objectWithoutPropertiesLoose */
 
+/*! For license information please see react-voodoo.js.LICENSE.txt */
+
 /*! Sample/.___layerPackIndexUtils */
 
 /*! Sample/comps/GooBall.js */
-
-/*! abs-svg-path */
 
 /*! color-name */
 
@@ -112,23 +102,13 @@ object-assign
 
 /*! is */
 
-/*! isarray */
-
 /*! nanoid/format */
 
 /*! object-assign */
 
-/*! parse-svg-path */
-
-/*! point-at-length */
-
-/*! prop-types */
-
 /*! react */
 
 /*! react-dom */
-
-/*! react-is */
 
 /*! react-voodoo */
 
@@ -152,14 +132,6 @@ object-assign
   !*** ./src/comps/GooBall.js ***!
   \******************************/
 
-/*!***************************************!*\
-  !*** ./node_modules/isarray/index.js ***!
-  \***************************************/
-
-/*!****************************************!*\
-  !*** ./node_modules/react-is/index.js ***!
-  \****************************************/
-
 /*!****************************************!*\
   !*** ./src/.___layerPackIndexUtils.js ***!
   \****************************************/
@@ -170,6 +142,14 @@ object-assign
 
 /*!*****************************************!*\
   !*** ./node_modules/color-space/rgb.js ***!
+  \*****************************************/
+
+/*!*****************************************!*\
+  !*** ./node_modules/d3-ease/src/exp.js ***!
+  \*****************************************/
+
+/*!*****************************************!*\
+  !*** ./node_modules/d3-ease/src/sin.js ***!
   \*****************************************/
 
 /*!*****************************************!*\
@@ -185,7 +165,19 @@ object-assign
   \******************************************/
 
 /*!******************************************!*\
-  !*** ./node_modules/prop-types/index.js ***!
+  !*** ./node_modules/d3-ease/src/back.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/d3-ease/src/math.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/d3-ease/src/poly.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/d3-ease/src/quad.js ***!
   \******************************************/
 
 /*!*******************************************!*\
@@ -193,24 +185,36 @@ object-assign
   \*******************************************/
 
 /*!*******************************************!*\
+  !*** ./node_modules/d3-ease/src/cubic.js ***!
+  \*******************************************/
+
+/*!*******************************************!*\
+  !*** ./node_modules/d3-ease/src/index.js ***!
+  \*******************************************/
+
+/*!*******************************************!*\
   !*** ./node_modules/scheduler/tracing.js ***!
   \*******************************************/
 
 /*!********************************************!*\
-  !*** ./node_modules/abs-svg-path/index.js ***!
+  !*** ./node_modules/d3-ease/src/bounce.js ***!
   \********************************************/
+
+/*!********************************************!*\
+  !*** ./node_modules/d3-ease/src/circle.js ***!
+  \********************************************/
+
+/*!********************************************!*\
+  !*** ./node_modules/d3-ease/src/linear.js ***!
+  \********************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/d3-ease/src/elastic.js ***!
+  \*********************************************/
 
 /*!*********************************************!*\
   !*** ./node_modules/object-assign/index.js ***!
   \*********************************************/
-
-/*!**********************************************!*\
-  !*** ./node_modules/d3-ease/dist/d3-ease.js ***!
-  \**********************************************/
-
-/*!**********************************************!*\
-  !*** ./node_modules/parse-svg-path/index.js ***!
-  \**********************************************/
 
 /*!**********************************************!*\
   !*** ./src/MapOf.Sample_comps_____js.gen.js ***!
@@ -225,16 +229,20 @@ object-assign
   \***********************************************/
 
 /*!***********************************************!*\
-  !*** ./node_modules/point-at-length/index.js ***!
+  !*** ./node_modules/tween-axis/dist/index.js ***!
   \***********************************************/
 
 /*!***************************************************!*\
-  !*** ./node_modules/prop-types/checkPropTypes.js ***!
+  !*** ./node_modules/tween-axis/dist/TweenAxis.js ***!
   \***************************************************/
 
-/*!****************************************************!*\
-  !*** ./node_modules/tween-axis/dist/tween-axis.js ***!
-  \****************************************************/
+/*!*****************************************************!*\
+  !*** ./node_modules/tween-axis/dist/lines/Tween.js ***!
+  \*****************************************************/
+
+/*!******************************************************!*\
+  !*** ./node_modules/tween-axis/dist/utils/Runner.js ***!
+  \******************************************************/
 
 /*!********************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/extends.js ***!
@@ -248,25 +256,9 @@ object-assign
   !*** ./node_modules/lpack-react/node_modules/is/index.js ***!
   \***********************************************************/
 
-/*!***********************************************************!*\
-  !*** ./node_modules/react-is/cjs/react-is.development.js ***!
-  \***********************************************************/
-
-/*!************************************************************!*\
-  !*** ./node_modules/@babel/runtime/helpers/createClass.js ***!
-  \************************************************************/
-
 /*!************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/esm/extends.js ***!
   \************************************************************/
-
-/*!************************************************************!*\
-  !*** ./node_modules/prop-types/factoryWithTypeCheckers.js ***!
-  \************************************************************/
-
-/*!*************************************************************!*\
-  !*** ./node_modules/prop-types/lib/ReactPropTypesSecret.js ***!
-  \*************************************************************/
 
 /*!*************************************************************!*\
   !*** ./node_modules/scheduler/cjs/scheduler.development.js ***!
@@ -279,14 +271,6 @@ object-assign
 /*!**************************************************************!*\
   !*** ./node_modules/lpack-react/node_modules/react/index.js ***!
   \**************************************************************/
-
-/*!***************************************************************!*\
-  !*** ./node_modules/@babel/runtime/helpers/classCallCheck.js ***!
-  \***************************************************************/
-
-/*!***************************************************************!*\
-  !*** ./node_modules/@babel/runtime/helpers/defineProperty.js ***!
-  \***************************************************************/
 
 /*!***************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/setPrototypeOf.js ***!
@@ -408,15 +392,6 @@ object-assign
  * LICENSE file in the root directory of this source tree.
  */
 
-/** @license React v16.13.1
- * react-is.development.js
- *
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
 /** @license React v17.0.1
  * react-dom.development.js
  *
@@ -442,7 +417,3 @@ object-assign
  * @copyright 2013-2014 Enrico Marino / Jordan Harband
  * @license MIT
  */
-
-//!(pos >= _.min && pos <= _.max) && console.warn("out", _.pos, pos, delta);
-
-//!_.tweenRefCSS[id] &&

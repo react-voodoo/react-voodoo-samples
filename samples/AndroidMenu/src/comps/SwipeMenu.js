@@ -25,10 +25,8 @@
  */
 
 
-import React    from "react";
-import ReactDom from "react-dom";
-import Voodoo   from "react-voodoo";
-
+import React  from "react";
+import Voodoo from "react-voodoo";
 
 const Launcher = ( { label, icon, nodeRef, ...props } ) => {
 	return <div className={"launcher"} {...props} ref={nodeRef}>
@@ -87,6 +85,9 @@ export default (
 	const [tweener, ViewBox]  = Voodoo.hook({ enableMouseDrag: true, dragDirectionLock: true }),
 	      rootNode            = React.useRef(),
 	      [status, setStatus] = React.useState(closedStatus),
+	      /**
+	       * Generate the style & transition for all icons
+	       */
 	      styles              = React.useMemo(
 		      () => {
 			      let colSize = (100 - padding * 2) / cols,
@@ -235,7 +236,6 @@ export default (
 								      from    : 0,
 								      duration: 40,
 								      apply   : {
-									      //top : [top + '%'],
 									      height: [launcherHeight * 1.5],
 								      }
 							      },
@@ -243,12 +243,10 @@ export default (
 								      from    : 40,
 								      duration: 60,
 								      apply   : {
-									      //top : [top + '%'],
 									      height: [maximizedHeight, -launcherHeight * 1.5],
 								      }
 							      },
 							      {
-								      type    : "Event",
 								      from    : 0,
 								      duration: 50,
 								      entering: ( d ) => {
@@ -257,7 +255,6 @@ export default (
 								      }
 							      },
 							      {
-								      type    : "Event",
 								      from    : 80,
 								      duration: 20,
 								      entering: ( d ) => {

@@ -240,28 +240,29 @@ export default class Cube extends React.Component {
 	
 	render() {
 		let { facesStyle, cubeStyle, contentStyle, axis } = this.state;
-		return <Voodoo.Node
-			style={cubeStyle}
-			id={"root"}>
-			
-			<Voodoo.Draggable yAxis={"scrollY"} xAxis={"scrollX"}>
-				<Voodoo.Axis axe={"scrollY"} defaultPosition={10}
-				             items={axis.scrollY}
-				             inertia={this.inertiaY}/>
-				<Voodoo.Axis axe={"scrollX"} defaultPosition={100 + 20}
-				             items={axis.scrollX}
-				             scrollableWindow={33}
-				             inertia={this.inertiaX}/>
-				<Voodoo.Node.div id={"front"} initial={facesStyle.front} className={"face"}/>
-				<Voodoo.Node.div id={"back"} initial={facesStyle.back} className={"face"}/>
-				<Voodoo.Node.div id={"right"} initial={facesStyle.right} className={"face"}/>
-				<Voodoo.Node.div id={"left"} initial={facesStyle.left} className={"face"}/>
-				<Voodoo.Node.div id={"top"} initial={facesStyle.top} className={"face"}/>
-				<Voodoo.Node.div id={"bottom"} initial={facesStyle.bottom} className={"face"}/>
-				<Voodoo.Node.div id={"content"} initial={contentStyle} className={"content"}/>
-			
-			</Voodoo.Draggable>
-		</Voodoo.Node>
-			;
+		return <>
+			<Voodoo.Axis axe={"scrollY"} defaultPosition={10}
+			             items={axis.scrollY}
+			             inertia={this.inertiaY}/>
+			<Voodoo.Axis axe={"scrollX"} defaultPosition={100 + 30}
+			             items={axis.scrollX}
+			             scrollableWindow={33}
+			             inertia={this.inertiaX}/>
+			<Voodoo.Node
+				style={cubeStyle}
+				id={"root"}>
+				
+				<Voodoo.Draggable yAxis={"scrollY"} xAxis={"scrollX"}>
+					<Voodoo.Node.div id={"front"} initial={facesStyle.front} className={"face"}/>
+					<Voodoo.Node.div id={"back"} initial={facesStyle.back} className={"face"}/>
+					<Voodoo.Node.div id={"right"} initial={facesStyle.right} className={"face"}/>
+					<Voodoo.Node.div id={"left"} initial={facesStyle.left} className={"face"}/>
+					<Voodoo.Node.div id={"top"} initial={facesStyle.top} className={"face"}/>
+					<Voodoo.Node.div id={"bottom"} initial={facesStyle.bottom} className={"face"}/>
+					<Voodoo.Node.div id={"content"} initial={contentStyle} className={"content"}/>
+				
+				</Voodoo.Draggable>
+			</Voodoo.Node>
+		</>;
 	}
 }

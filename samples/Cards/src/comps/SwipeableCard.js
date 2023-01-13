@@ -46,7 +46,6 @@ export default ( { children, showBack } ) => {
                                   }
                               },
                               {
-                                  type    : "Event",
                                   from    : 50,
                                   duration: .01,
                                   entering: ( pos ) => {

@@ -1,16 +1,14 @@
 export default {
 	style: {
-		position          : "absolute",
-		top               : "10px",
-		left              : "10px",
-		width             : ["100%", "-20px"],
-		height            : ["100%", "-170px"],
-		transform         : [
+		position : "absolute",
+		top      : "10px",
+		left     : "10px",
+		width    : ["100%", "-20px"],
+		height   : ["100%", "-170px"],
+		transform: [
 			{
-				perspective: "1200px",
-				translateZ : "200px",
-				translateY : "100%",
-				translateX : "0%"
+				translateY: "100%",
+				translateX: "0%"
 			},
 			{
 				rotateZ: "-30deg",

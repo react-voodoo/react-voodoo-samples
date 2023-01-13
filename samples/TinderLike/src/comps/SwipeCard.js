@@ -67,15 +67,13 @@ export default (
 				      },
 				      hSwipeAxis: [
 					      {
-						      type    : "Event",
 						      from    : 30,
 						      duration: 40,
-						      moveTo  : ( pos, precPos, update ) => {
+						      moving  : ( pos, precPos, update ) => {
 							      tweener.scrollTo(Math.abs(.5 - pos) * 200, 0, "showNext");
 						      }
 					      },
 					      {
-						      type    : "Event",
 						      from    : 15,
 						      duration: .01,
 						      entering: ( pos ) => {
@@ -87,7 +85,6 @@ export default (
 						      }
 					      },
 					      {
-						      type    : "Event",
 						      from    : 85,
 						      duration: .01,
 						      entering: ( pos ) => {

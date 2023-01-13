@@ -35,9 +35,11 @@ body, html, #app {
   overscroll-behavior-y: contain;
   overscroll-behavior-x: contain;
   overflow: hidden;
+
   > * {
     backface-visibility: hidden;
   }
+
   //overflow: auto !important;
 }
 
@@ -54,6 +56,12 @@ body, html, #app {
 
   > * {
     backface-visibility: hidden;
+  }
+
+  .deskContent {
+    border-radius: 5px;
+    padding: 3px;
+    background: rgba(255, 255, 255, 0.42);
   }
 
   .notif {
@@ -105,6 +113,7 @@ body, html, #app {
         color: white;
         height: 30px;
       }
+
       overflow: hidden;
       background: black;
     }

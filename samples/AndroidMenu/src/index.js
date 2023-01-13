@@ -24,56 +24,55 @@
  *   @contact : n8tz.js@gmail.com
  */
 
-import React                       from "react";
-import ReactDom                    from "react-dom";
-import Voodoo                      from "react-voodoo";
-import icons                       from "./icons/(*).png";
-import { SwipeMenu, GithubCorner } from "./comps/(*).js";
+import React                     from "react";
+import ReactDom                  from "react-dom";
+import icons                     from "./icons/(*).png";
+import {SwipeMenu, GithubCorner} from "./comps/(*).js";
 
-const allIcons = Object.keys(icons).map(( name, i ) => ( {
-    
-    id   : "App" + i,
-    icon : icons[ name ],
-    label: name
-} ))
+const allIcons = Object.keys(icons).map(( name, i ) => ({
+	id   : "App" + i,
+	icon : icons[name],
+	label: name
+}))
 
 import "./index.scss";
 
 
 const Sample = () => {
-    
-    
-    return <>
-        <GithubCorner/>
-        <div className={ "desk" }>
-            <SwipeMenu
-                launchers={ {
-                    All    : [
-                        ...allIcons.slice(0, 20)
-                    ],
-                    Preview: ["App1", "App2", "App8", "App10"]
-                } }>
-                <div className={ "notif" }>
-                    notification
-                </div>
-            </SwipeMenu>
-            PoC desk
-        </div>
-    </>
+	
+	
+	return <>
+		<GithubCorner/>
+		
+		<div className={"desk"}>
+			<SwipeMenu
+				launchers={{
+					All    : [
+						...allIcons.slice(0, 20)
+					],
+					Preview: ["App1", "App2", "App8", "App10"]
+				}}>
+				<div className={"notif"}>
+					notification
+				</div>
+			</SwipeMenu>
+			<span className={"deskContent"}>Swipe that PoC</span>
+		</div>
+	</>
 }
 
 
-document.body.innerHTML = '<div id="app"></div>';
+document.body.innerHTML = '<div id= "app"></div>';
 
 function renderSample() {
-    ReactDom.render(
-        <Sample/>
-        , document.getElementById('app'));
-    
+	ReactDom.render(
+		<Sample/>
+		, document.getElementById('app'));
+	
 }
 
 renderSample()
 
 if ( process.env.NODE_ENV !== 'production' && module.hot ) {
-    module.hot.accept('.', renderSample);
+	module.hot.accept('.', renderSample);
 }
