@@ -30,6 +30,7 @@ import ReactDom from "react-dom";
 import Comps from "./comps/(*).js"
 
 import "./index.scss";
+import { createRoot } from 'react-dom/client';
 
 
 const areaStyle = {
@@ -58,14 +59,9 @@ class Sample extends React.Component {
 document.body.innerHTML = '<div id="app"></div>';
 
 function renderSample() {
-	ReactDom.render(
-		<Sample/>
-		, document.getElementById('app'));
+	createRoot(document.getElementById('app')).render(
+		<Sample/>);
 	
 }
 
 renderSample()
-
-if ( process.env.NODE_ENV !== 'production' && module.hot ) {
-	module.hot.accept('.', renderSample);
-}

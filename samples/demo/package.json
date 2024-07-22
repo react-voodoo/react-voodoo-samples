@@ -11,13 +11,13 @@
     "postinstall": "lpack-setup :www"
   },
   "dependencies": {
-    "react": "^17.0.2",
-    "react-voodoo": "^2.5.1",
-    "lpack-react": "^2.0.7"
+    "lpack-react": "^2.1.1",
+    "react-voodoo": "^2.5.10"
   },
   "devDependencies": {
-    "layer-pack": "^2.0.8",
-    "copy-webpack-plugin": "^10.0.0",
-    "local-web-server": "^5.1.1"
+    "layer-pack": "^2.3.9",
+    "webpack-dev-server": "^5.0.4",
+    "copy-webpack-plugin": "^12.0.2",
+    "local-web-server": "^5.3.4"
   }
 }

@@ -13,8 +13,7 @@ module.exports = {
 			"babelPreset" : {
 				"targets": {
 					"browsers": "> 0.25%, not dead, safari >= 7, ios_saf >= 7, chrome >= 52"
-				},
-				"loose"  : true
+				}
 			},
 			"webpackPatch": {
 				"optimization": {
@@ -44,8 +43,7 @@ module.exports = {
 			"babelPreset" : {
 				"targets": {
 					"browsers": "> 0.25%, not dead, safari >= 7, ios_saf >= 7, chrome >= 52"
-				},
-				"loose"  : true
+				}
 			},
 			"webpackPatch": {
 				"optimization": {

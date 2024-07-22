@@ -6,15 +6,16 @@
   "main": "./Server.js",
   "author": "Nathan Braun <n8tz.js@gmail.com>",
   "scripts": {
-    "build": "lpack",
-    "start-dev": "lpack-dev-server",
-    "postinstall": "lpack-setup"
+    "build": "lpack :www",
+    "start-dev": "lpack-dev-server :wwwDev --host 0.0.0.0",
+    "postinstall": "lpack-setup :www"
   },
   "dependencies": {
-    "react-voodoo": "^2.5.1",
-    "lpack-react": "2.0.2"
+    "lpack-react": "^2.1.0",
+    "react-voodoo": "^2.5.9"
   },
   "devDependencies": {
-    "layer-pack": "^2.0.7"
+    "layer-pack": "^2.3.9",
+    "webpack-dev-server": "^5.0.4"
   }
 }

@@ -34,7 +34,7 @@ import "./index.scss";
 
 function renderSample() {
 	let App                 = require("App/App.js").default;
-	document.body.innerHTML = '<div id="app" > </div>';
+	document.body.innerHTML = '<div id="app" ></div>';
 	
 	ReactDom.render(
 		<App/>

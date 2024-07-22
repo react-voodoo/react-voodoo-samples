@@ -28,7 +28,7 @@ import React                     from "react";
 import ReactDom                  from "react-dom";
 import Voodoo                    from "react-voodoo";
 import {SwipeCard, GithubCorner} from "./comps/(*).js";
-
+import { createRoot } from 'react-dom/client';
 const allCards = [];
 
 allCards.unshift(
@@ -93,16 +93,10 @@ const Sample = () => {
 
 document.body.innerHTML = '<div id="app"></div>';
 
-async function renderSample() {
-	
-	ReactDom.render(
-		<Sample/>
-		, document.getElementById('app'));
+function renderSample() {
+	createRoot(document.getElementById('app')).render(
+		<Sample/>);
 	
 }
 
 renderSample()
-
-if ( process.env.NODE_ENV !== 'production' && module.hot ) {
-	module.hot.accept('.', renderSample);
-}

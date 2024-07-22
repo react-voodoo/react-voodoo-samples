@@ -26,6 +26,7 @@
 
 import React    from "react";
 import ReactDom from "react-dom";
+import { createRoot } from 'react-dom/client';
 
 import Comps from "./comps/(*).js"
 
@@ -41,10 +42,10 @@ class Sample extends React.Component {
 					Array(6).fill(null).map(
 						( e, i ) =>
 							<Comps.SwipeableCard key={i} showBack={!!(i % 2)}>
-								<div className={"frontCard"}>
+								<div className={"frontCard"} style={{background: 'url("https://picsum.photos/400/700?random='+~(Math.random()*1000)+'") no-repeat center center'}}>
 									<div className={"description"}>front {i}</div>
 								</div>
-								<div className={"backCard"}>
+								<div className={"backCard"} style={{background: 'url("https://picsum.photos/400/700?random='+~(Math.random()*1000)+'") no-repeat center center'}}>
 									<div className={"description"}>back {i}</div>
 								</div>
 							</Comps.SwipeableCard>
@@ -58,14 +59,9 @@ class Sample extends React.Component {
 document.body.innerHTML = '<div id="app"> </div>';
 
 function renderSample() {
-	ReactDom.render(
-		<Sample/>
-		, document.getElementById('app'));
+	createRoot(document.getElementById('app')).render(
+		<Sample/>);
 	
 }
 
 renderSample()
-
-if ( process.env.NODE_ENV !== 'production' && module.hot ) {
-	module.hot.accept('.', renderSample);
-}
