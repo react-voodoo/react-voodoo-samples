@@ -14,7 +14,7 @@
     "debounce": "^2.1.0",
     "lpack-react": "^2.1.0",
     "memoize-one": "^6.0.0",
-    "react-voodoo": "^2.5.8"
+    "react-voodoo": "^2.5.14"
   },
   "devDependencies": {
     "layer-pack": "^2.3.9",

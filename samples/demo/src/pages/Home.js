@@ -52,13 +52,13 @@ const allSamples = [
 		github     : "https://github.com/react-voodoo/react-voodoo-samples/tree/master/samples/Cards",
 		sandbox    : "https://codesandbox.io/s/react-voodoo-demo-cards-fmpt2?file=/src/comps/SwipeableCard.js"
 	},
-	{
-		label      : "3d Cubes",
-		path       : "./samples/Cubes/dist/static/index.html",
-		description: "3d Cubes",
-		github     : "https://github.com/react-voodoo/react-voodoo-samples/tree/master/samples/Cubes",
-		sandbox    : "https://codesandbox.io/s/react-voodoo-cube-demo-7d65t"
-	},
+	//{
+	//	label      : "3d Cubes",
+	//	path       : "./samples/Cubes/dist/static/index.html",
+	//	description: "3d Cubes",
+	//	github     : "https://github.com/react-voodoo/react-voodoo-samples/tree/master/samples/Cubes",
+	//	sandbox    : "https://codesandbox.io/s/react-voodoo-cube-demo-7d65t"
+	//},
 	{
 		label      : "Goo balls",
 		path       : "./samples/Goo/dist/static/index.html",
