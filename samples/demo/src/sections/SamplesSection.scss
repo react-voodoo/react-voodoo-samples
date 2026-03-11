@@ -1,0 +1,133 @@
+.samples-section {
+  background: var(--surface);
+  padding: 80px 0;
+  border-top: 1px solid var(--border);
+}
+
+.samples-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: 560px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.sample-card {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
+  }
+}
+
+.sample-preview {
+  position: relative;
+  height: 200px;
+  background: var(--bg);
+  overflow: hidden;
+
+  iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    pointer-events: none;
+  }
+
+  .sample-preview-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(6, 11, 23, 0.5);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  &:hover .sample-preview-overlay {
+    opacity: 1;
+  }
+}
+
+.sample-open-btn {
+  display: inline-block;
+  padding: 8px 20px;
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: background 0.2s;
+
+  &:hover {
+    background: #2563eb;
+  }
+}
+
+.sample-info {
+  padding: 16px 20px 20px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.sample-emoji {
+  font-size: 1.8rem;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.sample-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.sample-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 6px;
+}
+
+.sample-desc {
+  font-size: 0.82rem;
+  color: var(--textSub);
+  line-height: 1.5;
+  margin: 0 0 12px;
+}
+
+.sample-links {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.sample-link {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.78rem;
+  font-weight: 500;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  border-radius: 6px;
+  padding: 3px 10px;
+  transition: all 0.15s;
+
+  &:hover {
+    background: rgba(59, 130, 246, 0.1);
+    border-color: rgba(59, 130, 246, 0.5);
+  }
+}

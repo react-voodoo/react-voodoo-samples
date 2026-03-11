@@ -22,7 +22,7 @@ module.exports = {
 				plugins       : [
 					new CopyPlugin({
 						               patterns: [
-							               { from: "../*/dist/static/**/*", to: "./samples/samples" }
+							               { from: "../*/dist/static/**/*", to: "./samples/samples" },
 						               ],
 					               }),
 				],
@@ -54,7 +54,7 @@ module.exports = {
 				plugins       : [
 					new CopyPlugin({
 						               patterns: [
-							               { from: "../*/dist/static/**/*", to: "./samples/samples" }
+							               { from: "../*/dist/static/**/*", to: "./samples/samples" },
 						               ],
 					               }),
 				],
