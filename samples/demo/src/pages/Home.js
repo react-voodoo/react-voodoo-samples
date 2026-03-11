@@ -34,48 +34,57 @@ const allSamples = [
 	{
 		label      : "TinderLike swiper",
 		path       : "./samples/TinderLike/dist/static/index.html",
-		description: "Swipe card desk like the native tinder anim",
+		description: "Tinder-style swipe cards with native-feel spring physics and gesture recognition",
 		github     : "https://github.com/react-voodoo/react-voodoo-samples/tree/master/samples/TinderLike",
 		sandbox    : "https://codesandbox.io/s/tinder-like-card-swiper-1735w"
 	},
 	{
 		label      : "Swipeable Menu",
 		path       : "./samples/AndroidMenu/dist/static/index.html",
-		description: "Proof of concept Android style Menu",
+		description: "Android-style radial menu with smooth swipe transitions and snap-to-item inertia",
 		github     : "https://github.com/react-voodoo/react-voodoo-samples/tree/master/samples/AndroidMenu",
 		sandbox    : "https://codesandbox.io/s/android-style-menu-bhn1n"
 	},
 	{
 		label      : "Swipeable cards",
 		path       : "./samples/Cards/dist/static/index.html",
-		description: "Swipeable cards",
+		description: "Swipeable card stack with additive animations composing position, rotation and scale",
 		github     : "https://github.com/react-voodoo/react-voodoo-samples/tree/master/samples/Cards",
 		sandbox    : "https://codesandbox.io/s/react-voodoo-demo-cards-fmpt2?file=/src/comps/SwipeableCard.js"
 	},
 	{
 		label      : "3d Cubes",
 		path       : "./samples/Cubes/dist/static/index.html",
-		description: "3d Cubes",
+		description: "CSS 3D cube faces driven by a single scroll axis — no canvas, pure DOM transforms",
 		github     : "https://github.com/react-voodoo/react-voodoo-samples/tree/master/samples/Cubes",
 		sandbox    : "https://codesandbox.io/s/react-voodoo-cube-demo-7d65t"
 	},
-	{
-		label      : "Goo balls",
-		path       : "./samples/Goo/dist/static/index.html",
-		github     : "https://github.com/react-voodoo/react-voodoo-samples/tree/master/samples/Goo",
-		description: "Multitouch Goo balls"
-	}
+	//{
+	//	label      : "Goo balls",
+	//	path       : "./samples/Goo/dist/static/index.html",
+	//	github     : "https://github.com/react-voodoo/react-voodoo-samples/tree/master/samples/Goo",
+	//	description: "Multitouch goo balls with SVG filter blobs, each finger tracked on an independent axis"
+	//}
 ]
 const allSlides  = [
 	{
 		label      : " React-Voodoo",
-		title      : "Welcome ! ",
-		description: <div>
-			React-voodoo is an additive & intuitive tween engine for React<br/>
-			<br/>
-			It's a drafty demo site; But you'll find here some simple / cool samples.<br/>
-			All demos have theirs github & codesandbox<br/>
-			<br/>
+		title      : "React-Voodoo",
+		description: <div className={"doc-content"}>
+			<p className={"tagline"}>
+				A fast, additive &amp; swipeable tween engine for React.
+			</p>
+			<ul className={"feature-list"}>
+				<li><strong>Delta-based</strong> — layer animations additively; no conflicts between tweens</li>
+				<li><strong>Direct DOM</strong> — bypasses React's render loop for buttery 60 fps</li>
+				<li><strong>Swipeable</strong> — predictive inertia, snap points, and looping axes</li>
+				<li><strong>SSR-ready</strong> — works with React 16 / 17 / 18</li>
+				<li><strong>Multi-unit</strong> — mix %, px, vw via CSS calc() in one value</li>
+				<li><strong>Composable</strong> — nest tweeners, share axes across components</li>
+			</ul>
+			<p className={"doc-note"}>
+				Spin the wheel to navigate. Scroll or drag down to browse samples.
+			</p>
 		</div>,
 		link       : "https://github.com/react-voodoo/react-voodoo"
 	},
@@ -84,9 +93,103 @@ const allSlides  = [
 		goDown: true
 	},
 	{
-		label      : "Doc",
-		title      : "Basic documentation",
-		description: "Here some draft documentation",
+		label      : "Docs",
+		title      : "API Reference",
+		description: <div className={"doc-content api-ref"}>
+			<section className={"doc-section"}>
+				<h3>Install</h3>
+				<pre className={"code-block"}>npm install react-voodoo</pre>
+			</section>
+
+			<section className={"doc-section"}>
+				<h3>Quick Start</h3>
+				<pre className={"code-block"}>{
+					`import Voodoo from 'react-voodoo';
+
+const tweens = [{
+  from: 0, duration: 200,
+  apply: { opacity: 1, transform: [{ translateY: "-100px" }] }
+}];
+
+export default () => {
+  const [tweener, ViewBox] = Voodoo.hook();
+  return (
+    <ViewBox>
+      <Voodoo.Axis axe="scroll" size={200} />
+      <Voodoo.Node id="box" axes={{ scroll: tweens }}>
+        <div>Animated!</div>
+      </Voodoo.Node>
+      <Voodoo.Draggable yAxis="scroll">
+        <div className="drag-area" />
+      </Voodoo.Draggable>
+    </ViewBox>
+  );
+}`
+				}</pre>
+			</section>
+
+			<section className={"doc-section"}>
+				<h3>Tween Descriptor</h3>
+				<pre className={"code-block"}>{
+					`{
+  from:     0,          // start position on timeline
+  duration: 200,        // length on the axis
+  apply: {
+    opacity:   1,
+    transform: [{ translateX: "100px" }],
+    filter:    { blur: "5px" }
+  },
+  easeFn:   "easeInOutCubic",
+  entering: (delta) => { /* axis entered range */ },
+  moving:   (pos, prev, delta) => {},
+  leaving:  (delta) => {}
+}`
+				}</pre>
+			</section>
+
+			<section className={"doc-section"}>
+				<h3>Multi-unit Values</h3>
+				<pre className={"code-block"}>{
+					`// Array = CSS calc() sum
+width: ["50%", "10vw", "-50px"]
+// → calc(50% + 10vw - 50px)
+
+// Applies delta to each unit independently
+apply: { width: ["-20%", "20px"] }`
+				}</pre>
+			</section>
+
+			<section className={"doc-section"}>
+				<h3>Axis &amp; Inertia</h3>
+				<pre className={"code-block"}>{
+					`<Voodoo.Axis
+  axe="scroll"
+  size={1000}
+  defaultPosition={0}
+  inertia={{
+    snapToBounds: true,
+    wayPoints: [{ at: 0 }, { at: 500 }, { at: 1000 }],
+    willSnap: (index, waypoint) => {},
+    onSnap:   (index, waypoint) => {},
+    shouldLoop: (pos, delta) => jumpValue | null
+  }}
+/>`
+				}</pre>
+			</section>
+
+			<section className={"doc-section"}>
+				<h3>Imperative Control</h3>
+				<pre className={"code-block"}>{
+					`const [tweener] = Voodoo.hook();
+
+// Animate to position with easing
+tweener.axes.scroll.scrollTo(500, 300, "easeInOutCubic");
+
+// Instantly jump
+tweener.axes.scroll.scrollTo(0, 0);`
+				}</pre>
+			</section>
+		</div>,
 		link       : "https://github.com/react-voodoo/react-voodoo/tree/master/doc",
 	}
 ]

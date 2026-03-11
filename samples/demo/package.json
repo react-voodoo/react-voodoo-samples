@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "lpack-react": "^2.1.1",
-    "react-voodoo": "^2.5.15"
+    "react-voodoo": "^2.6.2"
   },
   "devDependencies": {
     "layer-pack": "^2.3.9",
