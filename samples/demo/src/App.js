@@ -1,8 +1,9 @@
-import React       from "react";
-import NavBar       from "App/comps/NavBar.js";
-import HeroSection  from "App/sections/HeroSection.js";
-import DemosSection from "App/sections/DemosSection.js";
-import DocSection   from "App/sections/DocSection.js";
+import React         from "react";
+import NavBar         from "App/comps/NavBar.js";
+import HeroSection    from "App/sections/HeroSection.js";
+import WhySection     from "App/sections/WhySection.js";
+import DemosSection   from "App/sections/DemosSection.js";
+import DocSection     from "App/sections/DocSection.js";
 import SamplesSection from "App/sections/SamplesSection.js";
 
 export default function App() {
@@ -11,6 +12,7 @@ export default function App() {
 			<NavBar/>
 			<HeroSection/>
 			<DemosSection/>
+			<WhySection/>
 			<DocSection/>
 			<SamplesSection/>
 			<footer className="site-footer">

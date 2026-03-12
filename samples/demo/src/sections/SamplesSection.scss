@@ -79,20 +79,22 @@
 
 .sample-info {
   padding: 16px 20px 20px;
-  display: flex;
-  gap: 14px;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-areas: "emoji text" ". links";
+  column-gap: 14px;
+  row-gap: 10px;
 }
 
 .sample-emoji {
+  grid-area: emoji;
   font-size: 1.8rem;
   line-height: 1;
-  flex-shrink: 0;
   margin-top: 2px;
 }
 
 .sample-text {
-  flex: 1;
+  grid-area: text;
   min-width: 0;
 }
 
@@ -111,6 +113,7 @@
 }
 
 .sample-links {
+  grid-area: links;
   display: flex;
   gap: 10px;
   flex-wrap: wrap;

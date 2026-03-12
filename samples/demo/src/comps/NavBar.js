@@ -10,6 +10,7 @@ export default function NavBar() {
 					<span className="logo-bracket">&#x27E9;</span>
 				</a>
 				<div className="navbar-links">
+					<a href="#why">Why</a>
 					<a href="#demos">Demos</a>
 					<a href="#docs">Docs</a>
 					<a href="#samples">Samples</a>
