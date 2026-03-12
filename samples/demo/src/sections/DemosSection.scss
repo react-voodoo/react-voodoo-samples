@@ -67,27 +67,117 @@
 
 .demos-layout {
   display: flex;
-  gap: 32px;
-  align-items: flex-start;
+  gap: 48px;
+  align-items: center;
 
   @media (max-width: 800px) {
     flex-direction: column;
+    align-items: center;
   }
 }
 
-.demo-visual {
+/* ── Phone mockup ─────────────────────────────────────────────────────────── */
+
+.phone-frame {
   flex-shrink: 0;
-  width: 380px;
-  height: 420px;
+  position: relative;
+  width: 339px;
+  background: #101010;
+  border: 1.5px solid #2e2e2e;
+  border-radius: 48px;
+  box-shadow:
+    0 0 0 1px #080808,
+    0 40px 100px rgba(0, 0, 0, 0.7),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.07);
+
+  /* Volume buttons — left side */
+  &::before {
+    content: '';
+    position: absolute;
+    left: -5px;
+    top: 88px;
+    width: 4px;
+    height: 32px;
+    background: #1e1e1e;
+    border-radius: 3px 0 0 3px;
+    box-shadow: 0 44px 0 #1e1e1e, 0 86px 0 #1e1e1e;
+  }
+
+  /* Power button — right side */
+  &::after {
+    content: '';
+    position: absolute;
+    right: -5px;
+    top: 130px;
+    width: 4px;
+    height: 62px;
+    background: #1e1e1e;
+    border-radius: 0 3px 3px 0;
+  }
+
+  @media (max-width: 800px) {
+    width: 315px;
+  }
+}
+
+.phone-bar--top {
+  height: 44px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.phone-notch {
+  width: 120px;
+  height: 30px;
+  background: #000;
+  border-radius: 0 0 20px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.phone-camera {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.12);
+}
+
+.phone-speaker {
+  width: 44px;
+  height: 5px;
+  border-radius: 3px;
+  background: #1a1a1a;
+  border: 1px solid #272727;
+}
+
+.phone-bar--bottom {
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.phone-home-bar {
+  width: 100px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 2px;
+}
+
+.demo-visual {
+  width: 100%;
+  height: 629px;
   background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: 16px;
   overflow: hidden;
   user-select: none;
 
   @media (max-width: 800px) {
-    width: 100%;
-    height: 320px;
+    height: 557px;
   }
 }
 
@@ -150,19 +240,6 @@
     line-height: 1.65;
     white-space: pre;
     display: block;
-  }
-}
-
-// ── Iframe sample variant ─────────────────────────────────────────────────────
-
-.demos-layout--iframe {
-  .demo-visual--iframe {
-    height: 520px;
-    min-width: 320px;
-    background: #000;
-    iframe {
-      display: block;
-    }
   }
 }
 

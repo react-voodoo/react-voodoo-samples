@@ -114,23 +114,23 @@ tiles.map((tile, i) => (
 // Trigger with scrollTo
 tweener.axes.stagger.scrollTo(200, 800, "easeCubicOut")`,
 	},
-	{
-		id       : "additive",
-		title    : "Additive Axes",
-		tag      : "react-voodoo unique feature",
-		desc     : "Two independent axes both drive the same transform. They simply add. No ownership, no conflicts.",
-		component: AdditiveDemo,
-		snippet  : `<Voodoo.Axis axe="dragX" size={200} defaultPosition={100} scrollableWindow={200} />
-<Voodoo.Axis axe="dragY" size={200} defaultPosition={100} scrollableWindow={200} />
-<Voodoo.Draggable xAxis="dragX" yAxis="dragY">
-  <Voodoo.Node axes={{
-    dragX: [{ from:0, duration:200, apply:{ transform:[{translateX:"200px"},{}] }}],
-    dragY: [{ from:0, duration:200, apply:{ transform:[{},{translateY:"200px"}] }}],
-  }}>
-    <Ball />
-  </Voodoo.Node>
-</Voodoo.Draggable>`,
-	},
+//	{
+//		id       : "additive",
+//		title    : "Additive Axes",
+//		tag      : "react-voodoo unique feature",
+//		desc     : "Two independent axes both drive the same transform. They simply add. No ownership, no conflicts.",
+//		component: AdditiveDemo,
+//		snippet  : `<Voodoo.Axis axe="dragX" size={200} defaultPosition={100} scrollableWindow={200} />
+//<Voodoo.Axis axe="dragY" size={200} defaultPosition={100} scrollableWindow={200} />
+//<Voodoo.Draggable xAxis="dragX" yAxis="dragY">
+//  <Voodoo.Node axes={{
+//    dragX: [{ from:0, duration:200, apply:{ transform:[{translateX:"200px"},{}] }}],
+//    dragY: [{ from:0, duration:200, apply:{ transform:[{},{translateY:"200px"}] }}],
+//  }}>
+//    <Ball />
+//  </Voodoo.Node>
+//</Voodoo.Draggable>`,
+//	},
 //	{
 //		id       : "reveal",
 //		title    : "Scroll Reveal",
@@ -176,18 +176,29 @@ export default function DemosSection() {
 					))}
 				</div>
 				
-				<div className={"demos-layout" + (isSample ? " demos-layout--iframe" : "")}>
-					<div className={"demo-visual" + (isSample ? " demo-visual--iframe" : "")}>
-						{isSample
-						 ? <iframe
-							 key={activeId}
-							 src={active.iframe}
-							 title={active.title}
-							 sandbox="allow-scripts allow-same-origin"
-							 style={{ width: "100%", height: "100%", border: "none" }}
-						 />
-						 : <ActiveComponent key={activeId}/>
-						}
+				<div className="demos-layout">
+					<div className="phone-frame">
+						<div className="phone-bar phone-bar--top">
+							<div className="phone-notch">
+								<span className="phone-camera"/>
+								<span className="phone-speaker"/>
+							</div>
+						</div>
+						<div className="demo-visual">
+							{isSample
+							 ? <iframe
+								 key={activeId}
+								 src={active.iframe}
+								 title={active.title}
+								 sandbox="allow-scripts allow-same-origin"
+								 style={{ width: "100%", height: "100%", border: "none" }}
+							 />
+							 : <ActiveComponent key={activeId}/>
+							}
+						</div>
+						<div className="phone-bar phone-bar--bottom">
+							<div className="phone-home-bar"/>
+						</div>
 					</div>
 					<div className="demo-info">
 						<div className="demo-header">
