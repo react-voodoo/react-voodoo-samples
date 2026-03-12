@@ -23,7 +23,7 @@ export default function SnapCarouselDemo() {
 	return (
 		<ViewBox style={{ width: "100%", height: "100%", overflow: "hidden", position: "relative" }}>
 			<Voodoo.Axis
-				axe="snap"
+				id="snap"
 				size={(N_CARDS - 1) * 100}
 				defaultPosition={0}
 				scrollableWindow={(N_CARDS - 1) * 100}

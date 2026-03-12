@@ -49,7 +49,7 @@ export default function HeroSection() {
 			</div>
 			<ViewBox className="hero-viewbox">
 				<Voodoo.Axis
-					axe="scrollOut"
+					id="scrollOut"
 					size={100}
 					defaultPosition={0}
 				/>

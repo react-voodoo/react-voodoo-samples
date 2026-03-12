@@ -2,21 +2,12 @@ import React  from "react";
 import Voodoo from "react-voodoo";
 
 export default function ParallaxDemo() {
-	const [tweener, ViewBox] = Voodoo.hook({ enableMouseDrag: true, dragDirectionLock: true });
-	const [scrollPct, setScrollPct] = React.useState(0);
-
-	React.useEffect(
-		() => {
-			const unsub = tweener.watchAxis?.("parallax", (pos) => setScrollPct(pos / 400));
-			return () => unsub?.();
-		},
-		[tweener]
-	);
+	const [, ViewBox] = Voodoo.hook({ enableMouseDrag: true, dragDirectionLock: true });
 
 	return (
 		<ViewBox style={{ width: "100%", height: "100%", overflow: "hidden", position: "relative" }}>
 			<Voodoo.Axis
-				axe="parallax"
+				id="parallax"
 				size={400}
 				defaultPosition={0}
 				scrollableWindow={400}
@@ -182,18 +173,31 @@ export default function ParallaxDemo() {
 				borderRadius : "2px",
 				pointerEvents: "none",
 			}}>
-				<div style={{
-					position     : "absolute",
-					left         : "50%",
-					top          : `${scrollPct * 100}%`,
-					transform    : "translate(-50%, -50%)",
-					width        : "7px",
-					height       : "28px",
-					background   : "var(--accent)",
-					borderRadius : "4px",
-					boxShadow    : "0 0 6px var(--accent)",
-					transition   : "top 0.05s linear",
-				}}/>
+				{/*
+				  * Thumb travels from top:0 to top:(trackHeight - thumbHeight).
+				  * Track height = bh - 32px (16px margins top+bottom).
+				  * Thumb height = 28px → total travel = ["1bh", "-60px"].
+				  * Layer 0: static horizontal centering. Layer 1: axis-driven vertical position.
+				*/}
+				<Voodoo.Node.div
+					style={{
+						position    : "absolute",
+						left        : "50%",
+						top         : "0px",
+						width       : "7px",
+						height      : "28px",
+						background  : "#3b82f6",
+						borderRadius: "4px",
+						transform   : [{ translateX: "-50%" }, { translateY: "0px" }],
+					}}
+					axes={{
+						parallax: [{
+							from    : 0,
+							duration: 400,
+							apply   : { transform: [{}, { translateY: ["1bh", "-60px"] }] },
+						}]
+					}}
+				/>
 			</div>
 		</ViewBox>
 	);

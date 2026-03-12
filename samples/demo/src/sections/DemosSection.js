@@ -68,15 +68,15 @@ const DEMOS = [
 		tag      : "GSAP ScrollTrigger equivalent",
 		desc     : "A single axis drives three layers at different speeds. Drag vertically to scrub the parallax effect.",
 		component: ParallaxDemo,
-		snippet  : `const [tweener, ViewBox] = Voodoo.hook({ enableMouseDrag: true });
+		snippet  : `const [tweener, ViewBox] = Voodoo.hook({ enableMouseDrag: true, dragDirectionLock: true });
 // Three nodes, same axis, different apply deltas
-<Voodoo.Axis axe="parallax" size={200} scrollableWindow={200} />
+<Voodoo.Axis id="parallax" size={400} scrollableWindow={400} />
 <Voodoo.Node axes={{ parallax: [{
-  from: 0, duration: 200,
-  apply: { transform: [{ translateY: "-20px" }] }  // slow
+  from: 0, duration: 400,
+  apply: { transform: [{ translateY: "-40px" }] }  // slow
 }] }} />
 <Voodoo.Node axes={{ parallax: [{
-  from: 0, duration: 200,
+  from: 0, duration: 400,
   apply: { transform: [{ translateY: "-140px" }] } // fast
 }] }} />`,
 	},
@@ -86,15 +86,16 @@ const DEMOS = [
 		tag      : "react-spring equivalent",
 		desc     : "Drag the carousel and release. Inertia carries it to the nearest snap point automatically.",
 		component: SnapCarouselDemo,
-		snippet  : `<Voodoo.Axis axe="snap" size={400} scrollableWindow={100}
+		snippet  : `// CARD_W=220, GAP=16, N_CARDS=5 → SLOT=236, total shift=944px
+<Voodoo.Axis id="snap" size={400} scrollableWindow={400}
   inertia={{ wayPoints: [{at:0},{at:100},{at:200},{at:300},{at:400}],
              willSnap: (i) => setActive(i) }} />
-<Voodoo.Draggable xAxis="snap" xHook={d => -d}>
-  <Voodoo.Node axes={{ snap: [{
+<Voodoo.Draggable xAxis="snap">
+  <Voodoo.Node id="track" axes={{ snap: [{
     from: 0, duration: 400,
-    apply: { transform: [{ translateX: "-1104px" }] }
+    apply: { transform: [{ translateX: "-944px" }, {}] }
   }] }}>
-    {cards}
+    <div style={{ display: "flex", gap: "16px" }}>{cards}</div>
   </Voodoo.Node>
 </Voodoo.Draggable>`,
 	},
@@ -120,12 +121,12 @@ tweener.axes.stagger.scrollTo(200, 800, "easeCubicOut")`,
 //		tag      : "react-voodoo unique feature",
 //		desc     : "Two independent axes both drive the same transform. They simply add. No ownership, no conflicts.",
 //		component: AdditiveDemo,
-//		snippet  : `<Voodoo.Axis axe="dragX" size={200} defaultPosition={100} scrollableWindow={200} />
-//<Voodoo.Axis axe="dragY" size={200} defaultPosition={100} scrollableWindow={200} />
+//		snippet  : `<Voodoo.Axis id="dragX" size={200} defaultPosition={100} scrollableWindow={200} />
+//<Voodoo.Axis id="dragY" size={200} defaultPosition={100} scrollableWindow={200} />
 //<Voodoo.Draggable xAxis="dragX" yAxis="dragY">
 //  <Voodoo.Node axes={{
-//    dragX: [{ from:0, duration:200, apply:{ transform:[{translateX:"200px"},{}] }}],
-//    dragY: [{ from:0, duration:200, apply:{ transform:[{},{translateY:"200px"}] }}],
+//    dragX: [{ from:0, duration:200, apply:{ transform:[{translateX:"-200px"},{}] }}],
+//    dragY: [{ from:0, duration:200, apply:{ transform:[{},{translateY:"-200px"}] }}],
 //  }}>
 //    <Ball />
 //  </Voodoo.Node>
@@ -144,7 +145,7 @@ tweener.axes.stagger.scrollTo(200, 800, "easeCubicOut")`,
 //    apply: { opacity: 1, transform: [{ translateY: "-30px" }] }
 //  }] }} />
 //))
-//<Voodoo.Axis axe="scroll" size={300} scrollableWindow={300} />
+//<Voodoo.Axis id="scroll" size={300} scrollableWindow={300} />
 //<Voodoo.Draggable yAxis="scroll">{blocks}</Voodoo.Draggable>`,
 //	}
 ];

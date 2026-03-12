@@ -315,14 +315,14 @@ export default (
 	
 	return <ViewBox className={"RadialSelect"} style={style} ref={rootNode}>
 		<Voodoo.Axis
-			axe={"hSwipe"}
+			id={"hSwipe"}
 			//size={slideLength}
 			scrollableWindow={15}
 			defaultPosition={(2 * items.length - 1 + 2) * slotSize}
 			items={styles.hSwipeAxis}
 			inertia={styles.hInertia}/>
 		<Voodoo.Axis
-			axe={"vSwipe"}
+			id={"vSwipe"}
 			size={100}
 			//scrollableWindow={15}
 			defaultPosition={100}

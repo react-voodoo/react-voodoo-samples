@@ -23,7 +23,7 @@ export default function StaggerDemo() {
 	return (
 		<ViewBox style={{ width: "100%", height: "100%", overflow: "hidden", position: "relative" }}>
 			<Voodoo.Axis
-				axe="stagger"
+				id="stagger"
 				size={200}
 				defaultPosition={0}
 			/>

@@ -14,7 +14,7 @@ export default function ScrollRevealDemo() {
 	return (
 		<ViewBox style={{ width: "100%", height: "100%", overflow: "hidden", position: "relative" }}>
 			<Voodoo.Axis
-				axe="scroll"
+				id="scroll"
 				size={300}
 				defaultPosition={0}
 				scrollableWindow={300}
