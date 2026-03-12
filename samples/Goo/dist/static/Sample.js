@@ -816,19 +816,14 @@ var GooBall = _exports.GooBall;
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ GooBall)
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
-/* harmony import */ var _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/inheritsLoose */ "./node_modules/@babel/runtime/helpers/esm/inheritsLoose.js");
-/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "./node_modules/lpack-react/node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var react_voodoo__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-voodoo */ "./node_modules/react-voodoo/dist/react-voodoo.js");
-/* harmony import */ var react_voodoo__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_voodoo__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/lpack-react/node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_voodoo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-voodoo */ "./node_modules/react-voodoo/dist/react-voodoo.js");
+/* harmony import */ var react_voodoo__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_voodoo__WEBPACK_IMPORTED_MODULE_2__);
 
-
-
-var _dec, _class, _GooBall;
 /*
  *   The MIT License (MIT)
  *   Copyright (c) 2020. Nathanael Braun
@@ -857,12 +852,6 @@ var _dec, _class, _GooBall;
 
 
 
-
-/**
- * This is an experimental lib & a very alpha demo
- * Probably not the simpler methods
- */
-
 var initialBallStyle = {
   position: "absolute",
   display: "inline-block",
@@ -871,36 +860,120 @@ var initialBallStyle = {
   top: "100%",
   left: "100%"
 };
-var GooBall = (_dec = react_voodoo__WEBPACK_IMPORTED_MODULE_4___default().tweener({
-  enableMouseDrag: true
-}), _dec(_class = (_GooBall = /*#__PURE__*/function (_React$Component) {
-  function GooBall(props) {
-    var _this;
-    _this = _React$Component.apply(this, arguments) || this;
-    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(_this, "state", {});
-    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(_this, "nextTarget", {});
-    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(_this, "pushGoTo", function (nextTarget) {
-      var tweener = _this.props.tweener,
-        target = {
-          y: 200 - nextTarget.scrollY,
-          x: 200 - nextTarget.scrollX
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (function (_ref) {
+  var _ref$defaultPosition = _ref.defaultPosition,
+    defaultPosition = _ref$defaultPosition === void 0 ? {
+      x: .5,
+      y: .5
+    } : _ref$defaultPosition,
+    _ref$style = _ref.style,
+    style = _ref$style === void 0 ? initialBallStyle : _ref$style,
+    _ref$color = _ref.color,
+    color = _ref$color === void 0 ? "black" : _ref$color;
+  var _Voodoo$hook = react_voodoo__WEBPACK_IMPORTED_MODULE_2___default().hook({
+      enableMouseDrag: true
+    }),
+    tweener = _Voodoo$hook[0],
+    ViewBox = _Voodoo$hook[1],
+    currentTarget = react__WEBPACK_IMPORTED_MODULE_1___default().useRef(null),
+    nextTarget = react__WEBPACK_IMPORTED_MODULE_1___default().useRef({
+      scrollX: 1 - defaultPosition.x,
+      scrollY: 1 - defaultPosition.y
+    }),
+    lastTm = react__WEBPACK_IMPORTED_MODULE_1___default().useRef(0),
+    pendingGotoTm = react__WEBPACK_IMPORTED_MODULE_1___default().useRef(null),
+    styles = react__WEBPACK_IMPORTED_MODULE_1___default().useMemo(function () {
+      return {
+        nodeStyle: (0,_babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, initialBallStyle, style, {
+          backgroundColor: color,
+          transform: [{
+            translateX: "0box",
+            translateY: "0box"
+          }, {
+            translateX: "-50%",
+            translateY: "-50%"
+          }]
+        }),
+        styleBall: (0,_babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, initialBallStyle, style, {
+          backgroundColor: color,
+          top: "0%",
+          left: "0%",
+          transform: [{
+            translateX: defaultPosition.x + "box",
+            translateY: defaultPosition.y + "box"
+          }, {
+            translateX: "-50%",
+            translateY: "-50%"
+          }]
+        }),
+        ballAxis: {
+          scrollX: [{
+            from: 0,
+            duration: 200,
+            apply: {
+              transform: {
+                translateX: "-1box"
+              }
+            },
+            moving: function moving(pos) {
+              scrollRef.current == null || scrollRef.current(pos, "scrollX");
+            }
+          }],
+          scrollY: [{
+            from: 0,
+            duration: 200,
+            apply: {
+              transform: {
+                translateY: "-1box"
+              }
+            },
+            moving: function moving(pos) {
+              return scrollRef.current == null ? void 0 : scrollRef.current(pos, "scrollY");
+            }
+          }]
         },
-        lastTarget = _this.currentTarget,
-        tween;
-      target.y /= 200;
-      target.x /= 200;
-      target.y = Math.min(1, Math.max(0, target.y.toFixed(3)));
-      target.x = Math.min(1, Math.max(0, target.x.toFixed(3)));
-      if (!lastTarget) {
-        return _this.currentTarget = target;
+        inertiaX: {
+          willEnd: function willEnd(targetPos, targetDelta, duration) {
+            console.log('inertiaX::willEnd: ', targetPos, targetDelta, duration);
+          }
+        },
+        inertiaY: {
+          willEnd: function willEnd(targetPos, targetDelta, duration) {
+            console.log('inertiaY::willEnd: ', targetPos, targetDelta, duration);
+          }
+        }
+      };
+    }, [color, style, defaultPosition]),
+    scrollRef = react__WEBPACK_IMPORTED_MODULE_1___default().useRef(function (pos, axis) {
+      var now = Date.now();
+      nextTarget.current[axis] = pos;
+      if (pendingGotoTm.current) clearTimeout(pendingGotoTm.current);
+      if (now - lastTm.current < 50 || Object.keys(nextTarget.current).length !== 2) {
+        pendingGotoTm.current = setTimeout(function () {
+          return scrollRef.current == null ? void 0 : scrollRef.current(pos, axis);
+        }, 50);
+        return;
       }
-      _this.currentTarget = target;
-      tween = {
+      lastTm.current = now;
+      var target = {
+        y: 1 - nextTarget.current.scrollY,
+        x: 1 - nextTarget.current.scrollX
+      };
+      target.y = Math.min(1, Math.max(0, parseFloat(target.y.toFixed(3))));
+      target.x = Math.min(1, Math.max(0, parseFloat(target.x.toFixed(3))));
+      var lastTarget = currentTarget.current;
+      if (!lastTarget) {
+        currentTarget.current = target;
+        return;
+      }
+      currentTarget.current = target;
+      var tween = {
         transform: {
           translateX: target.x - lastTarget.x + "box",
           translateY: target.y - lastTarget.y + "box"
         }
       };
+      //console.log('target:::121: ', tween.transform);
       tweener.pushAnim([{
         target: "goo3",
         duration: 200,
@@ -911,124 +984,38 @@ var GooBall = (_dec = react_voodoo__WEBPACK_IMPORTED_MODULE_4___default().tweene
         apply: tween
       }]);
     });
-    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(_this, "inertiaX", {
-      willEnd: function willEnd(targetPos, targetDelta, duration) {
-        console.log('inertiaX::willEnd:183: ', targetPos, targetDelta, duration);
-      }
-    });
-    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(_this, "inertiaY", {
-      willEnd: function willEnd(targetPos, targetDelta, duration) {
-        console.log('inertiaY::willEnd:183: ', targetPos, targetDelta, duration);
-      }
-    });
-    _this.nextTarget = {
-      scrollX: 200 - props.defaultPosition.x * 200,
-      scrollY: 200 - props.defaultPosition.y * 200
-    };
-    return _this;
-  }
-  (0,_babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_1__["default"])(GooBall, _React$Component);
-  var _proto = GooBall.prototype;
-  _proto.componentDidScroll = function componentDidScroll(pos, axis) {
-    var _this2 = this;
-    var now = Date.now();
-    this.nextTarget[axis] = pos;
-    this._pendingGotoTm && clearTimeout(this._pendingGotoTm);
-    // mano debounce
-    if (now - this.lastTm < 50) return this._pendingGotoTm = setTimeout(function (tm) {
-      return _this2.componentDidScroll(pos, axis);
-    }, 50);
-    this.lastTm = now;
-    this.pushGoTo(this.nextTarget);
-  };
-  GooBall.getDerivedStateFromProps = function getDerivedStateFromProps(props, state) {
-    var color = props.color,
-      style = props.style,
-      defaultPosition = props.defaultPosition;
-    return {
-      style: (0,_babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, style, {
-        backgroundColor: color,
-        transform: [{
-          translateX: "0box",
-          translateY: "0box"
-        }, {
-          translateX: "-50%",
-          translateY: "-50%"
-        }]
-      }),
-      styleBall: (0,_babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, style, {
-        backgroundColor: color,
-        top: "0%",
-        left: "0%",
-        transform: [{
-          translateX: defaultPosition.x + "box",
-          translateY: defaultPosition.y + "box"
-        }, {
-          translateX: "-50%",
-          translateY: "-50%"
-        }]
-      }),
-      ballAxis: {
-        scrollX: [{
-          from: 0,
-          duration: 200,
-          apply: {
-            transform: {
-              translateX: "-1box"
-            }
-          }
-        }],
-        scrollY: [{
-          from: 0,
-          duration: 200,
-          apply: {
-            transform: {
-              translateY: "-1box"
-            }
-          }
-        }]
-      }
-    };
-  };
-  _proto.render = function render() {
-    var defaultPosition = this.props.defaultPosition;
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default().createElement((react_voodoo__WEBPACK_IMPORTED_MODULE_4___default().Draggable), {
-      yAxis: "scrollY",
-      xAxis: "scrollX",
-      className: "GooBall"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default().createElement((react_voodoo__WEBPACK_IMPORTED_MODULE_4___default().Axis), {
-      axe: "scrollY",
-      defaultPosition: 200 - defaultPosition.y * 200,
-      inertia: this.inertiaY
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default().createElement((react_voodoo__WEBPACK_IMPORTED_MODULE_4___default().Axis), {
-      axe: "scrollX",
-      defaultPosition: 200 - defaultPosition.x * 200,
-      inertia: this.inertiaX
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default().createElement((react_voodoo__WEBPACK_IMPORTED_MODULE_4___default().Node).div, {
-      id: "goo2",
-      initial: this.state.styleBall,
-      className: "ball"
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default().createElement((react_voodoo__WEBPACK_IMPORTED_MODULE_4___default().Node).div, {
-      id: "goo3",
-      initial: this.state.styleBall,
-      className: "ball"
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default().createElement((react_voodoo__WEBPACK_IMPORTED_MODULE_4___default().Node).div, {
-      id: "goo1",
-      tweenAxis: this.state.ballAxis,
-      initial: this.state.style,
-      className: "ball"
-    }));
-  };
-  return GooBall;
-}((react__WEBPACK_IMPORTED_MODULE_3___default().Component)), (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(_GooBall, "defaultProps", {
-  defaultPosition: {
-    x: .5,
-    y: .5
-  },
-  style: initialBallStyle,
-  color: "black"
-}), _GooBall)) || _class);
 
+  // Updated each render so the moving callbacks always call the latest closure
+  //scrollRef.current = ;
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(ViewBox, {
+    className: "GooBall"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement((react_voodoo__WEBPACK_IMPORTED_MODULE_2___default().Axis), {
+    axe: "scrollY",
+    defaultPosition: 200 - defaultPosition.y * 200,
+    inertia: styles.inertiaY
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement((react_voodoo__WEBPACK_IMPORTED_MODULE_2___default().Axis), {
+    axe: "scrollX",
+    defaultPosition: 200 - defaultPosition.x * 200,
+    inertia: styles.inertiaX
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement((react_voodoo__WEBPACK_IMPORTED_MODULE_2___default().Draggable), {
+    yAxis: "scrollY",
+    xAxis: "scrollX"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement((react_voodoo__WEBPACK_IMPORTED_MODULE_2___default().Node).div, {
+    id: "goo2",
+    initial: styles.styleBall,
+    className: "ball"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement((react_voodoo__WEBPACK_IMPORTED_MODULE_2___default().Node).div, {
+    id: "goo3",
+    initial: styles.styleBall,
+    className: "ball"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement((react_voodoo__WEBPACK_IMPORTED_MODULE_2___default().Node).div, {
+    id: "goo1",
+    tweenAxis: styles.ballAxis,
+    initial: styles.nodeStyle,
+    className: "ball"
+  })));
+});
 
 /***/ },
 
@@ -37144,31 +37131,6 @@ module.exports = _unsupportedIterableToArray, module.exports.__esModule = true, 
 
 /***/ },
 
-/***/ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js"
-/*!*******************************************************************!*\
-  !*** ./node_modules/@babel/runtime/helpers/esm/defineProperty.js ***!
-  \*******************************************************************/
-(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ _defineProperty)
-/* harmony export */ });
-/* harmony import */ var _toPropertyKey_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./toPropertyKey.js */ "./node_modules/@babel/runtime/helpers/esm/toPropertyKey.js");
-
-function _defineProperty(e, r, t) {
-  return (r = (0,_toPropertyKey_js__WEBPACK_IMPORTED_MODULE_0__["default"])(r)) in e ? Object.defineProperty(e, r, {
-    value: t,
-    enumerable: !0,
-    configurable: !0,
-    writable: !0
-  }) : e[r] = t, e;
-}
-
-
-/***/ },
-
 /***/ "./node_modules/@babel/runtime/helpers/esm/extends.js"
 /*!************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/esm/extends.js ***!
@@ -37228,80 +37190,6 @@ function _setPrototypeOf(t, e) {
   return _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function (t, e) {
     return t.__proto__ = e, t;
   }, _setPrototypeOf(t, e);
-}
-
-
-/***/ },
-
-/***/ "./node_modules/@babel/runtime/helpers/esm/toPrimitive.js"
-/*!****************************************************************!*\
-  !*** ./node_modules/@babel/runtime/helpers/esm/toPrimitive.js ***!
-  \****************************************************************/
-(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ toPrimitive)
-/* harmony export */ });
-/* harmony import */ var _typeof_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./typeof.js */ "./node_modules/@babel/runtime/helpers/esm/typeof.js");
-
-function toPrimitive(t, r) {
-  if ("object" != (0,_typeof_js__WEBPACK_IMPORTED_MODULE_0__["default"])(t) || !t) return t;
-  var e = t[Symbol.toPrimitive];
-  if (void 0 !== e) {
-    var i = e.call(t, r || "default");
-    if ("object" != (0,_typeof_js__WEBPACK_IMPORTED_MODULE_0__["default"])(i)) return i;
-    throw new TypeError("@@toPrimitive must return a primitive value.");
-  }
-  return ("string" === r ? String : Number)(t);
-}
-
-
-/***/ },
-
-/***/ "./node_modules/@babel/runtime/helpers/esm/toPropertyKey.js"
-/*!******************************************************************!*\
-  !*** ./node_modules/@babel/runtime/helpers/esm/toPropertyKey.js ***!
-  \******************************************************************/
-(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ toPropertyKey)
-/* harmony export */ });
-/* harmony import */ var _typeof_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./typeof.js */ "./node_modules/@babel/runtime/helpers/esm/typeof.js");
-/* harmony import */ var _toPrimitive_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./toPrimitive.js */ "./node_modules/@babel/runtime/helpers/esm/toPrimitive.js");
-
-
-function toPropertyKey(t) {
-  var i = (0,_toPrimitive_js__WEBPACK_IMPORTED_MODULE_1__["default"])(t, "string");
-  return "symbol" == (0,_typeof_js__WEBPACK_IMPORTED_MODULE_0__["default"])(i) ? i : i + "";
-}
-
-
-/***/ },
-
-/***/ "./node_modules/@babel/runtime/helpers/esm/typeof.js"
-/*!***********************************************************!*\
-  !*** ./node_modules/@babel/runtime/helpers/esm/typeof.js ***!
-  \***********************************************************/
-(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ _typeof)
-/* harmony export */ });
-function _typeof(o) {
-  "@babel/helpers - typeof";
-
-  return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) {
-    return typeof o;
-  } : function (o) {
-    return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o;
-  }, _typeof(o);
 }
 
 
@@ -37548,7 +37436,7 @@ var Sample = /*#__PURE__*/function (_React$Component) {
       values: "1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 30 -7"
     }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", {
       className: "description"
-    }, "Drag & throw the balls ( alpha demo )"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", {
+    }, "Drag & throw the balls"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", {
       style: areaStyle,
       className: "area"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_comps_js__WEBPACK_IMPORTED_MODULE_3__["default"].GooBall, {

@@ -59,7 +59,7 @@ export default ( props ) => {
 						      height         : "100%",
 						      backgroundColor: color,
 						      opacity        : .5,
-						      transform      : { rotateY: 0, translateZ: "6vh" }
+						      transform      : { rotateY: 0, translateZ: "5em" }
 					      },
 					      right : {
 						      position       : "absolute",
@@ -67,7 +67,7 @@ export default ( props ) => {
 						      height         : "100%",
 						      backgroundColor: color,
 						      opacity        : .5,
-						      transform      : { rotateY: 90, translateZ: "6vh" }
+						      transform      : { rotateY: 90, translateZ: "5em" }
 					      },
 					      back  : {
 						      position       : "absolute",
@@ -75,7 +75,7 @@ export default ( props ) => {
 						      height         : "100%",
 						      backgroundColor: color,
 						      opacity        : .5,
-						      transform      : { rotateY: 180, translateZ: "6vh" }
+						      transform      : { rotateY: 180, translateZ: "5em" }
 					      },
 					      left  : {
 						      position       : "absolute",
@@ -83,7 +83,7 @@ export default ( props ) => {
 						      height         : "100%",
 						      backgroundColor: color,
 						      opacity        : .5,
-						      transform      : { rotateY: -90, translateZ: "6vh" }
+						      transform      : { rotateY: -90, translateZ: "5em" }
 					      },
 					      top   : {
 						      position       : "absolute",
@@ -91,7 +91,7 @@ export default ( props ) => {
 						      height         : "100%",
 						      backgroundColor: color,
 						      opacity        : .5,
-						      transform      : { rotateX: 90, translateZ: "6vh" }
+						      transform      : { rotateX: 90, translateZ: "5em" }
 					      },
 					      bottom: {
 						      position       : "absolute",
@@ -99,13 +99,13 @@ export default ( props ) => {
 						      height         : "100%",
 						      backgroundColor: color,
 						      opacity        : .5,
-						      transform      : { rotateX: -90, translateZ: "6vh" }
+						      transform      : { rotateX: -90, translateZ: "5em" }
 					      }
 				      },
 				      cubeStyle   : {
 					      position      : "absolute",
-					      width         : "10vh",
-					      height        : "10vh",
+					      width         : "9em",
+					      height        : "9em",
 					      left          : (defaultPosition.x * 100) + "%",
 					      top           : (defaultPosition.y * 100) + "%",
 					      transformStyle: "preserve-3d",
@@ -119,8 +119,8 @@ export default ( props ) => {
 				      },
 				      contentStyle: {
 					      position : "absolute",
-					      width    : "8vh",
-					      height   : "8vh",
+					      width    : "8em",
+					      height   : "8em",
 					      left     : "50%",
 					      top      : "50%",
 					      transform: [
@@ -163,7 +163,7 @@ export default ( props ) => {
 								      target,
 								      apply   : {
 									      transform: [{}, {
-										      translateZ: "1vh",
+										      translateZ: "1em",
 									      }],
 								      }
 							      })
@@ -175,8 +175,8 @@ export default ( props ) => {
 								      target,
 								      apply   : {
 									      transform: [{}, {
-										      translateZ: "4vh",
-										      translateY: "2vh",
+										      translateZ: "4em",
+										      translateY: "2em",
 										      rotateX   : "-45deg",
 									      }],
 								      }
@@ -189,20 +189,20 @@ export default ( props ) => {
 							      apply   : {
 								      opacity  : -.5,
 								      transform: [, {
-									      translateZ: "9vh",
+									      translateZ: "5em",
 									      scale     : -.5,
 								      }],
 							      }
 						      },
 						      {
 							      from    : 10,
-							      duration: 190,
+							      duration: 90,
 							      target  : "content",
 							      apply   : {
-								      width    : "3vh",
-								      height   : "3vh",
+								      width    : "3em",
+								      height   : "3em",
 								      transform: [, , {
-									      translateY: "-15vh",
+									      translateY: "-15em",
 									      
 								      }],
 							      }
@@ -222,7 +222,7 @@ export default ( props ) => {
 				      },
 				      inertiaY    :
 					      {
-						      wayPoints: [{ at: 10 }, { at: 200 }]
+						      wayPoints: [{ at: 10 }, { at: 100 }]
 					      }
 			      }
 		      ), [color, style, defaultPosition]
@@ -232,10 +232,11 @@ export default ( props ) => {
 	return <ViewBox className={"Cube"}>
 		<Voodoo.Axis axe={"scrollY"} defaultPosition={10}
 		             items={styles.axis.scrollY}
+		             scrollableWindow={200}
 		             inertia={styles.inertiaY}/>
 		<Voodoo.Axis axe={"scrollX"} defaultPosition={100 + 30}
 		             items={styles.axis.scrollX}
-		             scrollableWindow={33}
+		             scrollableWindow={60}
 		             inertia={styles.inertiaX}/>
 		<Voodoo.Node
 			style={styles.cubeStyle}

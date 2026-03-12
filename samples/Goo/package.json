@@ -11,7 +11,7 @@
     "postinstall": "lpack-setup "
   },
   "dependencies": {
-    "lpack-react": "2.1.0",
+    "lpack-react": "^2.2.0",
     "react-voodoo": "^2.6.1"
   },
   "devDependencies": {

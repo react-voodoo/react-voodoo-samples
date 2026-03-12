@@ -37,6 +37,14 @@ const SAMPLES = [
 		color  : "#ec4899",
 		emoji  : "🎲",
 	},
+	{
+		title : "Goo",
+		desc  : "Draggable goo balls with additive pushAnim lag — two axes drive a trailing blob effect via delta-based composition.",
+		path  : "./samples/Goo/dist/static/index.html",
+		github: "https://github.com/react-voodoo/react-voodoo-samples/tree/master/samples/Goo",
+		color : "#f59e0b",
+		emoji : "🫧",
+	},
 ];
 
 export default function SamplesSection() {

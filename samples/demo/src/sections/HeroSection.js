@@ -83,7 +83,7 @@ export default function HeroSection() {
 						<p className="hero-tagline">
 							A fast, additive &amp; swipeable tween engine for React.<br/>
 							Delta-based composition. Direct DOM. 60 fps.<br/>
-							( This is actually claude who made the new demos, there still some work to do ;) )
+							( Demo site still in wip/alpha mode ;) )
 						</p>
 					</Voodoo.Node>
 

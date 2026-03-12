@@ -49,6 +49,14 @@ const SAMPLE_DEMOS = [
 		github : "https://github.com/react-voodoo/react-voodoo-samples/tree/master/samples/Cubes",
 		sandbox: "https://codesandbox.io/s/react-voodoo-cube-demo-7d65t",
 	},
+	{
+		id    : "goo",
+		title : "Goo",
+		tag   : "complete app",
+		desc  : "Draggable goo balls with additive pushAnim lag — two axes drive a trailing blob effect via delta-based composition.",
+		iframe: "./samples/Goo/dist/static/index.html",
+		github: "https://github.com/react-voodoo/react-voodoo-samples/tree/master/samples/Goo",
+	},
 ];
 
 const DEMOS = [
@@ -123,22 +131,22 @@ tweener.axes.stagger.scrollTo(200, 800, "easeCubicOut")`,
   </Voodoo.Node>
 </Voodoo.Draggable>`,
 	},
-	{
-		id       : "reveal",
-		title    : "Scroll Reveal",
-		tag      : "Framer Motion useScroll equivalent",
-		desc     : "Axis-driven scroll reveals with easing. Each content block reveals as you drag through its range on the timeline.",
-		component: ScrollRevealDemo,
-		snippet  : `// blocks staggered along the axis timeline
-blocks.map((block, i) => (
-  <Voodoo.Node style={{ opacity: 0 }} axes={{ scroll: [{
-    from: i * 60, duration: 60, easeFn: "easeCubicOut",
-    apply: { opacity: 1, transform: [{ translateY: "-30px" }] }
-  }] }} />
-))
-<Voodoo.Axis axe="scroll" size={300} scrollableWindow={300} />
-<Voodoo.Draggable yAxis="scroll">{blocks}</Voodoo.Draggable>`,
-	}
+//	{
+//		id       : "reveal",
+//		title    : "Scroll Reveal",
+//		tag      : "Framer Motion useScroll equivalent",
+//		desc     : "Axis-driven scroll reveals with easing. Each content block reveals as you drag through its range on the timeline.",
+//		component: ScrollRevealDemo,
+//		snippet  : `// blocks staggered along the axis timeline
+//blocks.map((block, i) => (
+//  <Voodoo.Node style={{ opacity: 0 }} axes={{ scroll: [{
+//    from: i * 60, duration: 60, easeFn: "easeCubicOut",
+//    apply: { opacity: 1, transform: [{ translateY: "-30px" }] }
+//  }] }} />
+//))
+//<Voodoo.Axis axe="scroll" size={300} scrollableWindow={300} />
+//<Voodoo.Draggable yAxis="scroll">{blocks}</Voodoo.Draggable>`,
+//	}
 ];
 
 export default function DemosSection() {

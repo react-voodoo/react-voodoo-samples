@@ -51,7 +51,7 @@ class Sample extends React.Component {
 				</filter>
 			</svg>
 			<div className={"description"}>
-				Drag & throw the balls ( alpha demo )
+				Drag & throw the balls
 			</div>
 			<div style={areaStyle} className={"area"}>
 				<Comps.GooBall color={"cyan"} defaultPosition={{ x: .5, y: .5 }}/>
