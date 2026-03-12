@@ -16,10 +16,10 @@ export default function HeroSection() {
 	React.useEffect(
 		() => {
 			const entranceAnim = [
-				{ target: "logo",    from: 0,  duration: 60, easeFn: "easeCubicOut", apply: { opacity: 1, transform: [{ translateY: "-30px" }] } },
-				{ target: "tagline", from: 30, duration: 60, easeFn: "easeCubicOut", apply: { opacity: 1, transform: [{ translateY: "-30px" }] } },
-				{ target: "pills",   from: 60, duration: 50, easeFn: "easeCubicOut", apply: { opacity: 1, transform: [{ translateY: "-20px" }] } },
-				{ target: "cta",     from: 80, duration: 50, easeFn: "easeCubicOut", apply: { opacity: 1, transform: [{ translateY: "-20px" }] } },
+				{ target: "logo",    from: 0,  duration: 1000, easeFn: "easeCubicOut", apply: { opacity: 1, transform: [{ translateY: "-60px" }] } },
+				{ target: "tagline", from: 30, duration: 1000, easeFn: "easeCubicOut", apply: { opacity: 1, transform: [{ translateY: "-60px" }] } },
+				{ target: "pills",   from: 60, duration: 1200, easeFn: "easeCubicOut", apply: { opacity: 1, transform: [{ translateY: "-40px" }] } },
+				{ target: "cta",     from: 80, duration: 1200, easeFn: "easeCubicOut", apply: { opacity: 1, transform: [{ translateY: "-40px" }] } },
 			];
 			tweener.pushAnim(entranceAnim);
 		},
@@ -31,7 +31,7 @@ export default function HeroSection() {
 			const onScroll = () => {
 				const pos = Math.min(100, (window.scrollY / window.innerHeight) * 130);
 				if ( tweener.axes && tweener.axes.scrollOut ) {
-					tweener.axes.scrollOut.scrollTo(pos, 0);
+					tweener.axes.scrollOut.scrollTo(pos, 100);
 				}
 			};
 			window.addEventListener("scroll", onScroll, { passive: true });

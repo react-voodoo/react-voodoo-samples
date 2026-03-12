@@ -62,43 +62,58 @@ const SAMPLE_DEMOS = [
 const DEMOS = [
 	
 	...SAMPLE_DEMOS,
-	{
-		id       : "parallax",
-		title    : "Scroll Parallax",
-		tag      : "GSAP ScrollTrigger equivalent",
-		desc     : "A single axis drives three layers at different speeds. Drag vertically to scrub the parallax effect.",
-		component: ParallaxDemo,
-		snippet  : `const [tweener, ViewBox] = Voodoo.hook({ enableMouseDrag: true, dragDirectionLock: true });
-// Three nodes, same axis, different apply deltas
-<Voodoo.Axis id="parallax" size={400} scrollableWindow={400} />
-<Voodoo.Node axes={{ parallax: [{
-  from: 0, duration: 400,
-  apply: { transform: [{ translateY: "-40px" }] }  // slow
-}] }} />
-<Voodoo.Node axes={{ parallax: [{
-  from: 0, duration: 400,
-  apply: { transform: [{ translateY: "-140px" }] } // fast
-}] }} />`,
-	},
-	{
-		id       : "carousel",
-		title    : "Inertia Snap",
-		tag      : "react-spring equivalent",
-		desc     : "Drag the carousel and release. Inertia carries it to the nearest snap point automatically.",
-		component: SnapCarouselDemo,
-		snippet  : `// CARD_W=220, GAP=16, N_CARDS=5 → SLOT=236, total shift=944px
-<Voodoo.Axis id="snap" size={400} scrollableWindow={400}
-  inertia={{ wayPoints: [{at:0},{at:100},{at:200},{at:300},{at:400}],
-             willSnap: (i) => setActive(i) }} />
-<Voodoo.Draggable xAxis="snap">
-  <Voodoo.Node id="track" axes={{ snap: [{
-    from: 0, duration: 400,
-    apply: { transform: [{ translateX: "-944px" }, {}] }
-  }] }}>
-    <div style={{ display: "flex", gap: "16px" }}>{cards}</div>
-  </Voodoo.Node>
-</Voodoo.Draggable>`,
-	},
+//	{
+//		id       : "parallax",
+//		title    : "Multitouch Parallax",
+//		tag      : "independent axes per touch point",
+//		desc     : "Two panels, two axes, two fingers. Each Voodoo.Draggable tracks its own pointer independently — grab the day scene with one finger and the night scene with another at the same time. React-voodoo routes every touch point to whichever Draggable it lands on, so multiple animations run in parallel without any coordination code.",
+//		component: ParallaxDemo,
+//		snippet  : `// Two axes — each Draggable owns one touch point
+//<Voodoo.Axis id="day"   size={400} scrollableWindow={400}
+//  inertia={{ wayPoints }} />
+//<Voodoo.Axis id="night" size={400} scrollableWindow={400}
+//  inertia={{ wayPoints }} />
+//
+//{/* Left panel — responds to its own finger */}
+//<div style={{ position:"absolute", left:0, width:"50%" }}>
+//  <Voodoo.Draggable yAxis="day">
+//    <Voodoo.Node axes={{ day: [{
+//      from: 0, duration: 400,
+//      apply: { transform: [{ translateY: "-145px" }] }
+//    }] }} />
+//  </Voodoo.Draggable>
+//</div>
+//
+//{/* Right panel — fully independent pointer tracking */}
+//<div style={{ position:"absolute", right:0, width:"50%" }}>
+//  <Voodoo.Draggable yAxis="night">
+//    <Voodoo.Node axes={{ night: [{
+//      from: 0, duration: 400,
+//      apply: { transform: [{ translateY: "-260px" }] }
+//    }] }} />
+//  </Voodoo.Draggable>
+//</div>
+//// ← drag both panels simultaneously with two fingers`,
+//	},
+//	{
+//		id       : "carousel",
+//		title    : "Inertia Snap",
+//		tag      : "react-spring equivalent",
+//		desc     : "Drag the carousel and release. Inertia carries it to the nearest snap point automatically.",
+//		component: SnapCarouselDemo,
+//		snippet  : `// CARD_W=220, GAP=16, N_CARDS=5 → SLOT=236, total shift=944px
+//<Voodoo.Axis id="snap" size={400} scrollableWindow={400}
+//  inertia={{ wayPoints: [{at:0},{at:100},{at:200},{at:300},{at:400}],
+//             willSnap: (i) => setActive(i) }} />
+//<Voodoo.Draggable xAxis="snap">
+//  <Voodoo.Node id="track" axes={{ snap: [{
+//    from: 0, duration: 400,
+//    apply: { transform: [{ translateX: "-944px" }, {}] }
+//  }] }}>
+//    <div style={{ display: "flex", gap: "16px" }}>{cards}</div>
+//  </Voodoo.Node>
+//</Voodoo.Draggable>`,
+//	},
 	{
 		id       : "stagger",
 		title    : "Stagger Entrance",
@@ -119,18 +134,25 @@ tweener.axes.stagger.scrollTo(200, 800, "easeCubicOut")`,
 //		id       : "additive",
 //		title    : "Additive Axes",
 //		tag      : "react-voodoo unique feature",
-//		desc     : "Two independent axes both drive the same transform. They simply add. No ownership, no conflicts.",
+//		desc     : "Two axes composing the same transform layer — drag the ball anywhere and both axes update simultaneously. Because react-voodoo is delta-based, axes never fight for ownership: their contributions simply add. On a touchscreen you can grab the ball with one finger while a second finger drives another Draggable in the same scene.",
 //		component: AdditiveDemo,
-//		snippet  : `<Voodoo.Axis id="dragX" size={200} defaultPosition={100} scrollableWindow={200} />
-//<Voodoo.Axis id="dragY" size={200} defaultPosition={100} scrollableWindow={200} />
+//		snippet  : `// One ball, two axes, drag in any direction
+//<Voodoo.Axis id="dragX" size={200} defaultPosition={100}
+//  scrollableWindow={200} inertia={true} />
+//<Voodoo.Axis id="dragY" size={200} defaultPosition={100}
+//  scrollableWindow={200} inertia={true} />
+//
 //<Voodoo.Draggable xAxis="dragX" yAxis="dragY">
 //  <Voodoo.Node axes={{
-//    dragX: [{ from:0, duration:200, apply:{ transform:[{translateX:"-200px"},{}] }}],
-//    dragY: [{ from:0, duration:200, apply:{ transform:[{},{translateY:"-200px"}] }}],
+//    dragX: [{ from:0, duration:200,
+//      apply:{ transform:[{ translateX:"-200px" },{}] }}],
+//    dragY: [{ from:0, duration:200,
+//      apply:{ transform:[{},{ translateY:"-200px" }] }}],
 //  }}>
 //    <Ball />
 //  </Voodoo.Node>
-//</Voodoo.Draggable>`,
+//</Voodoo.Draggable>
+//// deltas from both axes accumulate — no conflicts`,
 //	},
 //	{
 //		id       : "reveal",

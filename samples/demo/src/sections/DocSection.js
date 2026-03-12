@@ -124,27 +124,32 @@ export default function MyComponent() {
 
 						<section className="doc-block" id="doc-node">
 							<h3>Voodoo.Node</h3>
-							<p>Animatable wrapper element. Registers CSS tween descriptors with the parent tweener.</p>
+							<p>Animatable wrapper element. Registers CSS tween descriptors with the parent tweener. <strong>Must have exactly one child element.</strong> Use <code>Voodoo.Node.div</code> when you need multiple children.</p>
 							<PropsTable rows={[
 								["id",    "string", "Node identifier. Referenced by tween target fields and pushAnim."],
 								["style", "object", "Initial CSS style. Supports transform layers and multi-unit arrays."],
 								["axes",  "object", "Map of axisId → tween descriptor array. No target field needed — tweens apply to this node."],
 							]}/>
-							<CodeBlock>{`<Voodoo.Node
+							<CodeBlock>{`// Voodoo.Node — must wrap exactly one child element
+<Voodoo.Node
   id="myNode"
-  style={{
-    opacity:   0,
-    transform: [{ translateY: "30px" }],
-  }}
-  axes={{
-    scroll: [{
-      from: 0, duration: 100, easeFn: "easeCubicOut",
-      apply: { opacity: 1, transform: [{ translateY: "-30px" }] }
-    }]
-  }}
+  style={{ opacity: 0, transform: [{ translateY: "30px" }] }}
+  axes={{ scroll: [{ from: 0, duration: 100, easeFn: "easeCubicOut",
+    apply: { opacity: 1, transform: [{ translateY: "-30px" }] } }] }}
 >
-  <div>...</div>
-</Voodoo.Node>`}</CodeBlock>
+  <div>single child</div>
+</Voodoo.Node>
+
+// Voodoo.Node.div — renders as the <div> itself; multiple children allowed
+<Voodoo.Node.div
+  id="myNode"
+  style={{ opacity: 0, transform: [{ translateY: "30px" }] }}
+  axes={{ scroll: [{ from: 0, duration: 100,
+    apply: { opacity: 1, transform: [{ translateY: "-30px" }] } }] }}
+>
+  <span>child 1</span>
+  <span>child 2</span>
+</Voodoo.Node.div>`}</CodeBlock>
 						</section>
 
 						<section className="doc-block" id="doc-draggable">
