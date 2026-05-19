@@ -16,6 +16,6 @@
   },
   "devDependencies": {
     "layer-pack": "^2.3.9",
-    "webpack-dev-server": "^5.0.4"
+    "webpack-dev-server": "^5.2.4"
   }
 }
